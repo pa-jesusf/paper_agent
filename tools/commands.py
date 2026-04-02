@@ -208,6 +208,14 @@ class CommandDispatcher:
                     {"name": "同步 .bib", "tool": "bib_manager", "method": "sync_bib"},
                 ],
             ),
+            CommandSpec(
+                name="查看进度",
+                pattern=r"^查看进度$",
+                description="显示项目全局状态面板",
+                steps=[
+                    {"name": "生成状态面板", "tool": "memory_manager", "method": "get_dashboard"},
+                ],
+            ),
         ]
 
     # ----------------------------------------------------------
@@ -315,6 +323,9 @@ class CommandDispatcher:
         elif tool_name == "bib_manager":
             from tools.bib_manager import BibManager
             return BibManager(self.root)
+        elif tool_name == "memory_manager":
+            from tools.memory_manager import MemoryManager
+            return MemoryManager(self.root)
         else:
             raise ValueError(f"未知工具: {tool_name}")
 

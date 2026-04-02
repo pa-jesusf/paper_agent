@@ -15,14 +15,25 @@
 
 配置层 `config/` 存放全局约束，`refs/` 管理参考文献，`tools/` 提供自动化工具。
 
+记忆层 `memory/` 持久化项目状态，所有 Agent 均可读写：
+- `memory/progress.yaml` — 阶段进度、章节状态、图表状态、文献统计
+- `memory/preferences.yaml` — 用户偏好（写作风格、交互习惯等）
+- `memory/decisions.yaml` — 关键决策及理由
+- `memory/sessions/` — 每次会话的摘要
+
 ## 核心工作流
 
-1. **任何写作任务前**，先读取 `config/` 下的全部配置文件（`paper.yaml`, `glossary.yaml`, `experiment-env.yaml`, `figure-style.yaml`, `style-guide.md`）
-2. **撰写前**检查 `pipeline/notes/outline.md`（大纲）和 `pipeline/notes/arguments.md`（论点）
-3. **使用符号时**只使用 `config/glossary.yaml` 中定义的宏，对应 `paper/preamble.tex` 中的 `\newcommand`
-4. **引用文献时**先搜索 `refs/library.yaml`，确认有对应的 `key_quotes` 溯源
-5. **完成章节后**运行 `tools/glossary_checker.py` 和 `tools/paper_lint.py` 验证一致性
-6. **生成图表时**读取 `config/figure-style.yaml`，确保视觉风格一致
+1. **每次会话开始时**，先读取 `memory/progress.yaml`（了解项目进度）和 `memory/preferences.yaml`（了解用户偏好），以及最近的会话摘要 `memory/sessions/`
+2. **任何写作任务前**，先读取 `config/` 下的全部配置文件（`paper.yaml`, `glossary.yaml`, `experiment-env.yaml`, `figure-style.yaml`, `style-guide.md`）
+3. **撰写前**检查 `pipeline/notes/outline.md`（大纲）和 `pipeline/notes/arguments.md`（论点）
+4. **使用符号时**只使用 `config/glossary.yaml` 中定义的宏，对应 `paper/preamble.tex` 中的 `\newcommand`
+5. **引用文献时**先搜索 `refs/library.yaml`，确认有对应的 `key_quotes` 溯源
+6. **完成章节后**运行 `tools/glossary_checker.py` 和 `tools/paper_lint.py` 验证一致性
+7. **生成图表时**读取 `config/figure-style.yaml`，确保视觉风格一致
+8. **完成任何实质性工作后**，更新 `memory/progress.yaml`（章节/图表/文献状态）
+9. **做出重要决策后**（如结构调整、方法选择），记录到 `memory/decisions.yaml`
+10. **发现用户偏好后**（如写作风格、交互习惯），保存到 `memory/preferences.yaml`
+11. **会话结束前**，在 `memory/sessions/` 创建会话摘要（做了什么、改了哪些文件、下一步建议）
 
 ## 禁止事项
 

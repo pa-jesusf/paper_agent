@@ -103,7 +103,12 @@ paper_agent/
 │   ├── library.yaml         # 文献元数据 + 原文摘录
 │   ├── pdfs/                # PDF 存档
 │   └── notes/               # 阅读笔记
-└── tools/                   # 9 个自动化工具
+├── memory/                  # 记忆层（跨会话持久化）
+│   ├── progress.yaml        # 阶段/章节/图表进度
+│   ├── preferences.yaml     # 用户偏好
+│   ├── decisions.yaml       # 关键决策记录
+│   └── sessions/            # 会话摘要
+└── tools/                   # 10 个自动化工具
 ```
 
 ### 三层数据架构
@@ -131,6 +136,7 @@ data/ (Layer 0)  →  pipeline/ (Layer 1)  →  paper/ (Layer 2)
 | `paper_lint.py` | `python tools/paper_lint.py` | 引用完整性、图表引用、TODO 标记检查 |
 | `latex_compiler.py` | `python tools/latex_compiler.py` | LaTeX 编译 + 错误解析 |
 | `figure_builder.py` | `python tools/figure_builder.py` | 风格统一的图表生成 |
+| `memory_manager.py` | `python tools/memory_manager.py` | 项目进度、偏好、决策、会话管理 |
 | `commands.py` | `python tools/commands.py <命令>` | 快捷命令调度 |
 
 ---
@@ -152,6 +158,7 @@ data/ (Layer 0)  →  pipeline/ (Layer 1)  →  paper/ (Layer 2)
 | `写 <章节名>` | 加载该章节所需的大纲、论点、配置上下文 |
 | `分析 <文件名>` | 加载数据 manifest 准备分析 |
 | `添加文献 "<标题>"` | 搜索并添加文献到 library.yaml |
+| `查看进度` | 显示项目全局状态面板（阶段/章节/文献/决策） |
 
 ---
 

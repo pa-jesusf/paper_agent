@@ -1,0 +1,19 @@
+# Paper Agent — 用户偏好
+# 在交互过程中由 Agent 逐步发现和记录
+# 初始值为空，随使用积累
+
+writing:
+  # tone: formal | academic | conversational
+  # paragraph_length: short | medium | long
+  # citation_style: "括号引用" | "上标引用"
+  # abstract_style: "结构化" | "叙述式"
+
+workflow:
+  # review_frequency: after_each_section | after_each_phase | on_demand
+  # auto_compile: true | false
+  # preferred_language: zh | en
+
+interaction:
+  # verbosity: concise | detailed
+  # confirm_before_edit: true | false
+  # show_diff: true | false

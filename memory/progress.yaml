@@ -1,0 +1,53 @@
+# Paper Agent — 项目进度追踪
+# 由 memory_manager.py 自动维护，Agent 也可直接编辑
+
+current_phase: init  # init | research | analysis | writing | review | final
+
+phases:
+  init:
+    status: not_started     # not_started | in_progress | completed
+    started_at: null
+    completed_at: null
+  research:
+    status: not_started
+    started_at: null
+    completed_at: null
+  analysis:
+    status: not_started
+    started_at: null
+    completed_at: null
+  writing:
+    status: not_started
+    started_at: null
+    completed_at: null
+  review:
+    status: not_started
+    started_at: null
+    completed_at: null
+  final:
+    status: not_started
+    started_at: null
+    completed_at: null
+
+# 章节级进度
+sections: {}
+  # 示例:
+  # 01-introduction:
+  #   status: draft          # not_started | outline | draft | review | final
+  #   word_count: 850
+  #   last_edited: "2026-04-02T14:00:00"
+  #   todo_count: 2
+
+# 图表进度
+figures: {}
+  # 示例:
+  # fig_01_overview:
+  #   status: completed      # planned | in_progress | completed
+  #   path: "pipeline/figures/fig_01_overview.pdf"
+  #   section: "01-introduction"
+
+# 文献进度
+literature:
+  total_in_library: 0
+  papers_with_notes: 0
+  papers_cited: 0

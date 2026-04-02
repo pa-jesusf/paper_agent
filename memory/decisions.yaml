@@ -1,0 +1,10 @@
+# Paper Agent — 关键决策记录
+# 记录项目中的重要决策及其理由，供后续 Agent 参考
+
+decisions: []
+  # 示例:
+  # - timestamp: "2026-04-02T10:15:00"
+  #   topic: "论文结构"
+  #   decision: "采用 5 章结构"
+  #   rationale: "投稿目标有页数限制，5 章更紧凑"
+  #   agent: writer
