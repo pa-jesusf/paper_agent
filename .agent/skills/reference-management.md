@@ -15,16 +15,15 @@
 4. 同步 `paper/references.bib`
 
 ### 引用溯源
-- 每个 `key_quotes` 条目必须是原文原样摘录
-- 记录页码和所在章节
-- 在阅读笔记中建立「引用映射表」
+- `key_quotes` 应是原文原样摘录，尽量标注页码和所在章节
+- 阅读笔记中建议建立「引用映射表」
 
 ### 引用检查
-- `validate_citations()` 检查所有 `\cite{}` 是否有效
-- 确认每条引用都有 `key_quotes` 支撑
+- `validate_citations()` 检查 `\cite{}` 是否有效
+- 尽量确认每条引用都有 `key_quotes` 支撑；暂时缺失的用 `\todo{补充 key_quotes}` 标记
 
 ## 关键原则
 
-- 绝不编造原文内容
-- 新增文献必须同步 `library.yaml` 和 `.bib`
+- **不可违反**：不得编造原文内容（学术诚信底线）
+- 新增文献尽量同步 `library.yaml` 和 `.bib`；同步失败时用 `\todo{}` 标记
 - PDF 文件存放在 `refs/pdfs/`
