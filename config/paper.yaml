@@ -1,0 +1,37 @@
+# ============================================================
+# 论文元配置 — Paper Agent 全局设置
+# ============================================================
+# 此文件由 `初始化` 命令交互式填充，也可手动编辑。
+# Agent 在任何写作任务前必须读取此文件。
+
+# 论文基本信息
+title: ""                        # 论文标题（初始化时填充）
+authors: []                      # 作者列表，格式见下方注释
+# authors:
+#   - name: "张三"
+#     affiliation: "XX大学计算机学院"
+#     email: "zhangsan@example.edu"
+venue: ""                        # 投稿目标（会议/期刊/学位论文）
+language: "chinese"              # 撰写语言（chinese | english）
+page_limit: null                 # 正文页数限制（不含参考文献），null 表示无限制
+
+# 多语言设置
+i18n:
+  primary: "chinese"             # 主要撰写语言
+  secondary: "english"           # 辅助语言（摘要双语、术语原文标注等）
+  abstract_bilingual: true       # 是否生成中英双语摘要
+  term_original_annotation: true # 首次出现术语时附注英文原文
+
+# 写作风格
+style:
+  tone: "formal-academic"        # formal-academic | technical-concise | expository
+  person: "first-plural"        # first-plural ("我们") | passive | third-person
+  tense: "present"              # 方法/结果描述的默认时态
+  paragraph_style: "topic-sentence-first"  # 每段首句概括观点
+
+# LaTeX 编译
+latex:
+  compiler: "xelatex"           # 使用 xelatex 以支持中文
+  bibliography: "bibtex"        # bibtex | biber
+  template: ""                  # 模版名称（初始化时填充）
+  cjk_package: "ctex"           # 中文支持宏包

@@ -1,0 +1,23 @@
+# ============================================================
+# 实验环境描述
+# ============================================================
+# Agent 在撰写实验部分时必须引用此文件中的信息。
+# 由 `初始化` 命令交互式填充（可从 requirements.txt 等自动推断）。
+
+hardware:
+  gpu: ""                  # 例: "NVIDIA A100 80GB × 4"
+  cpu: ""                  # 例: "AMD EPYC 7763 64-Core"
+  memory: ""               # 例: "512 GB"
+
+software:
+  os: ""                   # 例: "Ubuntu 22.04"
+  python: ""               # 例: "3.10.12"
+  key_libraries: []        # 格式: [{name: "torch", version: "2.1.0"}, ...]
+
+training:
+  total_time: ""           # 例: "~48 hours"
+  batch_size: null
+  optimizer: ""            # 例: "AdamW"
+  learning_rate: null      # 例: 3e-4
+  epochs: null
+  extra: {}                # 其他训练超参数

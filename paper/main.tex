@@ -1,0 +1,26 @@
+% ============================================================
+% Paper Agent — 主入口文件
+% ============================================================
+% 此文件仅做 \input{} 串联，不含正文。
+% sections/ 目录下的 .tex 文件由 outline.md 驱动，
+% Agent 在新增/删除/重排章节时自动更新此文件。
+
+\documentclass[11pt]{article}
+
+\input{preamble}
+
+\begin{document}
+
+% --- 章节串联 ---
+% 以下 \input 列表由 Agent 根据 pipeline/notes/outline.md 自动维护。
+% 初始化后将在此处填充实际章节文件。
+
+% \input{sections/00-abstract}
+% \input{sections/01-introduction}
+% ... (由 outline.md 驱动)
+
+% --- 参考文献 ---
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

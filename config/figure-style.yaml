@@ -1,0 +1,31 @@
+# ============================================================
+# 图表视觉风格配置
+# ============================================================
+# 核心原则：优先继承用户导入的原始图表风格。
+# Agent 在首次处理用户导入的图表时，应分析其风格并自动填充此文件。
+# Agent 在生成图表时必须读取此配置。
+
+source_style:
+  inherited_from: ""               # 风格参考来源路径
+  analysis_notes: ""               # Agent 分析原始图表后的风格总结
+
+colors:
+  palette: ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd",
+            "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"]
+  background: "white"
+  grid_color: "#e0e0e0"
+
+fonts:
+  family: "serif"                  # 与 LaTeX 正文字体一致
+  title_size: 12
+  label_size: 10
+  tick_size: 9
+  legend_size: 9
+
+layout:
+  dpi: 300
+  single_column_width: 3.5        # 英寸
+  double_column_width: 7.0
+  default_format: "pdf"           # pdf | svg | png
+  grid_visible: false
+  spine_visible: ["bottom", "left"]

@@ -1,0 +1,40 @@
+# ============================================================
+# 参考文献库 — 文献元数据 + 摘要索引 + 关键原文摘录
+# ============================================================
+# 此文件是参考文献管理的核心数据源。
+# paper/references.bib 由 tools/bib_manager.py 从此文件自动同步生成。
+# Agent 在引用文献时必须先搜索此文件。
+
+references: []
+
+# 示例条目:
+# references:
+#   - citekey: "vaswani2017attention"
+#     title: "Attention Is All You Need"
+#     authors: ["Vaswani, A.", "Shazeer, N.", "Parmar, N."]
+#     year: 2017
+#     venue: "NeurIPS"
+#     doi: "10.48550/arXiv.1706.03762"
+#
+#     abstract_summary: >
+#       提出 Transformer 架构，完全基于注意力机制，
+#       摒弃了 RNN/CNN，在机器翻译任务上取得 SOTA。
+#     relevance: >
+#       本文方法的基础架构。在 Method 和 Related Work 中必须引用。
+#     tags: ["transformer", "attention", "architecture"]
+#
+#     key_quotes:
+#       - id: "q1"
+#         text: "The Transformer is the first transduction model..."
+#         page: 2
+#         context: "架构创新点的核心声明"
+#
+#     pdf_path: "refs/pdfs/vaswani2017attention.pdf"
+#
+#     bibtex: |
+#       @inproceedings{vaswani2017attention,
+#         title={Attention is all you need},
+#         author={Vaswani, Ashish and Shazeer, Noam},
+#         booktitle={NeurIPS},
+#         year={2017}
+#       }

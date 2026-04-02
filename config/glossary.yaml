@@ -1,0 +1,28 @@
+# ============================================================
+# 术语 / 符号表 — 保证论文全局一致性
+# ============================================================
+# Agent 在写作时必须使用此文件中定义的统一术语和符号。
+# Agent 可提议新增条目，但需经用户确认后方可写入。
+
+# 术语统一
+terms: []
+# 示例:
+# terms:
+#   - canonical: "large language model"
+#     abbreviation: "LLM"
+#     chinese: "大语言模型"
+#     first_use_zh: "大语言模型（Large Language Model, LLM）"
+#     first_use_en: "large language model (LLM)"
+#     forbidden_variants:
+#       - "big language model"
+#       - "large-scale language model"
+
+# 数学符号 — 与 preamble.tex 中的 \newcommand 对应
+symbols: []
+# 示例:
+# symbols:
+#   - name: "loss function"
+#     chinese: "损失函数"
+#     latex_macro: "\\loss"
+#     definition: "\\mathcal{L}"
+#     description: "The overall training loss"

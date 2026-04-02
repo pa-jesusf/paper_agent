@@ -1,0 +1,46 @@
+% ============================================================
+% Paper Agent — LaTeX 宏包与命令定义
+% ============================================================
+% 此文件由 main.tex 通过 \input{preamble} 引入。
+% 所有 \usepackage、自定义命令、数学符号宏均在此定义。
+% Agent 在 glossary.yaml 中新增符号时，必须同步更新此文件。
+
+% --- 中文支持 ---
+\usepackage[UTF8]{ctex}
+
+% --- 数学 ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% --- 图表 ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% --- 引用与链接 ---
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{natbib}
+
+% --- 其他 ---
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{xcolor}
+
+% ============================================================
+% 自定义数学符号宏
+% ============================================================
+% 与 config/glossary.yaml 中 symbols 部分保持同步。
+% 添加新符号时请同步更新 glossary.yaml。
+
+% \newcommand{\loss}{\mathcal{L}}       % 损失函数
+% \newcommand{\params}{\theta}           % 模型参数
+% \newcommand{\dataset}{\mathcal{D}}     % 数据集
+
+% ============================================================
+% 标记宏 — 用于 Agent 与用户的反馈循环
+% ============================================================
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{[TODO: #1]}}}
+\newcommand{\confirm}[1]{\textcolor{orange}{\textbf{[CONFIRM: #1]}}}

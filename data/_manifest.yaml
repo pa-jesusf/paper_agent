@@ -1,0 +1,23 @@
+# ============================================================
+# 数据层清单 — 帮助 Agent 理解 data/ 下的文件用途
+# ============================================================
+# 由 `初始化` 命令自动扫描生成，也可手动编辑。
+# Agent 通过此文件感知数据变动。
+
+files: []
+# 示例:
+# files:
+#   - path: raw/experiment_results_v3.csv
+#     type: data                  # data | code | draft | figure | other
+#     description: "模型A/B/C在CIFAR-10上的accuracy/loss，5次重复实验"
+#     columns: [model, epoch, accuracy, loss, run_id]
+#
+#   - path: code/train.py
+#     type: code
+#     description: "主训练脚本，使用PyTorch，含数据增强逻辑"
+#     language: python
+#     framework: pytorch
+#
+#   - path: drafts/old_intro.md
+#     type: draft
+#     description: "之前写的introduction草稿，需要重写"
