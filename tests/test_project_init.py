@@ -603,3 +603,404 @@ class TestEdgeCases:
 
         init_report = project.generate_init_report(scan, report)
         assert "项目初始化报告" in init_report
+
+
+# ============================================================
+# 8. 智能分类增强
+# ============================================================
+
+class TestSmartClassification:
+    """测试内容级智能分类、临时文件检测、用途推断。"""
+
+    # ---- 临时文件检测 ----
+
+    def test_temp_prefix(self, project: ProjectInitializer):
+        (project.data_dir / "temp_output.csv").write_text("x\n", encoding="utf-8")
+        result = project.scan_data_layer()
+        assert result.files[0].is_temporary is True
+
+    def test_tmp_prefix(self, project: ProjectInitializer):
+        (project.data_dir / "tmp-cache.pkl").write_bytes(b"\x80")
+        result = project.scan_data_layer()
+        assert result.files[0].is_temporary is True
+
+    def test_debug_prefix(self, project: ProjectInitializer):
+        (project.data_dir / "debug_run1.log").write_text("ok\n", encoding="utf-8")
+        result = project.scan_data_layer()
+        assert result.files[0].is_temporary is True
+
+    def test_checkpoint_anywhere(self, project: ProjectInitializer):
+        (project.data_dir / "model_checkpoint.pkl").write_bytes(b"\x80")
+        result = project.scan_data_layer()
+        assert result.files[0].is_temporary is True
+
+    def test_bak_suffix(self, project: ProjectInitializer):
+        (project.data_dir / "data.csv.bak").write_text("x\n", encoding="utf-8")
+        result = project.scan_data_layer()
+        assert result.files[0].is_temporary is True
+
+    def test_old_suffix(self, project: ProjectInitializer):
+        (project.data_dir / "script_old.py").write_text("pass\n", encoding="utf-8")
+        result = project.scan_data_layer()
+        assert result.files[0].is_temporary is True
+
+    def test_backup_suffix(self, project: ProjectInitializer):
+        (project.data_dir / "config_backup.yaml").write_text("x: 1\n", encoding="utf-8")
+        result = project.scan_data_layer()
+        assert result.files[0].is_temporary is True
+
+    def test_normal_file_not_temporary(self, project: ProjectInitializer):
+        (project.data_dir / "results.csv").write_text("x\n1\n", encoding="utf-8")
+        result = project.scan_data_layer()
+        assert result.files[0].is_temporary is False
+
+    def test_log_files_temporary(self, project: ProjectInitializer):
+        (project.data_dir / "train.log").write_text("epoch 1\n", encoding="utf-8")
+        result = project.scan_data_layer()
+        assert result.files[0].is_temporary is True
+
+    # ---- PDF 分类 ----
+
+    def test_pdf_reference_detection(self, project: ProjectInitializer):
+        """含有 abstract/references 关键词的 PDF 应识别为参考文献。"""
+        content = b"%PDF-1.4 " + b"abstract " + b"references " + b"introduction"
+        (project.data_dir / "paper.pdf").write_bytes(content)
+        result = project.scan_data_layer()
+        f = result.files[0]
+        assert f.type == "reference"
+        assert f.purpose == "参考文献"
+        assert f.suggested_location == "refs/pdfs/"
+
+    def test_pdf_figure_by_name(self, project: ProjectInitializer):
+        """不含学术关键词但文件名含 fig 的 PDF 应为图表。"""
+        (project.data_dir / "fig_comparison.pdf").write_bytes(b"%PDF-1.4 blank")
+        result = project.scan_data_layer()
+        f = result.files[0]
+        assert f.type == "figure"
+        assert f.purpose == "图表"
+
+    def test_pdf_ambiguous(self, project: ProjectInitializer):
+        """既无学术关键词也无图表关键词的 PDF。"""
+        (project.data_dir / "unknown.pdf").write_bytes(b"%PDF-1.4 blank")
+        result = project.scan_data_layer()
+        f = result.files[0]
+        assert f.type == "figure"  # 默认由扩展名决定
+        assert "不明" in f.content_hint
+
+    # ---- Python 用途推断 ----
+
+    def test_py_training(self, project: ProjectInitializer):
+        _write(project.data_dir / "train.py", """\
+            import torch
+            model.train()
+            loss.backward()
+            optimizer.step()
+        """)
+        result = project.scan_data_layer()
+        f = result.files[0]
+        assert f.purpose == "training"
+        assert "training" in f.content_hint
+
+    def test_py_visualization(self, project: ProjectInitializer):
+        _write(project.data_dir / "plot.py", """\
+            import matplotlib.pyplot as plt
+            plt.figure()
+            plt.savefig("output.png")
+        """)
+        result = project.scan_data_layer()
+        f = result.files[0]
+        assert f.purpose == "visualization"
+
+    def test_py_preprocessing(self, project: ProjectInitializer):
+        _write(project.data_dir / "clean.py", """\
+            import pandas as pd
+            df = pd.read_csv("data.csv")
+            df = df.dropna()
+        """)
+        result = project.scan_data_layer()
+        f = result.files[0]
+        assert "preprocessing" in f.content_hint
+
+    def test_py_evaluation(self, project: ProjectInitializer):
+        _write(project.data_dir / "eval.py", """\
+            from sklearn.metrics import accuracy_score, f1_score
+            acc = accuracy_score(y_true, y_pred)
+        """)
+        result = project.scan_data_layer()
+        f = result.files[0]
+        assert "evaluation" in f.content_hint
+
+    def test_py_no_match(self, project: ProjectInitializer):
+        _write(project.data_dir / "utils.py", """\
+            def helper(x):
+                return x + 1
+        """)
+        result = project.scan_data_layer()
+        f = result.files[0]
+        assert f.content_hint == "Python 脚本"
+
+    # ---- CSV 嗅探 ----
+
+    def test_csv_header_detection(self, project: ProjectInitializer):
+        _write(project.data_dir / "results.csv", """\
+            epoch,loss,accuracy,lr
+            1,0.5,0.8,0.001
+            2,0.3,0.85,0.001
+            3,0.2,0.9,0.0005
+        """)
+        result = project.scan_data_layer()
+        f = result.files[0]
+        assert "epoch" in f.content_hint
+        assert "loss" in f.content_hint
+        assert f.purpose == "数据表"
+
+    def test_tsv_header_detection(self, project: ProjectInitializer):
+        _write(project.data_dir / "data.tsv", "name\tscore\trank\nA\t90\t1\n")
+        result = project.scan_data_layer()
+        f = result.files[0]
+        assert "name" in f.content_hint
+        assert "score" in f.content_hint
+
+    # ---- TeX 嗅探 ----
+
+    def test_tex_full_document(self, project: ProjectInitializer):
+        _write(project.data_dir / "draft.tex", r"""\documentclass{article}
+            \begin{document}
+            Hello world
+            \end{document}
+        """)
+        result = project.scan_data_layer()
+        f = result.files[0]
+        assert f.purpose == "完整草稿"
+
+    def test_tex_section_fragment(self, project: ProjectInitializer):
+        _write(project.data_dir / "method.tex", r"""
+            \section{Method}
+            We propose a novel approach.
+        """)
+        result = project.scan_data_layer()
+        f = result.files[0]
+        assert f.purpose == "章节片段"
+
+    # ---- 建议位置 ----
+
+    def test_suggested_location_data(self, project: ProjectInitializer):
+        (project.data_dir / "results.csv").write_text("x\n1\n", encoding="utf-8")
+        result = project.scan_data_layer()
+        assert result.files[0].suggested_location == "data/raw/"
+
+    def test_suggested_location_code(self, project: ProjectInitializer):
+        _write(project.data_dir / "train.py", "pass")
+        result = project.scan_data_layer()
+        assert result.files[0].suggested_location == "data/code/"
+
+    def test_suggested_location_reference(self, project: ProjectInitializer):
+        content = b"%PDF-1.4 abstract references introduction"
+        (project.data_dir / "paper.pdf").write_bytes(content)
+        result = project.scan_data_layer()
+        assert result.files[0].suggested_location == "refs/pdfs/"
+
+    # ---- Manifest 增强字段 ----
+
+    def test_manifest_includes_purpose(self, project: ProjectInitializer):
+        _write(project.data_dir / "train.py", """\
+            import torch
+            model.train()
+            loss.backward()
+        """)
+        scan = project.scan_data_layer()
+        manifest = project.generate_manifest(scan)
+        entry = manifest["files"][0]
+        assert "purpose" in entry
+        assert entry["purpose"] == "training"
+
+    def test_manifest_includes_content_hint(self, project: ProjectInitializer):
+        _write(project.data_dir / "data.csv", "col_a,col_b\n1,2\n")
+        scan = project.scan_data_layer()
+        manifest = project.generate_manifest(scan)
+        entry = manifest["files"][0]
+        assert "content_hint" in entry
+
+    def test_manifest_includes_is_temporary(self, project: ProjectInitializer):
+        (project.data_dir / "temp_out.csv").write_text("x\n", encoding="utf-8")
+        scan = project.scan_data_layer()
+        manifest = project.generate_manifest(scan)
+        entry = manifest["files"][0]
+        assert entry.get("is_temporary") is True
+
+    def test_manifest_no_temporary_flag_for_normal(self, project: ProjectInitializer):
+        (project.data_dir / "results.csv").write_text("x\n1\n", encoding="utf-8")
+        scan = project.scan_data_layer()
+        manifest = project.generate_manifest(scan)
+        entry = manifest["files"][0]
+        assert "is_temporary" not in entry
+
+    def test_manifest_preserves_manual_purpose(self, project: ProjectInitializer):
+        """手动设置的 purpose 应在重扫后保留。"""
+        _write(project.data_dir / "script.py", "pass")
+        # 先有一个带手动 purpose 的 manifest
+        existing = {
+            "files": [
+                {"path": "script.py", "type": "code", "description": "",
+                 "purpose": "手动标注的工具"}
+            ]
+        }
+        with open(project.data_dir / "_manifest.yaml", "w", encoding="utf-8") as fp:
+            yaml.dump(existing, fp, allow_unicode=True)
+
+        scan = project.scan_data_layer()
+        manifest = project.generate_manifest(scan)
+        # 自动推断为空时，应保留手动标注
+        assert manifest["files"][0].get("purpose") in ("手动标注的工具", "utility", "")
+
+    # ---- ScanResult 新属性 ----
+
+    def test_scan_result_temporary_files(self, project: ProjectInitializer):
+        (project.data_dir / "temp_x.csv").write_text("x\n", encoding="utf-8")
+        (project.data_dir / "real.csv").write_text("x\n1\n", encoding="utf-8")
+        result = project.scan_data_layer()
+        assert len(result.temporary_files) == 1
+        assert result.temporary_files[0].path == "temp_x.csv"
+
+    def test_scan_result_reference_files(self, project: ProjectInitializer):
+        content = b"%PDF-1.4 abstract references"
+        (project.data_dir / "paper.pdf").write_bytes(content)
+        (project.data_dir / "plot.png").write_bytes(b"\x89PNG")
+        result = project.scan_data_layer()
+        assert len(result.reference_files) == 1
+
+    def test_summary_mentions_temporary(self, project: ProjectInitializer):
+        (project.data_dir / "temp_out.csv").write_text("x\n", encoding="utf-8")
+        result = project.scan_data_layer()
+        assert "临时文件" in result.summary()
+
+    def test_summary_mentions_references(self, project: ProjectInitializer):
+        content = b"%PDF-1.4 abstract references"
+        (project.data_dir / "paper.pdf").write_bytes(content)
+        result = project.scan_data_layer()
+        assert "参考文献" in result.summary()
+
+    # ---- 报告增强 ----
+
+    def test_report_file_details_section(self, project: ProjectInitializer):
+        _write(project.data_dir / "train.py", "import torch\nmodel.train()")
+        (project.data_dir / "data.csv").write_text("a,b\n1,2\n", encoding="utf-8")
+        scan = project.scan_data_layer()
+        report = project.generate_init_report(scan, project.check_completeness())
+        assert "文件详情" in report
+        assert "[code]" in report
+        assert "[data]" in report
+
+    def test_report_temp_warning(self, project: ProjectInitializer):
+        (project.data_dir / "temp_debug.csv").write_text("x\n", encoding="utf-8")
+        scan = project.scan_data_layer()
+        report = project.generate_init_report(scan, project.check_completeness())
+        assert "临时文件" in report
+
+    def test_report_reference_suggestion(self, project: ProjectInitializer):
+        content = b"%PDF-1.4 abstract references introduction"
+        (project.data_dir / "paper.pdf").write_bytes(content)
+        scan = project.scan_data_layer()
+        report = project.generate_init_report(scan, project.check_completeness())
+        assert "refs/pdfs/" in report
+
+
+# ============================================================
+# 9. 混乱文件夹综合场景
+# ============================================================
+
+class TestMessyFolder:
+    """模拟用户把所有文件混在一个目录下的场景。"""
+
+    def test_messy_raw_folder(self, project: ProjectInitializer):
+        raw = project.data_dir / "raw"
+        raw.mkdir()
+
+        # 训练代码
+        _write(raw / "train.py", """\
+            import torch
+            model.train()
+            loss.backward()
+            optimizer.step()
+        """)
+        # 画图脚本
+        _write(raw / "plot_results.py", """\
+            import matplotlib.pyplot as plt
+            plt.figure()
+            plt.savefig("out.png")
+        """)
+        # 数据
+        _write(raw / "results.csv", "epoch,loss,acc\n1,0.5,0.8\n2,0.3,0.9\n")
+        (raw / "embeddings.npy").write_bytes(b"\x00" * 100)
+        # 参考论文 PDF
+        (raw / "attention_paper.pdf").write_bytes(
+            b"%PDF-1.4 abstract references introduction related work"
+        )
+        # 图表 PNG
+        (raw / "loss_curve.png").write_bytes(b"\x89PNG fake")
+        # 图表 PDF (无学术关键词)
+        (raw / "fig_architecture.pdf").write_bytes(b"%PDF-1.4 blank figure")
+        # 旧草稿 tex
+        _write(raw / "draft_v2.tex", r"\documentclass{article}\begin{document}Hello\end{document}")
+        # 临时文件
+        (raw / "temp_checkpoint.pkl").write_bytes(b"\x80\x05" * 50)
+        (raw / "debug_output.log").write_text("error\n", encoding="utf-8")
+        # 训练配置
+        _write(raw / "config.yaml", "lr: 0.001\nbatch_size: 32")
+
+        scan = project.scan_data_layer()
+
+        # 检查文件总数
+        assert scan.total_count == 11
+
+        # 按 path 索引
+        by_path = {f.path: f for f in scan.files}
+
+        # 训练代码应识别用途
+        train = by_path["raw/train.py"]
+        assert train.type == "code"
+        assert train.purpose == "training"
+
+        # 画图脚本
+        plot = by_path["raw/plot_results.py"]
+        assert plot.type == "code"
+        assert plot.purpose == "visualization"
+
+        # 参考论文 PDF 应重分类
+        paper = by_path["raw/attention_paper.pdf"]
+        assert paper.type == "reference"
+        assert paper.suggested_location == "refs/pdfs/"
+
+        # 图表 PDF 保持 figure
+        fig_pdf = by_path["raw/fig_architecture.pdf"]
+        assert fig_pdf.type == "figure"
+
+        # CSV 应有表头摘要
+        csv_f = by_path["raw/results.csv"]
+        assert "epoch" in csv_f.content_hint
+        assert csv_f.purpose == "数据表"
+
+        # 临时文件应标记
+        temp = by_path["raw/temp_checkpoint.pkl"]
+        assert temp.is_temporary is True
+        debug = by_path["raw/debug_output.log"]
+        assert debug.is_temporary is True
+
+        # 草稿应识别
+        draft = by_path["raw/draft_v2.tex"]
+        assert draft.type == "draft"
+        assert draft.purpose == "完整草稿"
+
+        # ScanResult 属性
+        assert len(scan.temporary_files) >= 2
+        assert len(scan.reference_files) == 1
+
+        # 框架检测
+        assert "pytorch" in scan.detected_frameworks
+
+        # 报告不应崩溃且包含关键信息
+        completeness = project.check_completeness()
+        report = project.generate_init_report(scan, completeness)
+        assert "参考文献" in report or "reference" in report
+        assert "临时文件" in report
+        assert "文件详情" in report

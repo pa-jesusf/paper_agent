@@ -80,6 +80,69 @@ _PAPER_REQUIRED_FIELDS = ["title", "venue", "language"]
 # 需要跳过的文件名
 _SKIP_FILES = {"_manifest.yaml", ".gitkeep", ".DS_Store", "Thumbs.db"}
 
+# 临时文件名模式 (大小写不敏感)
+_TEMP_PATTERNS: list[re.Pattern] = [
+    re.compile(r"^temp[_-]", re.IGNORECASE),
+    re.compile(r"^tmp[_-]", re.IGNORECASE),
+    re.compile(r"[_-]temp\.", re.IGNORECASE),
+    re.compile(r"[_-]tmp\.", re.IGNORECASE),
+    re.compile(r"^debug[_-]", re.IGNORECASE),
+    re.compile(r"^test[_-]output", re.IGNORECASE),
+    re.compile(r"checkpoint", re.IGNORECASE),
+    re.compile(r"\.bak$", re.IGNORECASE),
+    re.compile(r"~$"),
+    re.compile(r"^\.", re.IGNORECASE),         # 隐藏文件
+    re.compile(r"copy\s*\(\d+\)", re.IGNORECASE),  # Windows 副本
+    re.compile(r"_old\.", re.IGNORECASE),
+    re.compile(r"_backup\.", re.IGNORECASE),
+]
+
+# Python 代码用途分类关键词
+_PY_PURPOSE_PATTERNS: dict[str, re.Pattern] = {
+    "training": re.compile(
+        r"model\.train\(|optimizer\.step|loss\.backward|fit\("
+        r"|training.loop|train_epoch|Trainer\(",
+        re.IGNORECASE,
+    ),
+    "evaluation": re.compile(
+        r"model\.eval\(|evaluate|accuracy_score|f1_score"
+        r"|classification_report|confusion_matrix|@torch\.no_grad",
+        re.IGNORECASE,
+    ),
+    "preprocessing": re.compile(
+        r"read_csv|load_data|preprocess|clean_data|tokeniz"
+        r"|transform|normalize|DataLoader\(",
+        re.IGNORECASE,
+    ),
+    "visualization": re.compile(
+        r"import\s+matplotlib|from\s+matplotlib|import\s+seaborn"
+        r"|plt\.show|plt\.savefig|plt\.figure|sns\.",
+        re.IGNORECASE,
+    ),
+    "utility": re.compile(
+        r"argparse|click\.command|def\s+main\(|if\s+__name__",
+        re.IGNORECASE,
+    ),
+}
+
+# PDF 文献特征
+_PDF_PAPER_INDICATORS = re.compile(
+    r"abstract|references|bibliography|introduction|related\s*work"
+    r"|conclusion|acknowledgment|arxiv|doi",
+    re.IGNORECASE,
+)
+
+# 建议目标位置映射
+_SUGGESTED_LOCATIONS: dict[str, str] = {
+    "data": "data/raw/",
+    "code": "data/code/",
+    "draft": "data/drafts/",
+    "figure": "pipeline/figures/",
+    "config": "data/",
+    "reference": "refs/pdfs/",
+    "other": "data/",
+}
+
 
 # ============================================================
 # 数据类
@@ -90,16 +153,29 @@ class FileInfo:
     """data/ 下单个文件的扫描信息。"""
     path: str                   # 相对于 data/ 的路径
     abs_path: str               # 绝对路径
-    type: str                   # data | code | draft | figure | config | other
+    type: str                   # data | code | draft | figure | config | reference | other
     size_bytes: int             # 文件大小
     extension: str              # 文件扩展名
+    purpose: str = ""           # 智能推断的用途 (training/visualization/preprocessing 等)
+    content_hint: str = ""      # 内容摘要 (CSV 表头 / PDF 类型 / 代码主题)
+    suggested_location: str = ""  # 建议的项目目标位置
+    is_temporary: bool = False  # 是否为临时/调试文件
 
     def to_manifest_entry(self) -> dict[str, Any]:
-        return {
+        entry: dict[str, Any] = {
             "path": self.path,
             "type": self.type,
             "description": "",  # 待 Agent 或用户填充
         }
+        if self.purpose:
+            entry["purpose"] = self.purpose
+        if self.content_hint:
+            entry["content_hint"] = self.content_hint
+        if self.suggested_location:
+            entry["suggested_location"] = self.suggested_location
+        if self.is_temporary:
+            entry["is_temporary"] = True
+        return entry
 
 
 @dataclass
@@ -112,6 +188,14 @@ class ScanResult:
     has_requirements: bool = False
     requirements_path: str | None = None
 
+    @property
+    def temporary_files(self) -> list[FileInfo]:
+        return [f for f in self.files if f.is_temporary]
+
+    @property
+    def reference_files(self) -> list[FileInfo]:
+        return [f for f in self.files if f.type == "reference"]
+
     def summary(self) -> str:
         lines = [f"扫描完成: 共发现 {self.total_count} 个文件"]
         for ftype, count in sorted(self.type_counts.items()):
@@ -120,6 +204,12 @@ class ScanResult:
             lines.append(f"  - 检测到框架: {', '.join(self.detected_frameworks)}")
         if self.has_requirements:
             lines.append(f"  - 依赖文件: {self.requirements_path}")
+        temp = self.temporary_files
+        if temp:
+            lines.append(f"  - ⚠ 疑似临时文件: {len(temp)} 个")
+        refs = self.reference_files
+        if refs:
+            lines.append(f"  - 📄 检测到参考文献: {len(refs)} 个")
         return "\n".join(lines)
 
 
@@ -229,6 +319,16 @@ class ProjectInitializer:
                     size_bytes=abs_path.stat().st_size,
                     extension=ext,
                 )
+
+                # 临时文件检测
+                info.is_temporary = self._is_temporary(fname)
+
+                # 内容级智能分类
+                self._enrich_file_info(info)
+
+                # 建议目标位置
+                info.suggested_location = _SUGGESTED_LOCATIONS.get(info.type, "data/")
+
                 result.files.append(info)
 
                 # 检测依赖文件
@@ -276,6 +376,126 @@ class ProjectInitializer:
 
         return sorted(frameworks)
 
+    @staticmethod
+    def _is_temporary(filename: str) -> bool:
+        """判断文件名是否匹配临时文件模式。"""
+        for pat in _TEMP_PATTERNS:
+            if pat.search(filename):
+                return True
+        return False
+
+    def _enrich_file_info(self, info: FileInfo) -> None:
+        """基于文件内容增强分类信息。
+
+        对不同文件类型做针对性内容嗅探:
+        - PDF: 区分参考文献 vs 图表
+        - Python: 推断用途 (训练/可视化/预处理/评估/工具)
+        - CSV/TSV: 读取表头作为 content_hint
+        - .tex: 检测是否为完整文档（草稿）
+        """
+        try:
+            if info.extension == ".pdf":
+                self._sniff_pdf(info)
+            elif info.extension in (".py", ".ipynb"):
+                self._sniff_python(info)
+            elif info.extension in (".csv", ".tsv"):
+                self._sniff_csv(info)
+            elif info.extension == ".tex":
+                self._sniff_tex(info)
+            elif info.extension in (".log",):
+                info.is_temporary = True
+                info.purpose = "log"
+                info.content_hint = "日志文件"
+        except OSError:
+            pass
+
+    def _sniff_pdf(self, info: FileInfo) -> None:
+        """区分 PDF 是参考文献还是图表。
+
+        读取前 4KB 文本内容，搜索学术论文关键词。
+        """
+        try:
+            with open(info.abs_path, "rb") as fp:
+                head = fp.read(4096)
+            text = head.decode("latin-1", errors="ignore")
+            if _PDF_PAPER_INDICATORS.search(text):
+                info.type = "reference"
+                info.purpose = "参考文献"
+                info.content_hint = "PDF 学术论文"
+                info.suggested_location = "refs/pdfs/"
+            else:
+                # 保持 figure 类型，尝试从文件名判断
+                fname_lower = Path(info.path).stem.lower()
+                if any(kw in fname_lower for kw in
+                       ("fig", "plot", "chart", "graph", "diagram",
+                        "curve", "result", "comparison", "architecture")):
+                    info.purpose = "图表"
+                    info.content_hint = "PDF 图表"
+                else:
+                    info.content_hint = "PDF 文件 (内容不明)"
+        except OSError:
+            pass
+
+    def _sniff_python(self, info: FileInfo) -> None:
+        """推断 Python 文件的用途。"""
+        try:
+            content = Path(info.abs_path).read_text(
+                encoding="utf-8", errors="ignore"
+            )
+            if info.extension == ".ipynb":
+                content = content[:50_000]
+
+            purposes: list[str] = []
+            for purpose, pat in _PY_PURPOSE_PATTERNS.items():
+                if pat.search(content):
+                    purposes.append(purpose)
+
+            if purposes:
+                info.purpose = purposes[0]  # 优先级: 按字典顺序先匹配的
+                info.content_hint = f"Python ({', '.join(purposes)})"
+            else:
+                info.content_hint = "Python 脚本"
+        except OSError:
+            pass
+
+    def _sniff_csv(self, info: FileInfo) -> None:
+        """读取 CSV/TSV 的表头和行数摘要。"""
+        try:
+            with open(info.abs_path, encoding="utf-8", errors="ignore") as fp:
+                first_line = fp.readline().strip()
+                # 计算行数 (最多读 10 万行避免超大文件)
+                line_count = 1
+                for line_count, _ in enumerate(fp, start=2):  # noqa: B007
+                    if line_count > 100_000:
+                        break
+
+            sep = "\t" if info.extension == ".tsv" else ","
+            columns = [c.strip().strip('"\'') for c in first_line.split(sep)]
+            col_preview = ", ".join(columns[:8])
+            if len(columns) > 8:
+                col_preview += f" ... (+{len(columns) - 8})"
+            info.content_hint = f"列: [{col_preview}], ~{line_count} 行"
+            info.purpose = "数据表"
+        except OSError:
+            pass
+
+    def _sniff_tex(self, info: FileInfo) -> None:
+        """检测 .tex 文件是完整论文草稿还是片段。"""
+        try:
+            content = Path(info.abs_path).read_text(
+                encoding="utf-8", errors="ignore"
+            )[:8192]
+            if r"\documentclass" in content:
+                info.purpose = "完整草稿"
+                info.content_hint = "LaTeX 完整文档"
+            elif r"\section" in content or r"\subsection" in content:
+                info.purpose = "章节片段"
+                info.content_hint = "LaTeX 章节片段"
+            else:
+                info.content_hint = "LaTeX 文件"
+        except OSError:
+            pass
+
     # ----------------------------------------------------------
     # 2. Manifest 管理
     # ----------------------------------------------------------
@@ -284,16 +504,21 @@ class ProjectInitializer:
         """从扫描结果生成 _manifest.yaml 内容。
 
         保留已有描述：如果 _manifest.yaml 中已有该文件的条目且有描述，
-        则保留原有描述。
+        则保留原有描述。同样保留已有的 purpose 等手动编辑。
         """
         existing = self._load_existing_manifest()
 
         entries = []
         for f in scan_result.files:
             entry = f.to_manifest_entry()
-            # 保留已有描述
-            if f.path in existing and existing[f.path].get("description"):
-                entry["description"] = existing[f.path]["description"]
+            # 保留已有描述和手动设定的字段
+            if f.path in existing:
+                old = existing[f.path]
+                if old.get("description"):
+                    entry["description"] = old["description"]
+                # 保留用户手动设定的 purpose（优先于自动推断）
+                if old.get("purpose") and not entry.get("purpose"):
+                    entry["purpose"] = old["purpose"]
             entries.append(entry)
 
         manifest = {"files": entries}
@@ -485,10 +710,44 @@ class ProjectInitializer:
             "## 数据层",
             scan_result.summary(),
             "",
-            "## 配置完备性",
-            completeness.summary(),
-            "",
         ]
+
+        # 文件详情（按类型分组）
+        if scan_result.files:
+            lines.append("## 文件详情")
+            by_type: dict[str, list[FileInfo]] = {}
+            for f in scan_result.files:
+                by_type.setdefault(f.type, []).append(f)
+            for ftype in sorted(by_type.keys()):
+                lines.append(f"  [{ftype}]")
+                for f in by_type[ftype]:
+                    marks: list[str] = []
+                    if f.is_temporary:
+                        marks.append("⚠临时")
+                    if f.purpose:
+                        marks.append(f.purpose)
+                    mark_str = f" ({', '.join(marks)})" if marks else ""
+                    hint_str = f"  → {f.content_hint}" if f.content_hint else ""
+                    lines.append(f"    {f.path}{mark_str}{hint_str}")
+            lines.append("")
+
+        # 重组建议
+        needs_reorg: list[FileInfo] = [
+            f for f in scan_result.files if f.suggested_location
+        ]
+        if needs_reorg:
+            lines.append("## 整理建议")
+            for f in needs_reorg:
+                # 只有当文件不在建议位置时才提示
+                current_prefix = f.path.split("/")[0] + "/" if "/" in f.path else ""
+                suggested = f.suggested_location
+                if not f.path.startswith(suggested.rstrip("/")):
+                    lines.append(f"    {f.path} → {suggested}")
+            lines.append("")
+
+        lines.append("## 配置完备性")
+        lines.append(completeness.summary())
+        lines.append("")
 
         # 建议下一步
         lines.append("## 建议下一步")
@@ -500,6 +759,12 @@ class ProjectInitializer:
             data_files = [f.path for f in scan_result.files if f.type == "data"]
             if data_files:
                 lines.append(f"  - 分析数据（执行 `分析 {data_files[0]}`）")
+        temp = scan_result.temporary_files
+        if temp:
+            lines.append(f"  - ⚠ 发现 {len(temp)} 个疑似临时文件，建议确认是否需要保留")
+        refs = scan_result.reference_files
+        if refs:
+            lines.append(f"  - 发现 {len(refs)} 个参考文献 PDF，建议移至 refs/pdfs/")
         lines.append("")
         lines.append("=" * 56)
 
