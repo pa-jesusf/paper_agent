@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+
+# pytest
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Distribution / Packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# LaTeX build artifacts
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.lof
+paper/*.lot
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+paper/*.nav
+paper/*.snm
+paper/*.vrb
+paper/*.pdf
+
+# 用户导入的原始数据（可选，按需取消注释）
+# data/raw/
+# data/code/
+# data/drafts/
+
+# 文献 PDF（通常体积较大，不建议入库）
+refs/pdfs/*.pdf

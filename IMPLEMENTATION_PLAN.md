@@ -1,6 +1,6 @@
 # Paper Agent —— 论文撰写智能体框架实现计划
 
-> 版本: v0.3 | 日期: 2025-07-24 | Phase 1 & 2 完成，Phase 3 部分完成
+> 版本: v1.0 | 日期: 2026-04-02 | 全部 Phase 完成
 
 ---
 
@@ -78,7 +78,9 @@ paper_agent/
 │   ├── latex_compiler.py            # LaTeX 编译工具
 │   ├── glossary_checker.py          # 术语一致性检查
 │   ├── paper_lint.py                # 论文质量检查
-│   └── project_init.py              # 交互式项目初始化工具
+│   ├── project_init.py              # 交互式项目初始化工具
+│   ├── config_validator.py          # 配置校验与自动补全
+│   └── commands.py                  # 快捷命令调度器
 │
 ├── IMPLEMENTATION_PLAN.md           # ← 本文件
 └── readme.md
@@ -758,17 +760,17 @@ class ProjectInitializer:
 - [x] 实现 `figure_builder.py`（风格继承 + 统一图表生成）
 - [x] 实现 `paper_lint.py`（综合质量检查 + 引用溯源验证）
 
-### Phase 3 — Agent 角色定义（部分完成）
+### Phase 3 — Agent 角色定义 ✅
 
 - [x] 编写 Researcher / Analyst / Writer / Reviewer / Experimenter 的 Agent 定义文件
 - [x] 定义各 Agent 的 Skill 文件（含 experiment-management）
-- [ ] 测试 Agent 在各阶段的工作流
+- [x] 测试 Agent 在各阶段的工作流（`tests/test_workflow.py`）
 
-### Phase 4 — 集成与优化
+### Phase 4 — 集成与优化 ✅
 
-- [ ] 端到端测试：从原始数据到 PDF 输出
-- [ ] 用户体验优化：快捷命令、反馈循环
-- [ ] 配置文件的校验与自动补全
+- [x] 端到端测试：从原始数据到 PDF 输出（`tests/test_e2e.py`）
+- [x] 用户体验优化：快捷命令调度器（`tools/commands.py`）
+- [x] 配置文件的校验与自动补全（`tools/config_validator.py`）
 
 ---
 

@@ -1,0 +1,13 @@
+# Paper Agent — 依赖清单
+
+# 核心依赖（必装）
+pyyaml>=6.0
+
+# PDF 文献解析（可选，不装则 pdf_extractor 不可用）
+PyMuPDF>=1.23.0
+
+# 图表生成（可选，不装则 figure_builder 不可用）
+matplotlib>=3.7
+
+# 开发 / 测试
+pytest>=8.0
