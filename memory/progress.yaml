@@ -1,7 +1,7 @@
 # Paper Agent — 项目进度追踪
 # 由 memory_manager.py 自动维护，Agent 也可直接编辑
 
-current_phase: analysis  # init | research | analysis | writing | review | final
+current_phase: writing  # init | research | analysis | writing | review | final
 
 # 写作规范状态
 style_guide:
@@ -31,8 +31,8 @@ phases:
     started_at: "2026-04-03"
     completed_at: null
   writing:
-    status: not_started
-    started_at: null
+    status: in_progress
+    started_at: "2026-04-03"
     completed_at: null
   review:
     status: not_started
@@ -56,7 +56,7 @@ sections:
     status: outline
   04-family:
     status: draft
-    note: "已在source paper中完成，需改写为中文硕士论文格式"
+    note: "已扩写为图表驱动的 LaTeX 章节稿，使用第4章全部13张图并补充多张统计表，编译通过"
   05-polarcatch:
     status: outline
   06-conclusion:
