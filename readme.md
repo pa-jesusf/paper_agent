@@ -31,6 +31,42 @@ pip install -r requirements.txt
 
 ### 2. 初始化项目
 
+#### 导入外部数据仓库（可选）
+
+如果你的实验数据存放在独立的 Git 仓库中，可以将其作为 submodule 挂载到 `data/raw/`：
+
+```bash
+# 添加数据仓库为 submodule
+git submodule add <你的数据仓库URL> data/raw
+
+# 提交 submodule 配置
+git commit -m "chore: add data/raw as submodule"
+```
+
+之后其他协作者克隆项目时，需要一并拉取 submodule：
+
+```bash
+# 方式一：克隆时直接递归拉取
+git clone --recurse-submodules <paper_agent_URL>
+
+# 方式二：已克隆后补拉
+git submodule update --init
+```
+
+更新数据到最新版本：
+
+```bash
+cd data/raw
+git pull origin main
+cd ../..
+git add data/raw
+git commit -m "chore: update data/raw submodule"
+```
+
+> **说明**：`data/raw/` 作为 submodule 后，`project_init.py` 扫描时会正常识别其中的文件并生成 `_manifest.yaml`。`_manifest.yaml`、`data/code/`、`data/drafts/` 仍由主仓库管理。
+
+如果不使用 submodule，直接将数据放入 `data/` 目录即可：
+
 将你的实验数据、代码、草稿放入 `data/` 目录，然后在 Copilot Chat 中输入：
 
 ```
