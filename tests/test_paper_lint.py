@@ -247,3 +247,123 @@ class TestLintReport:
         assert "[ERROR]" in s
         assert "[citation]" in s
         assert "a.tex:10" in s
+
+
+# ============================================================
+# 7. 写作风格检查
+# ============================================================
+
+class TestStyleRules:
+
+    def test_first_person_detected(self, project: PaperLint):
+        _write(project.paper_dir / "sections" / "01-intro.tex",
+               "我们提出了一种新方法。")
+
+        report = project.check_all()
+        style_warns = [i for i in report.items if i.category == "style"]
+        assert any("第一人称" in w.message for w in style_warns)
+
+    def test_first_person_variants(self, project: PaperLint):
+        _write(project.paper_dir / "sections" / "01-intro.tex",
+               "我们设计了框架。我认为这个方法很好。我们发现了规律。")
+
+        report = project.check_all()
+        fp = [i for i in report.items if i.category == "style" and "第一人称" in i.message]
+        assert len(fp) == 3
+
+    def test_first_person_in_comment_ignored(self, project: PaperLint):
+        _write(project.paper_dir / "sections" / "01-intro.tex",
+               "% 我们提出了一种新方法")
+
+        report = project.check_all()
+        style_warns = [i for i in report.items if i.category == "style" and "第一人称" in i.message]
+        assert len(style_warns) == 0
+
+    def test_third_person_ok(self, project: PaperLint):
+        _write(project.paper_dir / "sections" / "01-intro.tex",
+               "本文提出了一种新方法。实验结果表明该方法有效。")
+
+        report = project.check_all()
+        fp = [i for i in report.items if i.category == "style" and "第一人称" in i.message]
+        assert len(fp) == 0
+
+    def test_vague_language_detected(self, project: PaperLint):
+        _write(project.paper_dir / "sections" / "01-intro.tex",
+               "本方法大幅提升了性能。")
+
+        report = project.check_all()
+        vague = [i for i in report.items if i.category == "style" and "模糊" in i.message]
+        assert len(vague) == 1
+        assert "大幅提升" in vague[0].message
+
+    def test_vague_variants(self, project: PaperLint):
+        _write(project.paper_dir / "sections" / "01-intro.tex",
+               "显著优于基线。效果非常好。实验结果令人满意。")
+
+        report = project.check_all()
+        vague = [i for i in report.items if i.category == "style" and "模糊" in i.message]
+        assert len(vague) == 3
+
+    def test_quantified_ok(self, project: PaperLint):
+        _write(project.paper_dir / "sections" / "01-intro.tex",
+               r"F1-score 提升了 20.9 个百分点（0.77$\to$0.93）。")
+
+        report = project.check_all()
+        vague = [i for i in report.items if i.category == "style" and "模糊" in i.message]
+        assert len(vague) == 0
+
+    def test_banned_phrases_from_style_guide(self, project: PaperLint):
+        _write(project.root / "config" / "style-guide.md", """
+            # 写作风格
+            ## 禁止使用的套话
+            以下短语禁止使用：
+            - "近年来，……引起了广泛关注"
+            - "众所周知"
+            - "不言而喻"
+        """)
+        _write(project.paper_dir / "sections" / "01-intro.tex",
+               "众所周知，深度学习很重要。")
+
+        report = project.check_all()
+        banned = [i for i in report.items if i.category == "style" and "禁止套话" in i.message]
+        assert len(banned) == 1
+        assert "众所周知" in banned[0].message
+
+    def test_no_style_guide_no_banned(self, project: PaperLint):
+        """style-guide.md 不存在时不报错，只检查内置规则。"""
+        _write(project.paper_dir / "sections" / "01-intro.tex",
+               "本文提出了一种新方法。")
+
+        report = project.check_all()
+        banned = [i for i in report.items if i.category == "style" and "禁止套话" in i.message]
+        assert len(banned) == 0
+
+    def test_clean_academic_text(self, project: PaperLint):
+        """规范的学术文本不触发任何风格警告。"""
+        _write(project.paper_dir / "sections" / "01-intro.tex", r"""
+            本文针对软件缺陷预测场景，提出了一种基于图神经网络的方法。
+            实验结果表明，该方法在 F1-score 上提升了 12.3\%（0.78$\to$0.88）。
+            如图~\ref{fig:arch}~所示，系统由三个模块组成。
+        """)
+
+        report = project.check_all()
+        style_warns = [i for i in report.items if i.category == "style"]
+        assert len(style_warns) == 0
+
+    def test_long_style_guide_loads(self, project: PaperLint):
+        """验证大型 style-guide.md（如同济风格指南）可正常加载和使用。"""
+        long_guide = "# 风格指南\n\n" + "这是一段很长的写作规范。\n" * 200
+        long_guide += "\n## 禁止使用的套话\n以下禁止使用：\n"
+        long_guide += '- "毫无疑问"\n- "不言而喻"\n'
+        _write(project.root / "config" / "style-guide.md", long_guide)
+
+        phrases = project._load_banned_phrases()
+        assert "毫无疑问" in phrases
+        assert "不言而喻" in phrases
+
+        _write(project.paper_dir / "sections" / "01-intro.tex",
+               "毫无疑问，这是一个重要的研究方向。")
+
+        report = project.check_all()
+        banned = [i for i in report.items if i.category == "style" and "禁止套话" in i.message]
+        assert len(banned) == 1

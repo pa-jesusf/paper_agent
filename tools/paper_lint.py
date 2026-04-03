@@ -101,6 +101,7 @@ class PaperLint:
         self._check_todo_marks(report)
         self._check_section_structure(report)
         self._check_empty_sections(report)
+        self._check_style_rules(report)
 
         return report
 
@@ -305,6 +306,91 @@ class PaperLint:
                     file=self._rel(tex_file), line=None,
                     message="章节内容过少（可能是空模板）",
                 ))
+
+    # ----------------------------------------------------------
+    # 7. 写作风格检查
+    # ----------------------------------------------------------
+
+    # 第一人称用法
+    _FIRST_PERSON_RE = re.compile(
+        r"我们?(?:认为|提出|设计|实现|发现|观察|采用|构建|开发|引入|使用|分析|验证|证明|注意到)"
+    )
+    # 模糊修饰语（无定量支撑）
+    _VAGUE_RE = re.compile(
+        r"(?:大幅|显著|极大地?)(?:提升|提高|改善|增强|降低|减少|优于|超过)"
+        r"|效果(?:非常|很|十分|极其)好"
+        r"|实验结果令人满意"
+    )
+
+    def _check_style_rules(self, report: LintReport) -> None:
+        """检查正文中常见的学术写作规范问题。"""
+        tex_files = self._collect_tex_files()
+        banned = self._load_banned_phrases()
+
+        for tex_file in tex_files:
+            content = tex_file.read_text(encoding="utf-8", errors="ignore")
+            rel_path = self._rel(tex_file)
+            lines = content.split("\n")
+
+            for i, line in enumerate(lines):
+                if line.lstrip().startswith("%"):
+                    continue
+
+                for m in self._FIRST_PERSON_RE.finditer(line):
+                    report.items.append(LintItem(
+                        level="warn", category="style",
+                        file=rel_path, line=i + 1,
+                        message=f"第一人称用法「{m.group()}」→ 建议改为「本文/本章/实验表明」",
+                    ))
+
+                for m in self._VAGUE_RE.finditer(line):
+                    report.items.append(LintItem(
+                        level="warn", category="style",
+                        file=rel_path, line=i + 1,
+                        message=f"模糊修饰语「{m.group()}」→ 建议替换为具体数值或百分比",
+                    ))
+
+                for phrase in banned:
+                    if phrase in line:
+                        report.items.append(LintItem(
+                            level="warn", category="style",
+                            file=rel_path, line=i + 1,
+                            message=f"禁止套话「{phrase}」",
+                        ))
+
+    def _load_banned_phrases(self) -> list[str]:
+        """从 style-guide.md 提取禁止用语列表。
+
+        识别以 '禁止' 开头的列表区块，提取列表项中引号内的短语。
+        """
+        guide_path = self.config_dir / "style-guide.md"
+        if not guide_path.exists():
+            return []
+        try:
+            content = guide_path.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            return []
+
+        phrases: list[str] = []
+        in_ban_section = False
+        # 匹配引号或书名号内的文本
+        _quote_re = re.compile(r'[""「"\'](.+?)[""」"\']')
+
+        for line in content.split("\n"):
+            if re.search(r"禁止.*(?:使用|用语|写法|套话)", line):
+                in_ban_section = True
+                continue
+            if in_ban_section and (line.startswith("#") or line.startswith("---")):
+                in_ban_section = False
+                continue
+            if in_ban_section and line.strip().startswith(("-", "*")):
+                m = _quote_re.search(line)
+                if m:
+                    phrase = m.group(1).strip()
+                    if len(phrase) >= 2:
+                        phrases.append(phrase)
+
+        return phrases
 
     # ----------------------------------------------------------
     # 辅助方法
