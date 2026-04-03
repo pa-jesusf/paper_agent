@@ -110,8 +110,8 @@ CH4_FAMILY_FIGURES = {
     },
     "rq2_cv_comparison": {
         "name": "fig_04_rq2_cv_comparison",
-        "caption_zh": "五折交叉验证稳定性对比",
-        "caption_en": "5-Fold Cross-Validation Comparison",
+        "caption_zh": "家族内与家族间变异系数对比",
+        "caption_en": "Intra-Family vs Inter-Family CV Comparison",
     },
     "rq2_graph_scale_histogram": {
         "name": "fig_04_rq2_graph_scale",
@@ -135,13 +135,13 @@ CH4_FAMILY_FIGURES = {
     },
     "rq3_feature_heatmap": {
         "name": "fig_04_rq3_feature_heatmap",
-        "caption_zh": "特征值分布热力图",
-        "caption_en": "Feature Value Distribution Heatmap",
+        "caption_zh": "家族 × Top-10 判别特征热力图",
+        "caption_en": "Family × Top-10 Discriminative Feature Heatmap",
     },
     "rq3_feature_importance_top20": {
         "name": "fig_04_rq3_importance_top20",
-        "caption_zh": "Top-20特征判别力排序",
-        "caption_en": "Top-20 Feature Discriminability Ranking",
+        "caption_zh": "Top-20 家族判别特征排序",
+        "caption_en": "Top-20 Family Discriminative Feature Ranking",
     },
     "rq3_group_discriminability": {
         "name": "fig_04_rq3_group_discriminability",

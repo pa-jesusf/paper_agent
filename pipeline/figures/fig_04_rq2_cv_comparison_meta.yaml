@@ -2,8 +2,8 @@ adaptation_needed:
 - 中文坐标轴标签
 - 全宽6.0in
 - 图4-X编号
-caption_en: 5-Fold Cross-Validation Comparison
-caption_zh: 五折交叉验证稳定性对比
+caption_en: Intra-Family vs Inter-Family CV Comparison
+caption_zh: 家族内与家族间变异系数对比
 chapter: 4
 format: pdf
 name: fig_04_rq2_cv_comparison
