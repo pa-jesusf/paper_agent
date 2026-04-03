@@ -6,26 +6,49 @@
 # Agent 在生成图表时必须读取此配置。
 
 source_style:
-  inherited_from: ""               # 风格参考来源路径
-  analysis_notes: ""               # Agent 分析原始图表后的风格总结
+  inherited_from: "data/raw/paper/fig/"   # 原始投稿论文的图表目录
+  analysis_notes: |
+    原始论文（ASE 2026投稿）采用ACM sigconf双栏格式，图表风格特征：
+    - 颜色方案：以蓝色系为主色，辅以橙/绿/红作对比色，整体色调沉稳
+    - 字体：Times New Roman / serif，与ACM正文一致
+    - 图表格式：PDF矢量图为主，部分PNG（pipeline生成的分析图）
+    - 图宽：单栏3.33in（ACM sigconf），毕业论文改为单栏全宽~6.0in
+    - 箱线图/小提琴图/热力图/雷达图/散点图/柱状图等多种图型
+    - 三线表（无竖线），顶线底线粗，栏目线细
+    - 毕业论文需适配同济大学模版：宋体题注、五号字、按章编号（图X-Y）
 
 colors:
   palette: ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd",
             "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"]
   background: "white"
   grid_color: "#e0e0e0"
+  offensive_color: "#d62728"     # 攻击性行为用红色系
+  defensive_color: "#1f77b4"     # 防御性行为用蓝色系
+  benign_color: "#2ca02c"        # 良性样本用绿色系
+  malicious_color: "#d62728"     # 恶意样本用红色系
 
 fonts:
-  family: "serif"                  # 与 LaTeX 正文字体一致
+  family: "serif"                # Times New Roman / 宋体（中文）
   title_size: 12
-  label_size: 10
-  tick_size: 9
-  legend_size: 9
+  label_size: 11
+  tick_size: 10
+  legend_size: 10
+  caption_size: 10.5             # 五号字（同济规范）
 
 layout:
   dpi: 300
-  single_column_width: 3.5        # 英寸
-  double_column_width: 7.0
-  default_format: "pdf"           # pdf | svg | png
+  single_column_width: 6.0      # 英寸（学位论文单栏全宽）
+  double_column_width: 6.0      # 学位论文不分栏
+  default_format: "pdf"         # pdf 矢量图优先
   grid_visible: false
   spine_visible: ["bottom", "left"]
+
+table_style:
+  format: "three-line"           # 三线表
+  header_bold: true
+  best_value: "bold"             # 最优值加粗
+  second_best: "underline"       # 次优值下划线
+  caption_position: "above"      # 表标题在表格上方
+  numbering: "by-chapter"        # 按章编号：表X-Y
+
+figure_numbering: "by-chapter"   # 按章编号：图X-Y

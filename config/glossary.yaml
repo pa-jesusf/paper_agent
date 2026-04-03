@@ -5,24 +5,231 @@
 # Agent 可提议新增条目，但需经用户确认后方可写入。
 
 # 术语统一
-terms: []
-# 示例:
-# terms:
-#   - canonical: "large language model"
-#     abbreviation: "LLM"
-#     chinese: "大语言模型"
-#     first_use_zh: "大语言模型（Large Language Model, LLM）"
-#     first_use_en: "large language model (LLM)"
-#     forbidden_variants:
-#       - "big language model"
-#       - "large-scale language model"
+terms:
+  - canonical: "ransomware"
+    abbreviation: ""
+    chinese: "勒索软件"
+    first_use_zh: "勒索软件（Ransomware）"
+    first_use_en: "ransomware"
+    forbidden_variants:
+      - "勒索病毒"
+      - "勒索木马"
+
+  - canonical: "malware"
+    abbreviation: ""
+    chinese: "恶意软件"
+    first_use_zh: "恶意软件（Malware）"
+    first_use_en: "malware"
+    forbidden_variants:
+      - "恶意程序"
+      - "病毒"
+
+  - canonical: "offensive action"
+    abbreviation: ""
+    chinese: "攻击性行为"
+    first_use_zh: "攻击性行为（Offensive Action）"
+    first_use_en: "offensive action"
+    forbidden_variants:
+      - "进攻性行为"
+      - "攻击行为"
+
+  - canonical: "defensive action"
+    abbreviation: ""
+    chinese: "防御性行为"
+    first_use_zh: "防御性行为（Defensive Action）"
+    first_use_en: "defensive action"
+    forbidden_variants:
+      - "逃逸行为"
+      - "规避行为"
+
+  - canonical: "dormant ransomware"
+    abbreviation: ""
+    chinese: "休眠勒索软件"
+    first_use_zh: "休眠勒索软件（Dormant Ransomware）"
+    first_use_en: "dormant ransomware"
+    forbidden_variants:
+      - "沉睡勒索软件"
+
+  - canonical: "behavioral semantics"
+    abbreviation: ""
+    chinese: "行为语义"
+    first_use_zh: "行为语义（Behavioral Semantics）"
+    first_use_en: "behavioral semantics"
+    forbidden_variants: []
+
+  - canonical: "knowledge base"
+    abbreviation: "KB"
+    chinese: "知识库"
+    first_use_zh: "知识库（Knowledge Base）"
+    first_use_en: "knowledge base"
+    forbidden_variants: []
+
+  - canonical: "lexical knowledge"
+    abbreviation: ""
+    chinese: "词法知识"
+    first_use_zh: "词法知识层（Lexical Knowledge, $\\mathbb{K}_{lex}$）"
+    first_use_en: "lexical knowledge"
+    forbidden_variants: []
+
+  - canonical: "semantic knowledge"
+    abbreviation: ""
+    chinese: "语义知识"
+    first_use_zh: "语义知识层（Semantic Knowledge, $\\mathbb{K}_{sem}$）"
+    first_use_en: "semantic knowledge"
+    forbidden_variants: []
+
+  - canonical: "statistical knowledge"
+    abbreviation: ""
+    chinese: "统计知识"
+    first_use_zh: "统计知识层（Statistical Knowledge, $\\mathbb{K}_{sta}$）"
+    first_use_en: "statistical knowledge"
+    forbidden_variants: []
+
+  - canonical: "large language model"
+    abbreviation: "LLM"
+    chinese: "大语言模型"
+    first_use_zh: "大语言模型（Large Language Model, LLM）"
+    first_use_en: "large language model (LLM)"
+    forbidden_variants:
+      - "大模型"
+      - "大规模语言模型"
+
+  - canonical: "graph neural network"
+    abbreviation: "GNN"
+    chinese: "图神经网络"
+    first_use_zh: "图神经网络（Graph Neural Network, GNN）"
+    first_use_en: "graph neural network (GNN)"
+    forbidden_variants: []
+
+  - canonical: "function call graph"
+    abbreviation: "FCG"
+    chinese: "函数调用图"
+    first_use_zh: "函数调用图（Function Call Graph, FCG）"
+    first_use_en: "function call graph (FCG)"
+    forbidden_variants:
+      - "调用关系图"
+
+  - canonical: "PolarCatch"
+    abbreviation: ""
+    chinese: "PolarCatch"
+    first_use_zh: "PolarCatch（双图语义神经网络恶意软件识别模型）"
+    first_use_en: "PolarCatch"
+    forbidden_variants: []
+
+  - canonical: "PolarProfile"
+    abbreviation: ""
+    chinese: "PolarProfile"
+    first_use_zh: "PolarProfile（知识驱动的多粒度攻防行为画像框架）"
+    first_use_en: "PolarProfile"
+    forbidden_variants: []
+
+  - canonical: "Semantic-equivalent Literal Evidence Identification"
+    abbreviation: "SLEI"
+    chinese: "语义等价字面证据识别"
+    first_use_zh: "语义等价字面证据识别（Semantic-equivalent Literal Evidence Identification, SLEI）"
+    first_use_en: "Semantic-equivalent Literal Evidence Identification (SLEI)"
+    forbidden_variants: []
+
+  - canonical: "Semantic-equivalent Encryption Function Evidence Identification"
+    abbreviation: "SEFEI"
+    chinese: "语义等价加密函数证据识别"
+    first_use_zh: "语义等价加密函数证据识别（Semantic-equivalent Encryption Function Evidence Identification, SEFEI）"
+    first_use_en: "Semantic-equivalent Encryption Function Evidence Identification (SEFEI)"
+    forbidden_variants: []
+
+  - canonical: "Context-Aware Action Reasoning"
+    abbreviation: "CAR"
+    chinese: "上下文感知行为归因"
+    first_use_zh: "上下文感知行为归因（Context-Aware Action Reasoning, CAR）"
+    first_use_en: "Context-Aware Action Reasoning (CAR)"
+    forbidden_variants: []
+
+  - canonical: "GraphSAGE"
+    abbreviation: ""
+    chinese: "GraphSAGE"
+    first_use_zh: "GraphSAGE（基于采样聚合的图神经网络）"
+    first_use_en: "GraphSAGE"
+    forbidden_variants: []
+
+  - canonical: "effect size"
+    abbreviation: ""
+    chinese: "效应量"
+    first_use_zh: "效应量（Effect Size）"
+    first_use_en: "effect size"
+    forbidden_variants:
+      - "效果量"
+      - "效应大小"
+
+  - canonical: "obfuscation"
+    abbreviation: ""
+    chinese: "混淆"
+    first_use_zh: "代码混淆（Obfuscation）"
+    first_use_en: "obfuscation"
+    forbidden_variants:
+      - "模糊化"
+
+  - canonical: "unpacking"
+    abbreviation: ""
+    chinese: "脱壳"
+    first_use_zh: "动态脱壳（Dynamic Unpacking）"
+    first_use_en: "unpacking"
+    forbidden_variants:
+      - "解壳"
+      - "去壳"
+
+  - canonical: "packing"
+    abbreviation: ""
+    chinese: "加壳"
+    first_use_zh: "加壳（Packing）"
+    first_use_en: "packing"
+    forbidden_variants: []
 
 # 数学符号 — 与 preamble.tex 中的 \newcommand 对应
-symbols: []
-# 示例:
-# symbols:
-#   - name: "loss function"
-#     chinese: "损失函数"
-#     latex_macro: "\\loss"
-#     definition: "\\mathcal{L}"
-#     description: "The overall training loss"
+symbols:
+  - name: "knowledge base (full)"
+    chinese: "知识库（三层）"
+    latex_macro: "\\mathbb{K}"
+    definition: "\\mathbb{K} = \\{\\mathbb{K}_{lex}, \\mathbb{K}_{sem}, \\mathbb{K}_{sta}\\}"
+    description: "三层恶意软件攻防行为知识库"
+
+  - name: "lexical knowledge layer"
+    chinese: "词法知识层"
+    latex_macro: "\\mathbb{K}_{lex}"
+    definition: "\\mathbb{K}_{lex}"
+    description: "词法知识层（712条规则，含API/常量/字符串）"
+
+  - name: "semantic knowledge layer"
+    chinese: "语义知识层"
+    latex_macro: "\\mathbb{K}_{sem}"
+    definition: "\\mathbb{K}_{sem}"
+    description: "语义知识层（204条规则，186个标注加密函数，覆盖13个开源加密库）"
+
+  - name: "statistical knowledge layer"
+    chinese: "统计知识层"
+    latex_macro: "\\mathbb{K}_{sta}"
+    definition: "\\mathbb{K}_{sta}"
+    description: "统计知识层（57维特征向量）"
+
+  - name: "offensive action set"
+    chinese: "攻击性行为集"
+    latex_macro: "A_{off}"
+    definition: "A_{off}"
+    description: "攻击性行为集合（加密、文件系统访问、通知窗口）"
+
+  - name: "defensive action set"
+    chinese: "防御性行为集"
+    latex_macro: "A_{def}"
+    definition: "A_{def}"
+    description: "防御性行为集合（混淆、环境检查、延迟执行、系统破坏）"
+
+  - name: "eta squared"
+    chinese: "eta平方效应量"
+    latex_macro: "\\eta^2"
+    definition: "\\eta^2"
+    description: "Kruskal-Wallis检验的效应量指标，>0.14为大效应"
+
+  - name: "F1 score"
+    chinese: "F1分数"
+    latex_macro: "F_1"
+    definition: "F_1 = \\frac{2 \\cdot P \\cdot R}{P + R}"
+    description: "精确率与召回率的调和均值"
