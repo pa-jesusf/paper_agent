@@ -1,0 +1,10 @@
+adaptation_needed:
+- 中文坐标轴标签
+- 全宽6.0in
+- 图5-X编号
+caption_en: Feature Discriminability Boxplot
+caption_zh: 特征可区分性箱线图
+chapter: 5
+format: pdf
+name: fig_05_feature_boxplot
+source: data\raw\paper\fig\boxplot.pdf

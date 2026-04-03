@@ -1,0 +1,10 @@
+adaptation_needed:
+- 中文坐标轴标签
+- 全宽6.0in
+- 图3-X编号
+caption_en: Overall Framework of Knowledge Base Construction and Semantic Identification
+caption_zh: 恶意软件攻防行为知识库构建与语义识别总体框架
+chapter: 3
+format: pdf
+name: fig_03_system_overview
+source: data\raw\paper\fig\overview.pdf

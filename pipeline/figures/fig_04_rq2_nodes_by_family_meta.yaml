@@ -1,0 +1,10 @@
+adaptation_needed:
+- 中文坐标轴标签
+- 全宽6.0in
+- 图4-X编号
+caption_en: Node Count by Family (Log Scale)
+caption_zh: 各家族节点数量分布（对数尺度）
+chapter: 4
+format: pdf
+name: fig_04_rq2_nodes_by_family
+source: data\raw\chapter2_family_analysis\figures\rq2_nodes_by_family_log.pdf

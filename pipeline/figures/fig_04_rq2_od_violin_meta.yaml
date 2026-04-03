@@ -1,0 +1,10 @@
+adaptation_needed:
+- 中文坐标轴标签
+- 全宽6.0in
+- 图4-X编号
+caption_en: O/D Subgraph Topology Violin Plot
+caption_zh: 攻击性/防御性子图拓扑小提琴图
+chapter: 4
+format: pdf
+name: fig_04_rq2_od_violin
+source: data\raw\chapter2_family_analysis\figures\rq2_od_violin_comparison.pdf

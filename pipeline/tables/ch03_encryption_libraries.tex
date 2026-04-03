@@ -1,0 +1,44 @@
+% ============================================================
+% 表 3-X: 开源加密库及其支持的加密算法
+% Table 3-X: Open-source Encryption Libraries and their Supported Encryption Algorithms
+% 来源: data/raw/paper/table/encryption_libraries.tex
+% 注意: 注释状态的大表 → 可考虑附录或精简
+% ============================================================
+% \begin{table*}[!t]
+%     \centering
+%     \footnotesize
+%     \caption{Open-source Encryption Libraries and their Supported Encryption Algorithms}
+%     \vspace{-7pt}
+%     \begin{tabular}{m{1.64cm}m{0.4cm}m{0.06cm}
+%         m{0.06cm}m{0.06cm}m{0.06cm}m{0.06cm}
+%         m{0.06cm}m{0.06cm}m{0.06cm}m{0.06cm}
+%         m{0.06cm}m{0.06cm}m{0.06cm}m{0.06cm}
+%         m{0.06cm}m{0.06cm}m{0.06cm}m{0.06cm}
+%         m{0.06cm}m{0.06cm}m{0.06cm}m{0.06cm}
+%         m{0.06cm}m{0.06cm}m{0.06cm}m{0.06cm}
+%         m{0.06cm}m{0.06cm}m{0.06cm}}   
+%     \toprule
+%     \multirow{3}{*}{\textbf{Library}} & \multirow{3}{*}{\textbf{Stars}}  &\multicolumn{25}{c}{\textbf{Encryption Algorithms}} \\ 
+%     \cmidrule(lr){3-30}
+%     &  &  \multicolumn{18}{c}{Symmetric} & \multicolumn{10}{c}{Asymmetric} \\
+%     \cmidrule(lr){3-20}
+%     \cmidrule(lr){21-30}
+%     &  & \rotatebox{90}{AES}  & \rotatebox{90}{DES} & \rotatebox{90}{SM4} & \rotatebox{90}{RC4} & \rotatebox{90}{ChaCha} &  \rotatebox{90}{Camellia} & \rotatebox{90}{Blowfish} & \rotatebox{90}{Twofish} & \rotatebox{90}{IDEA} & \rotatebox{90}{Salsa20} & \rotatebox{90}{TEA} & \rotatebox{90}{HC-256} &  \rotatebox{90}{Rabbit}& \rotatebox{90}{Serpent} & \rotatebox{90}{CAST5} & \rotatebox{90}{Kuznyechik}  & \rotatebox{90}{Skipjack} & \rotatebox{90}{SAFER}                          & \rotatebox{90}{RSA-PKCS1}  & \rotatebox{90}{ECC-NIST} & \rotatebox{90}{ECC-SECG} & \rotatebox{90}{ECC-Brainpool} & \rotatebox{90}{ECC-Curve25519} &  \rotatebox{90}{ECC-Curve448}& \rotatebox{90}{ElGamal} & \rotatebox{90}{Paillier} & \rotatebox{90}{Cramer–Shoup}  & \rotatebox{90}{McEliece}\\
+%     \bottomrule
+%     BoringSSL~\cite{boringssl} & 1.9k  &  \checkmark &  \checkmark &  \checkmark &  \checkmark & \checkmark  & \xmark & \xmark & \xmark & \xmark & \xmark & \xmark & \xmark & \xmark& \xmark & \checkmark & \xmark & \xmark                           & \xmark & \checkmark  & \checkmark  &  \xmark &  \checkmark & \checkmark  & \xmark& \xmark & \xmark & \xmark & \xmark \\
+%     Botan~\cite{botan} & 2.9k &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \xmark &  \xmark &  \xmark& \checkmark & \checkmark & \xmark & \xmark & \xmark                           &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark & \xmark & \xmark & \xmark & \checkmark\\
+%     OpenSSL~\cite{openssl} & 27.1k &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \xmark &  \xmark &  \checkmark &  \xmark &  \xmark &  \xmark &  \xmark & \xmark & \checkmark & \xmark & \xmark & \xmark                            &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark& \xmark & \xmark & \xmark & \xmark\\
+%     Cryptlib~\cite{cryptlib} & -  &  \checkmark &  \checkmark & \xmark &  \checkmark &  \xmark &  \xmark &  \checkmark & \checkmark &  \checkmark &  \xmark &  \xmark &  \xmark &  \xmark& \xmark & \checkmark & \xmark & \xmark & \xmark                           &  \checkmark &  \checkmark & \checkmark &  \checkmark &  \xmark &  \xmark& \xmark & \xmark & \xmark & \xmark  \\
+%     Crypto++~\cite{cryptopp} & 5.1k   &  \checkmark & \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark & \xmark &  \checkmark &  \checkmark & \checkmark & \checkmark & \xmark & \checkmark & \checkmark                          &  \checkmark & \checkmark &  \checkmark &  \checkmark &  \checkmark &  \xmark& \checkmark & \xmark & \xmark & \xmark \\
+%     GmSSL~\cite{gmssl} & 1.7k &   \checkmark &  \xmark & \checkmark &  \xmark &  \checkmark &  \xmark &  \xmark  & \xmark &  \xmark &  \xmark &  \xmark &  \xmark &  \xmark& \xmark & \xmark & \xmark & \xmark & \xmark                           & \checkmark  &  \xmark & \xmark & \xmark & \xmark  & \xmark & \xmark & \xmark & \xmark & \xmark  \\
+%     GnuTLS~\cite{gnutls} & 0.1k  &  \checkmark &  \xmark & \xmark &  \xmark &  \xmark &  \checkmark &  \xmark  & \xmark &  \xmark &  \xmark &  \xmark &  \xmark &  \xmark& \xmark & \checkmark & \xmark & \xmark & \xmark                           &  \checkmark &  \checkmark & \xmark &  \xmark &  \xmark &  \xmark & \xmark & \xmark & \xmark & \xmark\\
+%     LibreSSL~\cite{libressl} & 1.4k  &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \xmark &  \xmark & \xmark &  \checkmark &  \xmark &  \xmark &  \xmark &  \xmark& \xmark & \checkmark & \xmark & \xmark & \xmark                            &   \checkmark &  \xmark &  \xmark & \xmark &  \checkmark  & \xmark & \xmark & \xmark & \xmark & \xmark  \\
+%     Libsodium~\cite{libsodium} & 12.6k  &  \checkmark &  \xmark &  \xmark &  \xmark &  \checkmark &  \xmark &  \xmark & \xmark &  \xmark &  \checkmark &  \xmark &  \xmark &  \xmark& \xmark & \xmark & \xmark & \xmark & \xmark                           &  \checkmark &  \checkmark &  \xmark &  \xmark &  \checkmark &   \checkmark& \xmark & \xmark & \xmark & \xmark\\
+%     LibTomCrypt~\cite{libtomcrypt} & 1.6k  &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark & \checkmark &  \checkmark &  \checkmark &  \checkmark &  \xmark &  \checkmark & \xmark & \checkmark & \xmark & \checkmark & \checkmark                           &  \checkmark & \xmark  &  \xmark & \xmark  & \checkmark  &  \xmark & \xmark & \xmark & \xmark & \xmark\\
+%     MbedTLS~\cite{mbedtls} & 5.8k  &  \checkmark &  \checkmark &  \xmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark & \xmark &  \xmark &  \xmark &  \xmark &  \xmark &  \xmark& \xmark & \xmark & \xmark & \xmark & \xmark                           &  \checkmark &  \checkmark &  \checkmark  &  \checkmark &  \checkmark &   \xmark& \xmark & \xmark & \xmark & \xmark \\
+%     Ring~\cite{ring} & 3.9k &  \checkmark &  \checkmark &  \xmark &  \xmark &  \checkmark &  \xmark &  \xmark & \xmark &  \xmark &  \xmark &  \xmark &  \xmark &  \xmark& \xmark & \xmark & \xmark & \xmark & \xmark                           & \checkmark & \checkmark  & \checkmark & \xmark &  \checkmark &  \xmark & \xmark & \xmark & \xmark & \xmark\\
+%     WolfSSL~\cite{wolfssl} & 2.5k &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \xmark & \xmark &  \checkmark &  \checkmark &  \xmark &  \xmark &  \xmark& \xmark & \xmark & \xmark & \xmark & \xmark                           &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark &  \checkmark& \xmark & \xmark & \xmark & \xmark \\
+%     \bottomrule
+%     \end{tabular}
+%     \label{tab:encryption-libraries}
+% \end{table*}

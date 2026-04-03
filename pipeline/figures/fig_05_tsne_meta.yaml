@@ -1,0 +1,10 @@
+adaptation_needed:
+- 中文坐标轴标签
+- 全宽6.0in
+- 图5-X编号
+caption_en: t-SNE Feature Visualization
+caption_zh: t-SNE特征可视化
+chapter: 5
+format: pdf
+name: fig_05_tsne
+source: data\raw\paper\fig\tsne.pdf

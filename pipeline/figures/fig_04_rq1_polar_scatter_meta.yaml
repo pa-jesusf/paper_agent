@@ -1,0 +1,10 @@
+adaptation_needed:
+- 中文坐标轴标签
+- 全宽6.0in
+- 图4-X编号
+caption_en: Family O-D Polarity Scatter Plot
+caption_zh: 家族攻防极性散点图
+chapter: 4
+format: pdf
+name: fig_04_rq1_polar_scatter
+source: data\raw\chapter2_family_analysis\figures\rq1_polar_scatter.pdf

@@ -1,0 +1,10 @@
+adaptation_needed:
+- 中文坐标轴标签
+- 全宽6.0in
+- 图4-X编号
+caption_en: Top-20 Feature Discriminability Ranking
+caption_zh: Top-20特征判别力排序
+chapter: 4
+format: pdf
+name: fig_04_rq3_importance_top20
+source: data\raw\chapter2_family_analysis\figures\rq3_feature_importance_top20.pdf

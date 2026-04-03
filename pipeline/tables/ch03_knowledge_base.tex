@@ -1,0 +1,60 @@
+% ============================================================
+% 表 3-X: 知识库结构与行为证据示例
+% Table 3-X: Knowledge Base and Evidence Examples
+% 来源: data/raw/paper/table/knowledge_base.tex
+% 注意: 跨页表格 → 改为 table* 全宽
+% ============================================================
+\begin{table*}[!t]
+    \centering
+    \footnotesize
+    \caption{Knowledge Base and Evidence Examples}\label{tab:db}
+    \vspace{-10pt}
+    \begin{tabular}{m{1.4cm}m{2.5cm}m{2.2cm}m{8.9cm}} 
+    \toprule
+    \textbf{Categories} & \textbf{Offensive/Defensive Actions} &\textbf{Knowledge Elements} & {\textbf{Evidence Examples}} \\ 
+    \midrule
+    \multirow{7}{*}{\shortstack[l]{Lexical\\Knowledge}} 
+    & \multirow{2}{*}{Encryption} & Constants & \texttt{637C777BF26B6FC53001 ...} (AES S-Box) \\ 
+            \cmidrule{3-4}
+                                & & API calls & \texttt{CryptDestroyKey()}, \texttt{BCryptEncrypt()} \\ 
+            \cmidrule{2-4}
+    & Filesystem Access & API Calls &  \texttt{LZRead()}, \texttt{WriteFile()}, \texttt{DeleteFile()}\\ 
+            \cmidrule{2-4}
+    & Execution Delay &  API Calls & \texttt{Sleep()}, \texttt{setTimeout()} \\
+            \cmidrule{2-4}
+    & \multirow{2}{*}{Environment Checks} & API Calls  & \texttt{GetSystemInfo()}, \texttt{EnumProcessModules()} \\ 
+     \cmidrule{3-4}
+    & & String literals & \texttt{VBoxGuest.sys}, \texttt{vmmouse.sys}, \texttt{VMSrvc.exe} \\ 
+                \cmidrule{2-4}
+
+    & Obfuscation & API Calls &  \texttt{CryptBinaryToString()},  \texttt{CryptStringToBinary()}\\
+    \hline
+    \multirow{9}{*}{\shortstack[l]{Semantic\\Knowledge}} 
+    & Notification Window & Canonical sentence & Notifying the victim that their data or files have been encrypted: \textit{All your files are encrypted by LockBit for more information see Restore-My-Files.txt...} \\ 
+        \cmidrule{2-4} 
+    & \multirow{1}{*}{Environment Checks} 
+                & Canonical sentence  & \shortstack[l]{Checking VM environments:\\\texttt{wmic computersystem get model, manufacturer}}\\ 
+%                 \cmidrule{3-4}
+%                 & & Semantic behaviors  & Checking VM environments:
+%                 \begin{verbatim}unsigned char m[2+4], rpill[] = "\x0f\x01\x0d..";
+%  *((unsigned*)&rpill[3]) = (unsigned)m;
+% ((void(*)())&rpill)();
+% return (m[5]>0xd0) ? 1 : 0;\end{verbatim}
+        \cmidrule{2-4}            
+    & System Compromise & Canonical sentence  & \shortstack[l]{Disabling security defenses: \texttt{taskkill /F /IM avp.exe}}\\ 
+        \cmidrule{2-4}
+    & Encryption & Functions &Encrypting: 
+    v8 = v6 \textasciicircum (unsigned \_\_int8) RijnDael\_AES[BYTE1(v7)] \textasciicircum (((unsigned \_\_int8) RijnDael\_AES[BYTE2(v7)] \textasciicircum (((unsigned \_\_int8) RijnDael\_AES [HIBYTE(v7)] \textasciicircum ((unsigned \_\_int8) RijnDael\_AES [(unsigned \_\_int8)v7] << 8)) << 8)) << 8) \textasciicircum 1;
+    \\ \hline
+    \multirow{4}{*}{\shortstack[l]{Statistical\\Knowledge}} 
+    & Execution Delay & Ratio & \texttt{NOP} ratio \\
+     \cmidrule{2-4}
+    & \multirow{3}{*}{Obfuscation} & Ratio & instruction ratio,  syntax element ratio, expression ratio, control flow out-degree ratio \\ %, isolated control flow node ratio, loop number ratio, register assign ratio  \\
+     \cmidrule{3-4}
+            & & Count & big data segment, renamed section \\ %, PE structural anomalies \\
+             \cmidrule{3-4}
+            & & Entropy &  entropy value\\
+    \bottomrule
+    \end{tabular}
+    
+\end{table*}

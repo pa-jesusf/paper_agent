@@ -1,0 +1,65 @@
+% ============================================================
+% 表 5-X: 消融实验结果
+% Table 5-X: Results of Ablation Study
+% 来源: data/raw/paper/table/rq_ablation.tex
+% 注意: 预处理+证据识别+架构 三类消融
+% ============================================================
+\begin{table}[!t]
+  \centering
+  \footnotesize
+  \caption{Results of our Ablation Study}\label{tab:ablation}
+  \vspace{-9pt}
+            \begin{tabular}{m{2.5cm}m{3cm}m{0.7cm}m{0.8cm}}   
+            \toprule
+            \textbf{Category} & \textbf{Sub-Category} & \textbf{F1.} & $\Delta$\textbf{F1.} \\ 
+            \hline
+            
+            \multirow{2}{*}{\textit{Preprocessing}} 
+            % & w/o Unpacking  & 0.949 & -0.031 \\
+            % & w/o Compile and Decompile  & 0.947 & -0.034 \\
+            % \hline
+            % \multirow{6}{*}{E.I.} 
+            % & w/ Lex. Eq. & 0.880 & -0.100 \\
+            % & w/ Sem. Eq.  & 0.877 & -0.104 \\
+            % & w/ Sta. Eq. & 0.927 & -0.053 \\
+            % & w/ Offensive & 0.952 & -0.028 \\ 
+            % & w/ Defensive & 0.949 & -0.031 \\ 
+            % & w/o Encryption Library & 0.964 & -0.015 \\ \hline
+            % \multirow{3}{*}{R.D.} 
+            % & w/o CEU & 0.973 & -0.007 \\
+            % & w/ XGBost & 0.975 & -0.004 \\
+            % & w/ SVM & 0.964 & -0.016 \\\hline
+            % \multirow{2}{*}{LLMs} 
+            % & w/ GPT3.5  & 0.971 & -0.009 \\
+            % & w/ DeepSeek  & 0.969 & -0.011 \\
+            & w/o Unpacking  & 0.81 & -0.13 \\
+            & w/o C\&D  & 0.81 & -0.13 \\
+            \cmidrule(lr){2-4}
+            \multirow{6}{*}{\textit{Evidence Identification}}
+            & w/ Lex. Eq. & 0.69 & -0.25 \\
+            & w/ Sem. Eq.  & 0.73 & -0.21 \\
+            & w/ Sta. Eq. & 0.64 & -0.30 \\
+            & w/ Off. & 0.71 & -0.23 \\ 
+            & w/ Def. & 0.86 & -0.08 \\ 
+            & w/o CAR & 0.89 & -0.05 \\ 
+            & w/o Encryption Library & 0.87 & -0.07 \\ 
+            \cmidrule(lr){2-4}
+            \textit{Architecture}
+            & LLM-E2E & 0.55 & -0.39 \\
+            % \cmidrule(lr){2-4}
+            % \multirow{2}{*}{{Ransomware Detection }} 
+            % & w/ GNN  & 0.73 & -0.21 \\
+            % & w/ Numerical  & 0.88 & -0.06 \\
+            % \cmidrule(lr){3-4}
+            % \multirow{3}{*}{Ransomware Detection} 
+            % & w/ Logistic Regression& 0.923 & -0.036 \\
+            % & w/ SVM & 0.929 & -0.030 \\
+            % \cmidrule(lr){2-4}
+            %  & \textbf{Alternatives} & & \\
+            %   \cmidrule(lr){2-4}
+            % \multirow{2}{*}{LLMs} 
+            % & w/ GPT3.5  & 0.941 & -0.018 \\
+            % & w/ DeepSeek  & 0.926 & -0.033 \\
+            \bottomrule
+            \end{tabular} 
+\end{table}%

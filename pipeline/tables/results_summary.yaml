@@ -1,0 +1,98 @@
+RQ2_effectiveness:
+  num_results: 21
+  result_files:
+  - aghakhani_chronological_result
+  - aghakhani_org_result
+  - aghakhani_unpack_result
+  - greedy_chronological_result
+  - greedy_org_result
+  - greedy_unpack_result
+  - greedyblock_chronological_result
+  - greedyblock_org_result
+  - greedyblock_unpack_result
+  - PolarCatch_chronological_Adv_result
+  - PolarCatch_chronological_result
+  - PolarCatch_org_Adv_result
+  - PolarCatch_org_result
+  - PolarCatch_unpack_result
+  - PolarCatchA_chronological_result
+  - PolarCatchA_org_result
+  - PolarCatchA_unpack_result
+  - Sampled_baseline_results
+  - ZRS_chronological_result
+  - ZRS_org_result
+  - ZRS_unpack_result
+RQ5_ablation:
+  num_configs: 11
+  configs:
+  - baseline
+  - defensive_only
+  - lexical_only
+  - llm_e2e_summ
+  - offensive_only
+  - semantic_only
+  - statistical_only
+  - wo_car
+  - wo_decompilation
+  - wo_encryption_library
+  - wo_unpacking
+RQ6_efficiency:
+  num_files: 6
+  files:
+  - time_aghakhani
+  - time_greddy
+  - time_greedybolck
+  - time_PolarCatch
+  - time_ZRS
+  - token_usage_estimate
+Ch4_family_analysis:
+  num_files: 16
+  files:
+    rq1_behavior_mean_by_family:
+      rows: 34
+      cols: 19
+    rq1_dunn_def_execution_delay:
+      rows: 23
+      cols: 24
+    rq1_dunn_off_encryption:
+      rows: 23
+      cols: 24
+    rq1_dunn_off_notification_window:
+      rows: 23
+      cols: 24
+    rq1_family_polarity_summary:
+      rows: 34
+      cols: 6
+    rq1_kw_test_results:
+      rows: 7
+      cols: 8
+    rq1_stat_features_kw:
+      rows: 54
+      cols: 4
+    rq2_callgraph_family_stats:
+      rows: 34
+      cols: 24
+    rq2_callgraph_kw_tests:
+      rows: 7
+      cols: 5
+    rq2_intra_inter_cv:
+      rows: 11
+      cols: 5
+    rq2_od_comparison:
+      rows: 8
+      cols: 13
+    rq2_od_per_family:
+      rows: 105
+      cols: 6
+    rq2_topology_kw_tests:
+      rows: 11
+      cols: 5
+    rq3_family_coverage:
+      rows: 34
+      cols: 11
+    rq3_feature_discriminability:
+      rows: 54
+      cols: 7
+    rq3_feature_group_summary:
+      rows: 8
+      cols: 5

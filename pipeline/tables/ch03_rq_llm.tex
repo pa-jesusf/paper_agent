@@ -1,0 +1,47 @@
+% ============================================================
+% 表 3-X: 多LLM行为语义识别性能对比
+% Table 3-X: Results of LLM Evaluation
+% 来源: data/raw/paper/table/rq_LLMs.tex
+% 注意: 三任务×五LLM → 按章编号 表3-X
+% ============================================================
+\begin{table}[!t]
+  \centering
+  \footnotesize
+  \caption{Results of our LLM Evaluation}\label{tab:ablation_LLM}
+  \vspace{-8pt}
+            \begin{tabular}{
+            >{\raggedright\arraybackslash}m{3.2cm}
+            m{2cm}
+            m{0.5cm}
+            m{0.5cm}
+            m{0.5cm}}   
+            \toprule
+            \textbf{LLM Task} & \textbf{LLM} &\textbf{Prec.} & \textbf{Rec.}  & \textbf{F1.} \\ 
+            \hline
+             \multirow{5}{*}{\parbox{3cm}{\raggedright\textit{Semantic-equivalent Literal Evidence Identification (SLEI)}}} 
+             & GPT-4o  & 0.83  & 0.95 &  0.89 \\
+             & Claude-3.5 sonnet & 0.36  & 0.89 &  0.51\\
+             & Gemini-2.0 Flash & 0.93  & 0.81 &  0.87\\
+             & DeepSeek-R1 & 0.79  & 0.84 &  0.81\\
+             & Qwen-Turbo & 0.20  & 0.93 &  0.33\\
+            \cmidrule{1-5}
+            \multirow{5}{*}{\parbox{3cm}{\raggedright\textit{Semantic-equivalent Encryption Function Evidence Identification (SEFEI)}}}
+             & GPT-4o  & 0.93  & 0.90 & 0.91 \\
+             & Claude-3.5 sonnet & 0.66  & 0.82 & 0.73\\
+             & Gemini-2.0 Flash & 0.84  & 0.90 & 0.87\\
+             & DeepSeek-R1 & 0.24  & 0.97 & 0.38\\
+             & Qwen-Turbo & 0.92  & 0.79 & 0.85\\
+             \cmidrule{1-5}
+            \multirow{5}{*}{\parbox{3cm}{\raggedright\textit{Context-Aware Action Refinement (CAR)}}}
+             & GPT-4o  & 0.92  & 0.94 & 0.93\\
+             & Claude-3.5 sonnet & 0.12  & 0.88 &  0.21\\
+             & Gemini-2.0 Flash & 0.90  & 0.92  & 0.91\\
+             & DeepSeek-R1 & 0.75  & 0.90  & 0.82\\
+             & Qwen-Turbo & 0.05  & 0.94  & 0.09\\
+            \bottomrule
+            \end{tabular} 
+\end{table}
+
+
+ 
+

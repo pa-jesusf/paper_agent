@@ -1,0 +1,10 @@
+adaptation_needed:
+- 中文坐标轴标签
+- 全宽6.0in
+- 图4-X编号
+caption_en: Ransomware Family Phylogeny Network
+caption_zh: 勒索软件家族谱系网络图
+chapter: 4
+format: pdf
+name: fig_04_family_phylogeny
+source: data\raw\chapter2_family_analysis\figures\family_phylogeny_network.pdf

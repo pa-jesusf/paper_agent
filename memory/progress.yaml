@@ -1,7 +1,7 @@
 # Paper Agent — 项目进度追踪
 # 由 memory_manager.py 自动维护，Agent 也可直接编辑
 
-current_phase: research  # init | research | analysis | writing | review | final
+current_phase: analysis  # init | research | analysis | writing | review | final
 
 phases:
   init:
@@ -13,8 +13,8 @@ phases:
     started_at: "2026-04-03"
     completed_at: null
   analysis:
-    status: not_started
-    started_at: null
+    status: in_progress
+    started_at: "2026-04-03"
     completed_at: null
   writing:
     status: not_started
@@ -49,12 +49,21 @@ sections:
     status: not_started
 
 # 图表进度
-figures: {}
-  # 示例:
-  # fig_01_overview:
-  #   status: completed      # planned | in_progress | completed
-  #   path: "pipeline/figures/fig_01_overview.pdf"
-  #   section: "01-introduction"
+figures:
+  total_collected: 24
+  ch1: 1
+  ch3: 5
+  ch4: 13
+  ch5: 5
+  adaptation_status: "已收集原始PDF，待中文化标签"
+  meta_files_generated: true
+
+# 表格进度
+tables:
+  total_generated: 7
+  ch3: 3  # knowledge_base, encryption_libraries, rq_llm
+  ch5: 4  # effectiveness, generalizability, adversarial, ablation
+  adaptation_status: "已转换基础格式，\\tool替换为PolarCatch"
 
 # 文献进度
 literature:

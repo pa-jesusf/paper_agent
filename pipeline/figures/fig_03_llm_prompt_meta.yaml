@@ -1,0 +1,10 @@
+adaptation_needed:
+- 中文坐标轴标签
+- 全宽6.0in
+- 图3-X编号
+caption_en: LLM Three-stage Identification Prompt Design
+caption_zh: LLM三阶段识别提示词设计
+chapter: 3
+format: pdf
+name: fig_03_llm_prompt
+source: data\raw\paper\fig\prompt.pdf

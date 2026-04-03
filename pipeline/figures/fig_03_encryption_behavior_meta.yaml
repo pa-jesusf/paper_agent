@@ -1,0 +1,10 @@
+adaptation_needed:
+- 中文坐标轴标签
+- 全宽6.0in
+- 图3-X编号
+caption_en: Encryption Behavior Analysis Example
+caption_zh: 加密行为分析示例
+chapter: 3
+format: pdf
+name: fig_03_encryption_behavior
+source: data\raw\paper\fig\encryption_behavior.pdf

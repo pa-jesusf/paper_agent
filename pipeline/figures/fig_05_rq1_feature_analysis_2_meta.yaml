@@ -1,0 +1,10 @@
+adaptation_needed:
+- 中文坐标轴标签
+- 全宽6.0in
+- 图5-X编号
+caption_en: RQ1 Feature Analysis Figure 2
+caption_zh: RQ1特征分析图（二）
+chapter: 5
+format: pdf
+name: fig_05_rq1_feature_analysis_2
+source: data\raw\evaluation\RQ1\Fig5.pdf
