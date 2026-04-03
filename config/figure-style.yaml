@@ -50,5 +50,8 @@ table_style:
   second_best: "underline"       # 次优值下划线
   caption_position: "above"      # 表标题在表格上方
   numbering: "by-chapter"        # 按章编号：表X-Y
+  ablation_delta: true           # 消融表格标注 ΔF1/Δ指标绝对值变化
+  comparison_baselines: true     # 对比表格必须包含基线+本方法+变体
+  no_vertical_lines: true        # 严禁纵向分界线
 
 figure_numbering: "by-chapter"   # 按章编号：图X-Y

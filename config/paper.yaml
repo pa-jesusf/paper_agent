@@ -57,6 +57,33 @@ meta:
     - "Graph Neural Network"
     - "Large Language Model"
 
+# 参考文献要求
+references:
+  min_count: 60                  # 硕士论文参考文献不少于60篇
+  foreign_ratio: 0.40            # 外文文献占比不低于40%
+  format: "GB/T 7714-2015"       # 顺序编码制
+  require_recent: true           # 必须包含近三年顶级会议/期刊
+  require_classic: true          # 必须涵盖经典文献
+
+# 后置部分结构
+back_matter:
+  acknowledgment:
+    structure:                   # 致谢情感递进结构
+      - "导师致谢（庄重）：选题指导、治学态度"
+      - "团队致谢（务实）：同门实验与论文讨论"
+      - "资助致谢（严谨）：科研基金项目编号"
+      - "家人致谢（温情）：默默付出与精神后盾"
+  resume:
+    sections:                    # 个人简历模块化
+      - "教育背景"
+      - "已发表/投稿论文（标注排名及收录级别）"
+      - "专利"
+      - "参与项目"
+  appendices:
+    - "附录A：知识库完整条目表"
+    - "附录B：13个开源加密库算法覆盖矩阵"
+    - "附录C：检测覆盖率Venn图"
+
 # 核心投稿论文（本毕业论文基于此论文扩展）
 source_paper:
   title: "Mind the Blind Spots: Proactively Detecting Dormant Ransomware via Statically-Extracted Offensive and Defensive Actions"

@@ -3,6 +3,20 @@
 
 current_phase: analysis  # init | research | analysis | writing | review | final
 
+# 写作规范状态
+style_guide:
+  status: completed
+  version: "v2_full_rewrite"
+  updated_at: "2026-04-03"
+  sections_count: 18
+  note: "基于用户提供的完整写作范式规范全面重写，涵盖CARS模型、实验评估体系、禁止清单、LLM参数化等"
+
+config_sync:
+  style_guide_md: completed  # 18节完整写作范式
+  paper_yaml: completed      # 新增参考文献要求(≥60/外文≥40%)+后置部分结构
+  figure_style_yaml: completed  # 新增消融表ΔF1、对比表基线、禁纵线等
+  outline_md: completed      # 新增章首衔接注释+致谢/个人简历
+
 phases:
   init:
     status: completed
