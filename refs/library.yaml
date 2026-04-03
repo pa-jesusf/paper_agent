@@ -4,37 +4,2418 @@
 # 此文件是参考文献管理的核心数据源。
 # paper/references.bib 由 tools/bib_manager.py 从此文件自动同步生成。
 # Agent 在引用文献时必须先搜索此文件。
+# 来源: data/raw/paper/references.bib (151 条)
 
-references: []
+references:
+- citekey: statista
+  title: Share of financial organizations worldwide hit by ransomware attacks from 2021 to 2024
+  authors:
+  - statista
+  year: null
+  venue: ''
+  bibtex: '@misc{statista,
 
-# 示例条目:
-# references:
-#   - citekey: "vaswani2017attention"
-#     title: "Attention Is All You Need"
-#     authors: ["Vaswani, A.", "Shazeer, N.", "Parmar, N."]
-#     year: 2017
-#     venue: "NeurIPS"
-#     doi: "10.48550/arXiv.1706.03762"
-#
-#     abstract_summary: >
-#       提出 Transformer 架构，完全基于注意力机制，
-#       摒弃了 RNN/CNN，在机器翻译任务上取得 SOTA。
-#     relevance: >
-#       本文方法的基础架构。在 Method 和 Related Work 中必须引用。
-#     tags: ["transformer", "attention", "architecture"]
-#
-#     key_quotes:
-#       - id: "q1"
-#         text: "The Transformer is the first transduction model..."
-#         page: 2
-#         context: "架构创新点的核心声明"
-#
-#     pdf_path: "refs/pdfs/vaswani2017attention.pdf"
-#
-#     bibtex: |
-#       @inproceedings{vaswani2017attention,
-#         title={Attention is all you need},
-#         author={Vaswani, Ashish and Shazeer, Noam},
-#         booktitle={NeurIPS},
-#         year={2017}
-#       }
+    author = {statista},
+
+    title = {Share of financial organizations worldwide hit by ransomware attacks from 2021 to 2024},
+
+    note = {\url{https://www.statista.com/statistics/1460896/rate-ransomware-attacks-global/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: packing2
+  title: 'Obfuscated Files or Information: Software Packing'
+  authors:
+  - mitre
+  year: null
+  venue: ''
+  bibtex: '@misc{packing2,
+
+    author = {mitre},
+
+    title = {Obfuscated Files or Information: Software Packing},
+
+    note = {\url{https://attack.mitre.org/techniques/T1027/002/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: fsscaling
+  title: Feature Scaling
+  authors:
+  - wikipedia
+  year: null
+  venue: ''
+  bibtex: '@misc{fsscaling,
+
+    author = {wikipedia},
+
+    title = {Feature Scaling},
+
+    note = {\url{https://en.wikipedia.org/wiki/Feature\_scaling}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: abuse
+  title: MalwareBazaar
+  authors:
+  - abuse
+  year: null
+  venue: ''
+  bibtex: '@misc{abuse,
+
+    author = {abuse},
+
+    title = {MalwareBazaar},
+
+    note = {\url{https://bazaar.abuse.ch/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: die
+  title: Detect It Easy (DiE)
+  authors:
+  - GitHub
+  year: null
+  venue: ''
+  bibtex: '@misc{die,
+
+    author = {GitHub},
+
+    title = {Detect It Easy (DiE)},
+
+    note = {\url{https://github.com/horsicq/Detect-It-Easy}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: virusshare
+  title: VirusShare.com
+  authors:
+  - virusshare
+  year: null
+  venue: ''
+  bibtex: '@misc{virusshare,
+
+    author = {virusshare},
+
+    title = {VirusShare.com},
+
+    note = {\url{https://virusshare.com/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: pefile
+  title: pefile
+  authors:
+  - GitHub
+  year: null
+  venue: ''
+  bibtex: '@misc{pefile,
+
+    author = {GitHub},
+
+    title = {pefile},
+
+    note = {\url{https://github.com/erocarrera/pefile}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: cyfirma
+  title: cyfirma
+  authors:
+  - cyfirma
+  year: null
+  venue: ''
+  bibtex: '@misc{cyfirma,
+
+    author = {cyfirma},
+
+    title = {cyfirma},
+
+    note = {\url{https://www.cyfirma.com/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: anti_analysis
+  title: 'GitHub Topics: anti-analysis'
+  authors:
+  - GitHub
+  year: null
+  venue: ''
+  bibtex: '@misc{anti_analysis,
+
+    author = {GitHub},
+
+    title = {GitHub Topics: anti-analysis},
+
+    note = {\url{https://github.com/topics/anti-analysis}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: sopost
+  title: Detect virtualized OS from an application?
+  authors:
+  - StackOverflow
+  year: null
+  venue: ''
+  bibtex: '@misc{sopost,
+
+    author = {StackOverflow},
+
+    title = {Detect virtualized OS from an application?},
+
+    note = {\url{https://stackoverflow.com/questions/154163/detect-virtualized-os-from-an-application}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: maaten2008visualizing
+  title: Visualizing data using t-SNE
+  authors:
+  - Maaten, Laurens van der
+  - Hinton, Geoffrey
+  year: 2008
+  venue: Journal of machine learning research
+  bibtex: "@article{maaten2008visualizing,\ntitle={Visualizing data using t-SNE},\n  author={Maaten, Laurens van der and Hinton,\
+    \ Geoffrey},\n  journal={Journal of machine learning research},\n  volume={9},\n  number={Nov},\n  pages={2579--2605},\n\
+    \  year={2008}\n}"
+  tags: []
+  key_quotes: []
+- citekey: rsaparam
+  title: Common RSA parameters
+  authors:
+  - openssl
+  year: null
+  venue: ''
+  bibtex: '@misc{rsaparam,
+
+    author = {openssl},
+
+    title = {Common RSA parameters},
+
+    note = {\url{https://docs.openssl.org/master/man7/EVP\_PKEY-RSA/\#common-rsa-parameters}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: mannw
+  title: Mann--Whitney U test
+  authors:
+  - Wikipedia
+  year: null
+  venue: ''
+  bibtex: "@misc{mannw,\nauthor = {Wikipedia},\n  title = {Mann--Whitney U test},\n  note = {\\url{https://en.wikipedia.org/wiki/Mann-Whitney_U_test}},\n\
+    \  year = {2025},\n}"
+  tags: []
+  key_quotes: []
+- citekey: Openstd
+  title: Open Std
+  authors:
+  - Openstd
+  year: null
+  venue: ''
+  bibtex: '@misc{Openstd,
+
+    author = {Openstd},
+
+    title = {Open Std},
+
+    note = {\url{https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1548.pdf}},
+
+    year = {2025},
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: compression
+  title: Torisma used Compression
+  authors:
+  - mitre
+  year: null
+  venue: ''
+  bibtex: '@misc{compression,
+
+    author = {mitre},
+
+    title = {Torisma used Compression},
+
+    note = {\url{https://attack.mitre.org/software/S0678/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: encryptionex
+  title: LiteDuke used Encryption
+  authors:
+  - mitre
+  year: null
+  venue: ''
+  bibtex: '@misc{encryptionex,
+
+    author = {mitre},
+
+    title = {LiteDuke used Encryption},
+
+    note = {\url{https://attack.mitre.org/software/S0513/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: konni
+  title: KONNI used Obfuscation
+  authors:
+  - mitre
+  year: null
+  venue: ''
+  bibtex: '@misc{konni,
+
+    author = {mitre},
+
+    title = {KONNI used Obfuscation},
+
+    note = {\url{https://attack.mitre.org/software/S0356/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: node4
+  title: Why Ransomware Now Hides in your Systems for Months
+  authors:
+  - node4
+  year: null
+  venue: ''
+  bibtex: '@misc{node4,
+
+    author = {node4},
+
+    title = {Why Ransomware Now Hides in your Systems for Months},
+
+    note = {\url{https://node4.co.uk/blog/why-ransomware-now-hides-in-your-systems-for-months/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: blackfog
+  title: 5 Reasons Why Ransomware Gangs Go Dormant and Re-Emerge
+  authors:
+  - blackfog
+  year: null
+  venue: ''
+  bibtex: '@misc{blackfog,
+
+    author = {blackfog},
+
+    title = {5 Reasons Why Ransomware Gangs Go Dormant and Re-Emerge},
+
+    note = {\url{https://www.blackfog.com/5-reasons-why-ransomware-gangs-go-dormant-and-re-emerge/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: ransomware_how_prevent
+  title: 'Ransomware: How to prevent and recover (ITSAP.00.099)'
+  authors:
+  - cyber.gc.ca
+  year: null
+  venue: ''
+  bibtex: '@misc{ransomware_how_prevent,
+
+    author = {cyber.gc.ca},
+
+    title = {Ransomware: How to prevent and recover (ITSAP.00.099)},
+
+    note = {\url{https://www.cyber.gc.ca/en/guidance/ransomware-how-prevent-and-recover-itsap00099}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: levelupmsp
+  title: How Long Can Ransomware Lay Dormant?
+  authors:
+  - levelupmsp
+  year: null
+  venue: ''
+  bibtex: '@misc{levelupmsp,
+
+    author = {levelupmsp},
+
+    title = {How Long Can Ransomware Lay Dormant?},
+
+    note = {\url{https://www.levelupmsp.com/how-long-can-ransomware-lay-dormant/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: cyberdivision
+  title: 'Dormant Malware: The Silent Threat'
+  authors:
+  - cyberdivision
+  year: null
+  venue: ''
+  bibtex: '@misc{cyberdivision,
+
+    author = {cyberdivision},
+
+    title = {Dormant Malware: The Silent Threat},
+
+    note = {\url{https://cyberdivision.co.uk/dormant-malware-the-silent-threat/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: trendmicro
+  title: Preventing Ransomware Attacks
+  authors:
+  - trendmicro
+  year: null
+  venue: ''
+  bibtex: '@misc{trendmicro,
+
+    author = {trendmicro},
+
+    title = {Preventing Ransomware Attacks},
+
+    note = {\url{https://www.trendmicro.com/en\_hk/what-is/ransomware/how-to-prevent.html}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: cryptosense
+  title: Replication Package of CryptoSense
+  authors:
+  - anonymous
+  year: null
+  venue: ''
+  bibtex: '@misc{cryptosense,
+
+    author = {anonymous},
+
+    title = {Replication Package of CryptoSense},
+
+    note = {\url{https://anonymous.4open.science/r/Artifact-for-replication-0134}},
+
+    year = {2026}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: samplesize
+  title: Sample Size Calculator
+  authors:
+  - surveysystem
+  year: null
+  venue: ''
+  bibtex: '@misc{samplesize,
+
+    author = {surveysystem},
+
+    title = {Sample Size Calculator},
+
+    note = {\url{https://www.surveysystem.com/sscalc.htm}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: wannacry
+  title: WannaCry ransomware attack
+  authors:
+  - wikipedia
+  year: null
+  venue: ''
+  bibtex: '@misc{wannacry,
+
+    author = {wikipedia},
+
+    title = {WannaCry ransomware attack},
+
+    note = {\url{https://en.wikipedia.org/wiki/WannaCry\\_ransomware\_attack}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: slcyber
+  title: 'Ransomware in H1 2024: Trends From The Dark Web'
+  authors:
+  - slcyber
+  year: null
+  venue: ''
+  bibtex: '@misc{slcyber,
+
+    author = {slcyber},
+
+    title = {Ransomware in H1 2024: Trends From The Dark Web},
+
+    note = {\url{https://slcyber.io/whitepapers-reports/ransomware-in-h1-2024-trends-from-the-dark-web/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: aids
+  title: AIDS (Trojan horse)
+  authors:
+  - wikipedia
+  year: null
+  venue: ''
+  bibtex: '@misc{aids,
+
+    author = {wikipedia},
+
+    title = {AIDS (Trojan horse)},
+
+    note = {\url{https://en.wikipedia.org/wiki/AIDS\_(Trojan_horse)}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: ransomhis
+  title: A Brief History of Ransomware
+  authors:
+  - varonis
+  year: null
+  venue: ''
+  bibtex: '@misc{ransomhis,
+
+    author = {varonis},
+
+    title = {A Brief History of Ransomware},
+
+    note = {\url{https://www.varonis.com/blog/a-brief-history-of-ransomware}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: whyransomwarepopular
+  title: WHY IS RANSOMWARE STILL A POPULAR ATTACK TECHNIQUE?
+  authors:
+  - slcyber
+  year: null
+  venue: ''
+  bibtex: '@misc{whyransomwarepopular,
+
+    author = {slcyber},
+
+    title = {WHY IS RANSOMWARE STILL A POPULAR ATTACK TECHNIQUE?},
+
+    note = {\url{https://slcyber.io/blog/why-is-ransomware-still-a-popular-attack-technique/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: archiveus2006
+  title: Archiveus
+  authors:
+  - wikipedia
+  year: null
+  venue: ''
+  bibtex: '@misc{archiveus2006,
+
+    author = {wikipedia},
+
+    title = {Archiveus},
+
+    note = {\url{https://en.wikipedia.org/wiki/Archiveus}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: gpcode2006
+  title: GPcode Ransomware
+  authors:
+  - knowbe4
+  year: null
+  venue: ''
+  bibtex: '@misc{gpcode2006,
+
+    author = {knowbe4},
+
+    title = {GPcode Ransomware},
+
+    note = {\url{https://www.knowbe4.com/gpcode}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: CryptoLocker
+  title: CryptoLocker
+  authors:
+  - wikipedia
+  year: null
+  venue: ''
+  bibtex: '@misc{CryptoLocker,
+
+    author = {wikipedia},
+
+    title = {CryptoLocker},
+
+    note = {\url{https://en.wikipedia.org/wiki/CryptoLocker}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: cryptowall40
+  title: CryptoWall 4.0 update - is this the revival of ransomware?
+  authors:
+  - onsitehelper
+  year: null
+  venue: ''
+  bibtex: '@misc{cryptowall40,
+
+    author = {onsitehelper},
+
+    title = {CryptoWall 4.0 update - is this the revival of ransomware?},
+
+    note = {\url{https://onsitehelper.com/cryptowall-4-0-update-is-this-the-revival-of-ransomware/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: ciip
+  title: 'Threat Assessment: Clop Ransomware'
+  authors:
+  - paloaltonetworks
+  year: null
+  venue: ''
+  bibtex: '@misc{ciip,
+
+    author = {paloaltonetworks},
+
+    title = {Threat Assessment: Clop Ransomware},
+
+    note = {\url{https://unit42.paloaltonetworks.com/clop-ransomware/}},
+
+    year = {2026}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: lowlevel04
+  title: LOWLEVEL04 RANSOMWARE EXPLOITS REMOTE DESKTOP TO SPREAD
+  authors:
+  - securityaffairs
+  year: null
+  venue: ''
+  bibtex: '@misc{lowlevel04,
+
+    author = {securityaffairs},
+
+    title = {LOWLEVEL04 RANSOMWARE EXPLOITS REMOTE DESKTOP TO SPREAD},
+
+    note = {\url{https://securityaffairs.com/41320/cyber-crime/lowlevel04-ransomware-remote-desktop.html}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: CryptoBlocker
+  title: CryptoBlocker
+  authors:
+  - knowbe4
+  year: null
+  venue: ''
+  bibtex: '@misc{CryptoBlocker,
+
+    author = {knowbe4},
+
+    title = {CryptoBlocker},
+
+    note = {\url{https://www.knowbe4.com/cryptoblocker}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: CryptorBit
+  title: CryptorBit Ransomware
+  authors:
+  - knowbe4
+  year: null
+  venue: ''
+  bibtex: '@misc{CryptorBit,
+
+    author = {knowbe4},
+
+    title = {CryptorBit Ransomware},
+
+    note = {\url{https://www.knowbe4.com/cryptorbit-ransomware}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: packing
+  title: What is Code packing?
+  authors:
+  - reasonlabs
+  year: null
+  venue: ''
+  bibtex: '@misc{packing,
+
+    author = {reasonlabs},
+
+    title = {What is Code packing?},
+
+    note = {\url{https://cyberpedia.reasonlabs.com/EN/code\%20packing.html}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: eternalblue
+  title: EternalBlue
+  authors:
+  - wikipedia
+  year: null
+  venue: ''
+  bibtex: '@misc{eternalblue,
+
+    author = {wikipedia},
+
+    title = {EternalBlue},
+
+    note = {\url{https://en.wikipedia.org/wiki/EternalBlue}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: wannacry2
+  title: WCry Ransomware Analysis
+  authors:
+  - secureworks
+  year: null
+  venue: ''
+  bibtex: '@misc{wannacry2,
+
+    author = {secureworks},
+
+    title = {WCry Ransomware Analysis},
+
+    note = {\url{https://www.secureworks.com/research/wcry-ransomware-analysis}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: idapro
+  title: IDA Pro A powerful disassembler, decompiler and a versatile debugger. In one tool.
+  authors:
+  - hex-rays
+  year: null
+  venue: ''
+  bibtex: '@misc{idapro,
+
+    author = {hex-rays},
+
+    title = {IDA Pro A powerful disassembler, decompiler and a versatile debugger. In one tool.},
+
+    note = {\url{https://hex-rays.com/ida-pro}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: ghidra
+  title: A software reverse engineering (SRE) suite of tools developed by NSA's Research Directorate in support of the Cybersecurity
+    mission
+  authors:
+  - NSA's Research Directorate
+  year: null
+  venue: ''
+  bibtex: '@misc{ghidra,
+
+    author = {NSA''s Research Directorate},
+
+    title = {A software reverse engineering (SRE) suite of tools developed by NSA''s Research Directorate in support of the
+    Cybersecurity mission},
+
+    note = {\url{https://ghidra-sre.org/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: Symmetric
+  title: Symmetric-key algorithm
+  authors:
+  - wikipedia
+  year: null
+  venue: ''
+  bibtex: '@misc{Symmetric,
+
+    author = {wikipedia},
+
+    title = {Symmetric-key algorithm},
+
+    note = {\url{https://en.wikipedia.org/wiki/Symmetric-key\_algorithm}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: Publickeycryptography
+  title: Public-key cryptography
+  authors:
+  - wikipedia
+  year: null
+  venue: ''
+  bibtex: '@misc{Publickeycryptography,
+
+    author = {wikipedia},
+
+    title = {Public-key cryptography},
+
+    note = {\url{https://en.wikipedia.org/wiki/Public-key\_cryptography}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: Comparisonofcryptographylibraries
+  title: Comparison of cryptography libraries
+  authors:
+  - wikipedia
+  year: null
+  venue: ''
+  bibtex: '@misc{Comparisonofcryptographylibraries,
+
+    author = {wikipedia},
+
+    title = {Comparison of cryptography libraries},
+
+    note = {\url{https://en.wikipedia.org/wiki/Public-key\_cryptography}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: cicala2020analysis
+  title: Analysis of encryption key generation in modern crypto ransomware
+  authors:
+  - Cicala, Fabrizio
+  - Bertino, Elisa
+  year: 2020
+  venue: IEEE Transactions on Dependable and Secure Computing
+  bibtex: "@article{cicala2020analysis,\ntitle={Analysis of encryption key generation in modern crypto ransomware},\n  author={Cicala,\
+    \ Fabrizio and Bertino, Elisa},\n  journal={IEEE Transactions on Dependable and Secure Computing},\n  volume={19},\n \
+    \ number={2},\n  pages={1239--1253},\n  year={2020},\n  publisher={IEEE}\n}"
+  tags: []
+  key_quotes: []
+- citekey: schultz2000data
+  title: Data mining methods for detection of new malicious executables
+  authors:
+  - Schultz, Matthew G
+  - Eskin, Eleazar
+  - Zadok, F
+  - Stolfo, Salvatore J
+  year: 2000
+  venue: Proceedings 2001 IEEE Symposium on Security and Privacy. S\&P 2001
+  bibtex: "@inproceedings{schultz2000data,\ntitle={Data mining methods for detection of new malicious executables},\n  author={Schultz,\
+    \ Matthew G and Eskin, Eleazar and Zadok, F and Stolfo, Salvatore J},\n  booktitle={Proceedings 2001 IEEE Symposium on\
+    \ Security and Privacy. S\\&P 2001},\n  pages={38--49},\n  year={2000},\n}"
+  tags: []
+  key_quotes: []
+- citekey: openssl
+  title: OpenSSL
+  authors:
+  - openssl
+  year: null
+  venue: ''
+  bibtex: '@misc{openssl,
+
+    author = {openssl},
+
+    title = {OpenSSL},
+
+    note = {\url{https://www.openssl.org/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: cryptopp
+  title: Crypto++
+  authors:
+  - Crypto++
+  year: null
+  venue: ''
+  bibtex: '@misc{cryptopp,
+
+    author = {Crypto++},
+
+    title = {Crypto++},
+
+    note = {\url{https://www.cryptopp.com/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: libsodium
+  title: libsodium
+  authors:
+  - libsodium
+  year: null
+  venue: ''
+  bibtex: '@misc{libsodium,
+
+    author = {libsodium},
+
+    title = {libsodium},
+
+    note = {\url{https://doc.libsodium.org/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: libressl
+  title: LibreSSL
+  authors:
+  - LibreSSL
+  year: null
+  venue: ''
+  bibtex: '@misc{libressl,
+
+    author = {LibreSSL},
+
+    title = {LibreSSL},
+
+    note = {\url{https://www.libressl.org/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: boringssl
+  title: BoringSSL
+  authors:
+  - BoringSSL
+  year: null
+  venue: ''
+  bibtex: '@misc{boringssl,
+
+    author = {BoringSSL},
+
+    title = {BoringSSL},
+
+    note = {\url{https://boringssl.googlesource.com/boringssl}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: botan
+  title: Botan
+  authors:
+  - Botan
+  year: null
+  venue: ''
+  bibtex: '@misc{botan,
+
+    author = {Botan},
+
+    title = {Botan},
+
+    note = {\url{https://botan.randombit.net/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: mbedtls
+  title: MbedTLS
+  authors:
+  - MbedTLS
+  year: null
+  venue: ''
+  bibtex: '@misc{mbedtls,
+
+    author = {MbedTLS},
+
+    title = {MbedTLS},
+
+    note = {\url{https://www.trustedfirmware.org/projects/mbed\-tls/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: wolfssl
+  title: WolfSSL
+  authors:
+  - WolfSSL
+  year: null
+  venue: ''
+  bibtex: '@misc{wolfssl,
+
+    author = {WolfSSL},
+
+    title = {WolfSSL},
+
+    note = {\url{https://www.wolfssl.com/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: buymeacoffee
+  title: Detecting an Obfuscated PE Executable Using Entropy Analysis
+  authors:
+  - buymeacoffee
+  year: null
+  venue: ''
+  bibtex: '@misc{buymeacoffee,
+
+    author = {buymeacoffee},
+
+    title = {Detecting an Obfuscated PE Executable Using Entropy Analysis},
+
+    note = {\url{https://buymeacoffee.com/cyberwarzone/detecting-obfuscated-pe-executable-using-entropy-analysis}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: libtomcrypt
+  title: LibTomCrypt
+  authors:
+  - LibTomCrypt
+  year: null
+  venue: ''
+  bibtex: '@misc{libtomcrypt,
+
+    author = {LibTomCrypt},
+
+    title = {LibTomCrypt},
+
+    note = {\url{https://www.libtom.net/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: ring
+  title: Ring
+  authors:
+  - Ring
+  year: null
+  venue: ''
+  bibtex: '@misc{ring,
+
+    author = {Ring},
+
+    title = {Ring},
+
+    note = {\url{https://github.com/briansmith/ring}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: gmssl
+  title: GmSSL
+  authors:
+  - GmSSL
+  year: null
+  venue: ''
+  bibtex: '@misc{gmssl,
+
+    author = {GmSSL},
+
+    title = {GmSSL},
+
+    note = {\url{http://gmssl.org/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: cryptlib
+  title: Cryptlib
+  authors:
+  - Cryptlib
+  year: null
+  venue: ''
+  bibtex: '@misc{cryptlib,
+
+    author = {Cryptlib},
+
+    title = {Cryptlib},
+
+    note = {\url{https://cs.auckland.ac.nz/~pgut001/cryptlib/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: gnutls
+  title: GnuTLS
+  authors:
+  - GnuTLS
+  year: null
+  venue: ''
+  bibtex: '@misc{gnutls,
+
+    author = {GnuTLS},
+
+    title = {GnuTLS},
+
+    note = {\url{https://github.com/gnutls/gnutls}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: malunpack
+  title: mal\_unpack
+  authors:
+  - hasherezade, Thomas Roccia
+  year: null
+  venue: ''
+  bibtex: '@misc{malunpack,
+
+    author = {hasherezade, Thomas Roccia},
+
+    title = {mal\_unpack},
+
+    note = {\url{https://github.com/hasherezade/mal\_unpack/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: filemanagementfunctions
+  title: File Management Functions
+  authors:
+  - Microsoft
+  year: null
+  venue: ''
+  bibtex: '@misc{filemanagementfunctions,
+
+    author = {Microsoft},
+
+    title = {File Management Functions},
+
+    note = {\url{https://learn.microsoft.com/en-us/windows/win32/fileio/file-management-functions/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: cryptography
+  title: Cryptography
+  authors:
+  - Microsoft
+  year: null
+  venue: ''
+  bibtex: '@misc{cryptography,
+
+    author = {Microsoft},
+
+    title = {Cryptography},
+
+    note = {\url{https://learn.microsoft.com/en-us/windows/win32/seccrypto/cryptography-portal/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: cng
+  title: 'Cryptography API: Next Generation'
+  authors:
+  - Microsoft
+  year: null
+  venue: ''
+  bibtex: '@misc{cng,
+
+    author = {Microsoft},
+
+    title = {Cryptography API: Next Generation},
+
+    note = {\url{https://learn.microsoft.com/en-us/windows/win32/seccng/cng-portal}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: dike
+  title: DikeDataset
+  authors:
+  - iosifache
+  year: null
+  venue: ''
+  bibtex: '@misc{dike,
+
+    author = {iosifache},
+
+    title = {DikeDataset},
+
+    note = {\url{https://github.com/iosifache/DikeDataset/tree/main}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: cisa
+  title: America's Cyber Defense Agency
+  authors:
+  - Cybersecurity
+  - Infrastructure Security Agency
+  year: null
+  venue: ''
+  bibtex: '@misc{cisa,
+
+    author = {Cybersecurity and Infrastructure Security Agency},
+
+    title = {America''s Cyber Defense Agency},
+
+    note = {\url{https://www.cisa.gov/}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: embedding
+  title: text-embedding-3-large
+  authors:
+  - OpenAI
+  year: null
+  venue: ''
+  bibtex: '@misc{embedding,
+
+    author = {OpenAI},
+
+    title = {text-embedding-3-large},
+
+    note = {\url{https://platform.openai.com/docs/models/text-embedding-3-large}},
+
+    year = {2025}
+
+    }'
+  tags: []
+  key_quotes: []
+- citekey: abou2004n
+  title: N-gram-based detection of new malicious code
+  authors:
+  - Abou-Assaleh, Tony
+  - Cercone, Nick
+  - Keselj, Vlado
+  - Sweidan, Ray
+  year: 2004
+  venue: Proceedings of the 28th Annual International Computer Software and Applications Conference, 2004. COMPSAC 2004.
+  bibtex: "@inproceedings{abou2004n,\ntitle={N-gram-based detection of new malicious code},\n  author={Abou-Assaleh, Tony\
+    \ and Cercone, Nick and Keselj, Vlado and Sweidan, Ray},\n  booktitle={Proceedings of the 28th Annual International Computer\
+    \ Software and Applications Conference, 2004. COMPSAC 2004.},\n  volume={2},\n  pages={41--42},\n  year={2004},\n}"
+  tags: []
+  key_quotes: []
+- citekey: arp2014drebin
+  title: 'Drebin: Effective and explainable detection of android malware in your pocket.'
+  authors:
+  - Arp, Daniel
+  - Spreitzenbarth, Michael
+  - Hubner, Malte
+  - Gascon, Hugo
+  - Rieck, Konrad
+  year: 2014
+  venue: Ndss
+  bibtex: "@inproceedings{arp2014drebin,\ntitle={Drebin: Effective and explainable detection of android malware in your pocket.},\n\
+    \  author={Arp, Daniel and Spreitzenbarth, Michael and Hubner, Malte and Gascon, Hugo and Rieck, Konrad and Siemens, CERT},\n\
+    \  booktitle={Ndss},\n  volume={14},\n  number={1},\n  pages={23--26},\n  year={2014}\n}"
+  tags: []
+  key_quotes: []
+- citekey: raff2017learning
+  title: Learning the pe header, malware detection with minimal domain knowledge
+  authors:
+  - Raff, Edward
+  - Sylvester, Jared
+  - Nicholas, Charles
+  year: 2017
+  venue: Proceedings of the 10th ACM Workshop on Artificial Intelligence and Security
+  bibtex: "@inproceedings{raff2017learning,\ntitle={Learning the pe header, malware detection with minimal domain knowledge},\n\
+    \  author={Raff, Edward and Sylvester, Jared and Nicholas, Charles},\n  booktitle={Proceedings of the 10th ACM Workshop\
+    \ on Artificial Intelligence and Security},\n  pages={121--132},\n  year={2017}\n}"
+  tags: []
+  key_quotes: []
+- citekey: lyda2007using
+  title: Using entropy analysis to find encrypted and packed malware
+  authors:
+  - Lyda, Robert
+  - Hamrock, James
+  year: 2007
+  venue: IEEE Security \& Privacy
+  bibtex: "@article{lyda2007using,\ntitle={Using entropy analysis to find encrypted and packed malware},\n  author={Lyda,\
+    \ Robert and Hamrock, James},\n  journal={IEEE Security \\& Privacy},\n  volume={5},\n  number={2},\n  pages={40--45},\n\
+    \  year={2007},\n}"
+  tags: []
+  key_quotes: []
+- citekey: masud2008scalable
+  title: A scalable multi-level feature extraction technique to detect malicious executables
+  authors:
+  - Masud, Mohammad M
+  - Khan, Latifur
+  - Thuraisingham, Bhavani
+  year: 2008
+  venue: Information Systems Frontiers
+  bibtex: "@article{masud2008scalable,\ntitle={A scalable multi-level feature extraction technique to detect malicious executables},\n\
+    \  author={Masud, Mohammad M and Khan, Latifur and Thuraisingham, Bhavani},\n  journal={Information Systems Frontiers},\n\
+    \  volume={10},\n  pages={33--45},\n  year={2008},\n}"
+  tags: []
+  key_quotes: []
+- citekey: catanzaro2018malware
+  title: Malware Detection by Eating a Whole EXE
+  authors:
+  - Catanzaro, Bryan
+  - Nicholas, Charles
+  year: 2018
+  venue: ''
+  bibtex: "@article{catanzaro2018malware,\ntitle={Malware Detection by Eating a Whole EXE},\n  author={Catanzaro, Bryan and\
+    \ Nicholas, Charles},\n  year={2018}\n}"
+  tags: []
+  key_quotes: []
+- citekey: krvcal2018deep
+  title: Deep convolutional malware classifiers can learn from raw executables and labels only
+  authors:
+  - Kr{\v{c
+  year: 2018
+  venue: ''
+  bibtex: "@article{krvcal2018deep,\ntitle={Deep convolutional malware classifiers can learn from raw executables and labels\
+    \ only},\n  author={Kr{\\v{c}}{\\'a}l, Marek and {\\v{S}}vec, Ond{\\v{r}}ej and B{\\'a}lek, Martin and Ja{\\v{s}}ek, Otakar},\n\
+    \  year={2018}\n}"
+  tags: []
+  key_quotes: []
+- citekey: dambra2023decoding
+  title: 'Decoding the secrets of machine learning in malware classification: A deep dive into datasets, feature extraction,
+    and model performance'
+  authors:
+  - Dambra, Savino
+  - Han, Yufei
+  - Aonzo, Simone
+  - Kotzias, Platon
+  - Vitale, Antonino
+  year: 2023
+  venue: Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security
+  bibtex: "@inproceedings{dambra2023decoding,\ntitle={Decoding the secrets of machine learning in malware classification:\
+    \ A deep dive into datasets, feature extraction, and model performance},\n  author={Dambra, Savino and Han, Yufei and\
+    \ Aonzo, Simone and Kotzias, Platon and Vitale, Antonino and Caballero, Juan and Balzarotti, Davide and Bilge, Leyla},\n\
+    \  booktitle={Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security},\n  pages={60--74},\n\
+    \  year={2023}\n}"
+  tags: []
+  key_quotes: []
+- citekey: li2023packgenome
+  title: 'PackGenome: Automatically generating robust YARA rules for accurate malware packer detection'
+  authors:
+  - Li, Shijia
+  - Ming, Jiang
+  - Qiu, Pengda
+  - Chen, Qiyuan
+  - Liu, Lanqing
+  year: 2023
+  venue: Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security
+  bibtex: "@inproceedings{li2023packgenome,\ntitle={PackGenome: Automatically generating robust YARA rules for accurate malware\
+    \ packer detection},\n  author={Li, Shijia and Ming, Jiang and Qiu, Pengda and Chen, Qiyuan and Liu, Lanqing and Bao,\
+    \ Huaifeng and Wang, Qiang and Jia, Chunfu},\n  booktitle={Proceedings of the 2023 ACM SIGSAC Conference on Computer and\
+    \ Communications Security},\n  pages={3078--3092},\n  year={2023}\n}"
+  tags: []
+  key_quotes: []
+- citekey: dodia2022exposing
+  title: 'Exposing the rat in the tunnel: Using traffic analysis for tor-based malware detection'
+  authors:
+  - Dodia, Priyanka
+  - AlSabah, Mashael
+  - Alrawi, Omar
+  - Wang, Tao
+  year: 2022
+  venue: Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security
+  bibtex: "@inproceedings{dodia2022exposing,\ntitle={Exposing the rat in the tunnel: Using traffic analysis for tor-based\
+    \ malware detection},\n  author={Dodia, Priyanka and AlSabah, Mashael and Alrawi, Omar and Wang, Tao},\n  booktitle={Proceedings\
+    \ of the 2022 ACM SIGSAC Conference on Computer and Communications Security},\n  pages={875--889},\n  year={2022}\n}"
+  tags: []
+  key_quotes: []
+- citekey: cheng2018towards
+  title: 'Towards paving the way for large-scale windows malware analysis: Generic binary unpacking with orders-of-magnitude
+    performance boost'
+  authors:
+  - Cheng, Binlin
+  - Ming, Jiang
+  - Fu, Jianmin
+  - Peng, Guojun
+  - Chen, Ting
+  year: 2018
+  venue: Proceedings of the 2018 ACM SIGSAC Conference on Computer and Communications Security
+  bibtex: "@inproceedings{cheng2018towards,\ntitle={Towards paving the way for large-scale windows malware analysis: Generic\
+    \ binary unpacking with orders-of-magnitude performance boost},\n  author={Cheng, Binlin and Ming, Jiang and Fu, Jianmin\
+    \ and Peng, Guojun and Chen, Ting and Zhang, Xiaosong and Marion, Jean-Yves},\n  booktitle={Proceedings of the 2018 ACM\
+    \ SIGSAC Conference on Computer and Communications Security},\n  pages={395--411},\n  year={2018}\n}"
+  tags: []
+  key_quotes: []
+- citekey: petrik2018towards
+  title: Towards architecture and os-independent malware detection via memory forensics
+  authors:
+  - Petrik, Rachel
+  - Arik, Berat
+  - Smith, Jared M
+  year: 2018
+  venue: Proceedings of the 2018 ACM SIGSAC Conference on Computer and Communications Security
+  bibtex: "@inproceedings{petrik2018towards,\ntitle={Towards architecture and os-independent malware detection via memory\
+    \ forensics},\n  author={Petrik, Rachel and Arik, Berat and Smith, Jared M},\n  booktitle={Proceedings of the 2018 ACM\
+    \ SIGSAC Conference on Computer and Communications Security},\n  pages={2267--2269},\n  year={2018}\n}"
+  tags: []
+  key_quotes: []
+- citekey: chen2023continuous
+  title: Continuous learning for android malware detection
+  authors:
+  - Chen, Yizheng
+  - Ding, Zhoujie
+  - Wagner, David
+  year: 2023
+  venue: 32nd USENIX Security Symposium
+  bibtex: "@inproceedings{chen2023continuous,\ntitle={Continuous learning for android malware detection},\n  author={Chen,\
+    \ Yizheng and Ding, Zhoujie and Wagner, David},\n  booktitle={32nd USENIX Security Symposium},\n  pages={1127--1144},\n\
+    \  year={2023}\n}"
+  tags: []
+  key_quotes: []
+- citekey: gao2025malguard
+  title: 'MalGuard: Towards Real-Time, Accurate, and Actionable Detection of Malicious Packages in PyPI Ecosystem'
+  authors:
+  - Gao, Xingan
+  - Sun, Xiaobing
+  - Cao, Sicong
+  - Huang, Kaifeng
+  - Wu, Di
+  year: 2025
+  venue: 34th USENIX Security Symposium
+  bibtex: "@article{gao2025malguard,\ntitle={MalGuard: Towards Real-Time, Accurate, and Actionable Detection of Malicious\
+    \ Packages in PyPI Ecosystem},\n  author={Gao, Xingan and Sun, Xiaobing and Cao, Sicong and Huang, Kaifeng and Wu, Di\
+    \ and Liu, Xiaolei and Lin, Xingwei and Xiang, Yang},\n  journal={34th USENIX Security Symposium},\n  year={2025}\n}"
+  tags: []
+  key_quotes: []
+- citekey: lucas2023adversarial
+  title: Adversarial training for $\{$Raw-Binary$\
+  authors:
+  - Lucas, Keane
+  - Pai, Samruddhi
+  - Lin, Weiran
+  - Bauer, Lujo
+  - Reiter, Michael K
+  year: 2023
+  venue: 32nd USENIX Security Symposium
+  bibtex: "@inproceedings{lucas2023adversarial,\ntitle={Adversarial training for $\\{$Raw-Binary$\\}$ malware classifiers},\n\
+    \  author={Lucas, Keane and Pai, Samruddhi and Lin, Weiran and Bauer, Lujo and Reiter, Michael K and Sharif, Mahmood},\n\
+    \  booktitle={32nd USENIX Security Symposium},\n  pages={1163--1180},\n  year={2023}\n}"
+  tags: []
+  key_quotes: []
+- citekey: lucas2024training
+  title: Training Robust ML-based Raw-Binary Malware Detectors in Hours, not Months
+  authors:
+  - Lucas, Keane
+  - Lin, Weiran
+  - Bauer, Lujo
+  - Reiter, Michael K
+  - Sharif, Mahmood
+  year: 2024
+  venue: Proceedings of the 2024 on ACM SIGSAC Conference on Computer and Communications Security
+  bibtex: "@inproceedings{lucas2024training,\ntitle={Training Robust ML-based Raw-Binary Malware Detectors in Hours, not Months},\n\
+    \  author={Lucas, Keane and Lin, Weiran and Bauer, Lujo and Reiter, Michael K and Sharif, Mahmood},\n  booktitle={Proceedings\
+    \ of the 2024 on ACM SIGSAC Conference on Computer and Communications Security},\n  pages={124--138},\n  year={2024}\n\
+    }"
+  tags: []
+  key_quotes: []
+- citekey: continella2016shieldfs
+  title: 'Shieldfs: a self-healing, ransomware-aware filesystem'
+  authors:
+  - Continella, Andrea
+  - Guagnelli, Alessandro
+  - Zingaro, Giovanni
+  - De Pasquale, Giulio
+  - Barenghi, Alessandro
+  year: 2016
+  venue: Proceedings of the 32nd annual conference on computer security applications
+  bibtex: "@inproceedings{continella2016shieldfs,\ntitle={Shieldfs: a self-healing, ransomware-aware filesystem},\n  author={Continella,\
+    \ Andrea and Guagnelli, Alessandro and Zingaro, Giovanni and De Pasquale, Giulio and Barenghi, Alessandro and Zanero,\
+    \ Stefano and Maggi, Federico},\n  booktitle={Proceedings of the 32nd annual conference on computer security applications},\n\
+    \  pages={336--347},\n  year={2016}\n}"
+  tags: []
+  key_quotes: []
+- citekey: kharaz2016unveil
+  title: $\{$UNVEIL$\
+  authors:
+  - Kharaz, Amin
+  - Arshad, Sajjad
+  - Mulliner, Collin
+  - Robertson, William
+  - Kirda, Engin
+  year: 2016
+  venue: 25th USENIX security symposium (USENIX Security 16)
+  bibtex: "@inproceedings{kharaz2016unveil,\ntitle={$\\{$UNVEIL$\\}$: A $\\{$Large-Scale$\\}$, automated approach to detecting\
+    \ ransomware},\n  author={Kharaz, Amin and Arshad, Sajjad and Mulliner, Collin and Robertson, William and Kirda, Engin},\n\
+    \  booktitle={25th USENIX security symposium (USENIX Security 16)},\n  pages={757--772},\n  year={2016}\n}"
+  tags: []
+  key_quotes: []
+- citekey: vidas2014evading
+  title: Evading android runtime analysis via sandbox detection
+  authors:
+  - Vidas, Timothy
+  - Christin, Nicolas
+  year: 2014
+  venue: Proceedings of the 9th ACM symposium on Information, computer and communications security
+  bibtex: "@inproceedings{vidas2014evading,\ntitle={Evading android runtime analysis via sandbox detection},\n  author={Vidas,\
+    \ Timothy and Christin, Nicolas},\n  booktitle={Proceedings of the 9th ACM symposium on Information, computer and communications\
+    \ security},\n  pages={447--458},\n  year={2014}\n}"
+  tags: []
+  key_quotes: []
+- citekey: kharraz2017redemption
+  title: 'Redemption: Real-time protection against ransomware at end-hosts'
+  authors:
+  - Kharraz, Amin
+  - Kirda, Engin
+  year: 2017
+  venue: 'Research in Attacks, Intrusions, and Defenses: 20th International Symposium, RAID 2017, Atlanta, GA, USA, September
+    18--20, 2017, Proceedings'
+  bibtex: "@inproceedings{kharraz2017redemption,\ntitle={Redemption: Real-time protection against ransomware at end-hosts},\n\
+    \  author={Kharraz, Amin and Kirda, Engin},\n  booktitle={Research in Attacks, Intrusions, and Defenses: 20th International\
+    \ Symposium, RAID 2017, Atlanta, GA, USA, September 18--20, 2017, Proceedings},\n  pages={98--119},\n  year={2017},\n}"
+  tags: []
+  key_quotes: []
+- citekey: moore2016detecting
+  title: Detecting ransomware with honeypot techniques
+  authors:
+  - Moore, Chris
+  year: 2016
+  venue: 2016 Cybersecurity and Cyberforensics Conference
+  bibtex: "@inproceedings{moore2016detecting,\ntitle={Detecting ransomware with honeypot techniques},\n  author={Moore, Chris},\n\
+    \  booktitle={2016 Cybersecurity and Cyberforensics Conference},\n  pages={77--81},\n  year={2016},\n}"
+  tags: []
+  key_quotes: []
+- citekey: xie2017mitigating
+  title: Mitigating adversarial effects through randomization
+  authors:
+  - Xie, Cihang
+  - Wang, Jianyu
+  - Zhang, Zhishuai
+  - Ren, Zhou
+  - Yuille, Alan
+  year: 2017
+  venue: International Conference on Learning Representations
+  bibtex: "@article{xie2017mitigating,\ntitle={Mitigating adversarial effects through randomization},\n  author={Xie, Cihang\
+    \ and Wang, Jianyu and Zhang, Zhishuai and Ren, Zhou and Yuille, Alan},\n  journal={International Conference on Learning\
+    \ Representations},\n  year={2017}\n}"
+  tags: []
+  key_quotes: []
+- citekey: ganfure2023rtrap
+  title: 'Rtrap: Trapping and containing ransomware with machine learning'
+  authors:
+  - Ganfure, Gaddisa Olani
+  - Wu, Chun-Feng
+  - Chang, Yuan-Hao
+  - Shih, Wei-Kuan
+  year: 2023
+  venue: IEEE Transactions on Information Forensics and Security
+  bibtex: "@article{ganfure2023rtrap,\ntitle={Rtrap: Trapping and containing ransomware with machine learning},\n  author={Ganfure,\
+    \ Gaddisa Olani and Wu, Chun-Feng and Chang, Yuan-Hao and Shih, Wei-Kuan},\n  journal={IEEE Transactions on Information\
+    \ Forensics and Security},\n  volume={18},\n  pages={1433--1448},\n  year={2023},\n}"
+  tags: []
+  key_quotes: []
+- citekey: mehnaz2018rwguard
+  title: 'Rwguard: A real-time detection system against cryptographic ransomware'
+  authors:
+  - Mehnaz, Shagufta
+  - Mudgerikar, Anand
+  - Bertino, Elisa
+  year: 2018
+  venue: International Symposium on Research in Attacks, Intrusions, and Defenses
+  bibtex: "@inproceedings{mehnaz2018rwguard,\ntitle={Rwguard: A real-time detection system against cryptographic ransomware},\n\
+    \  author={Mehnaz, Shagufta and Mudgerikar, Anand and Bertino, Elisa},\n  booktitle={International Symposium on Research\
+    \ in Attacks, Intrusions, and Defenses},\n  pages={114--136},\n  year={2018},\n}"
+  tags: []
+  key_quotes: []
+- citekey: mcintosh2021dynamic
+  title: Dynamic user-centric access control for detection of ransomware attacks
+  authors:
+  - McIntosh, Timothy
+  - Kayes, ASM
+  - Chen, Yi-Ping Phoebe
+  - Ng, Alex
+  - Watters, Paul
+  year: 2021
+  venue: Computers \& Security
+  bibtex: "@article{mcintosh2021dynamic,\ntitle={Dynamic user-centric access control for detection of ransomware attacks},\n\
+    \  author={McIntosh, Timothy and Kayes, ASM and Chen, Yi-Ping Phoebe and Ng, Alex and Watters, Paul},\n  journal={Computers\
+    \ \\& Security},\n  volume={111},\n  pages={102461},\n  year={2021},\n}"
+  tags: []
+  key_quotes: []
+- citekey: wang2024cancal
+  title: 'CanCal: Towards Real-time and Lightweight Ransomware Detection and Response in Industrial Environments'
+  authors:
+  - Wang, Shenao
+  - Dong, Feng
+  - Yang, Hangfeng
+  - Xu, Jingheng
+  - Wang, Haoyu
+  year: 2024
+  venue: Proceedings of the 2024 on ACM SIGSAC Conference on Computer and Communications Security
+  bibtex: "@inproceedings{wang2024cancal,\ntitle={CanCal: Towards Real-time and Lightweight Ransomware Detection and Response\
+    \ in Industrial Environments},\n  author={Wang, Shenao and Dong, Feng and Yang, Hangfeng and Xu, Jingheng and Wang, Haoyu},\n\
+    \  booktitle={Proceedings of the 2024 on ACM SIGSAC Conference on Computer and Communications Security},\n  pages={2326--2340},\n\
+    \  year={2024}\n}"
+  tags: []
+  key_quotes: []
+- citekey: hou2024empirical
+  title: An Empirical Study of Data Disruption by Ransomware Attacks
+  authors:
+  - Hou, Yiwei
+  - Guo, Lihua
+  - Zhou, Chijin
+  - Xu, Yiwen
+  - Yin, Zijing
+  year: 2024
+  venue: Proceedings of the IEEE/ACM 46th International Conference on Software Engineering
+  bibtex: "@inproceedings{hou2024empirical,\ntitle={An Empirical Study of Data Disruption by Ransomware Attacks},\n  author={Hou,\
+    \ Yiwei and Guo, Lihua and Zhou, Chijin and Xu, Yiwen and Yin, Zijing and Li, Shanshan and Sun, Chengnian and Jiang, Yu},\n\
+    \  booktitle={Proceedings of the IEEE/ACM 46th International Conference on Software Engineering},\n  pages={1--12},\n\
+    \  year={2024}\n}"
+  tags: []
+  key_quotes: []
+- citekey: ma2023travelling
+  title: 'Travelling the hypervisor and ssd: A tag-based approach against crypto ransomware with fine-grained data recovery'
+  authors:
+  - Ma, Boyang
+  - Yang, Yilin
+  - Li, Jinku
+  - Zhang, Fengwei
+  - Shen, Wenbo
+  year: 2023
+  venue: Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security
+  bibtex: "@inproceedings{ma2023travelling,\ntitle={Travelling the hypervisor and ssd: A tag-based approach against crypto\
+    \ ransomware with fine-grained data recovery},\n  author={Ma, Boyang and Yang, Yilin and Li, Jinku and Zhang, Fengwei\
+    \ and Shen, Wenbo and Zhou, Yajin and Ma, Jianfeng},\n  booktitle={Proceedings of the 2023 ACM SIGSAC Conference on Computer\
+    \ and Communications Security},\n  pages={341--355},\n  year={2023}\n}"
+  tags: []
+  key_quotes: []
+- citekey: cen2024zero
+  title: 'Zero-Ran Sniff: A zero-day ransomware early detection method based on zero-shot learning'
+  authors:
+  - Cen, Mingcan
+  - Deng, Xizhen
+  - Jiang, Frank
+  - Doss, Robin
+  year: 2024
+  venue: Computers \& Security
+  bibtex: "@article{cen2024zero,\ntitle={Zero-Ran Sniff: A zero-day ransomware early detection method based on zero-shot learning},\n\
+    \  author={Cen, Mingcan and Deng, Xizhen and Jiang, Frank and Doss, Robin},\n  journal={Computers \\& Security},\n  volume={142},\n\
+    \  pages={103849},\n  year={2024},\n}"
+  tags: []
+  key_quotes: []
+- citekey: pappas2012smashing
+  title: 'Smashing the gadgets: Hindering return-oriented programming using in-place code randomization'
+  authors:
+  - Pappas, Vasilis
+  - Polychronakis, Michalis
+  - Keromytis, Angelos D
+  year: 2012
+  venue: 2012 IEEE Symposium on Security and Privacy
+  bibtex: "@inproceedings{pappas2012smashing,\ntitle={Smashing the gadgets: Hindering return-oriented programming using in-place\
+    \ code randomization},\n  author={Pappas, Vasilis and Polychronakis, Michalis and Keromytis, Angelos D},\n  booktitle={2012\
+    \ IEEE Symposium on Security and Privacy},\n  pages={601--615},\n  year={2012},\n}"
+  tags: []
+  key_quotes: []
+- citekey: koo2016juggling
+  title: 'Juggling the gadgets: Binary-level code randomization using instruction displacement'
+  authors:
+  - Koo, Hyungjoon
+  - Polychronakis, Michalis
+  year: 2016
+  venue: Proceedings of the 11th ACM on Asia Conference on Computer and Communications Security
+  bibtex: "@inproceedings{koo2016juggling,\ntitle={Juggling the gadgets: Binary-level code randomization using instruction\
+    \ displacement},\n  author={Koo, Hyungjoon and Polychronakis, Michalis},\n  booktitle={Proceedings of the 11th ACM on\
+    \ Asia Conference on Computer and Communications Security},\n  pages={23--34},\n  year={2016}\n}"
+  tags: []
+  key_quotes: []
+- citekey: d2019sok
+  title: 'SoK: Using dynamic binary instrumentation for security (and how you may get caught red handed)'
+  authors:
+  - D'Elia, Daniele Cono
+  - Coppa, Emilio
+  - Nicchi, Simone
+  - Palmaro, Federico
+  - Cavallaro, Lorenzo
+  year: 2019
+  venue: Proceedings of the 2019 ACM Asia Conference on Computer and Communications Security
+  bibtex: "@inproceedings{d2019sok,\ntitle={SoK: Using dynamic binary instrumentation for security (and how you may get caught\
+    \ red handed)},\n  author={D'Elia, Daniele Cono and Coppa, Emilio and Nicchi, Simone and Palmaro, Federico and Cavallaro,\
+    \ Lorenzo},\n  booktitle={Proceedings of the 2019 ACM Asia Conference on Computer and Communications Security},\n  pages={15--27},\n\
+    \  year={2019}\n}"
+  tags: []
+  key_quotes: []
+- citekey: he2023efficient
+  title: Efficient query-based attack against ML-based Android malware detection under zero knowledge setting
+  authors:
+  - He, Ping
+  - Xia, Yifan
+  - Zhang, Xuhong
+  - Ji, Shouling
+  year: 2023
+  venue: Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security
+  bibtex: "@inproceedings{he2023efficient,\ntitle={Efficient query-based attack against ML-based Android malware detection\
+    \ under zero knowledge setting},\n  author={He, Ping and Xia, Yifan and Zhang, Xuhong and Ji, Shouling},\n  booktitle={Proceedings\
+    \ of the 2023 ACM SIGSAC Conference on Computer and Communications Security},\n  pages={90--104},\n  year={2023}\n}"
+  tags: []
+  key_quotes: []
+- citekey: zhao2021structural
+  title: Structural attack against graph based android malware detection
+  authors:
+  - Zhao, Kaifa
+  - Zhou, Hao
+  - Zhu, Yulin
+  - Zhan, Xian
+  - Zhou, Kai
+  year: 2021
+  venue: Proceedings of the 2021 ACM SIGSAC conference on computer and communications security
+  bibtex: "@inproceedings{zhao2021structural,\ntitle={Structural attack against graph based android malware detection},\n\
+    \  author={Zhao, Kaifa and Zhou, Hao and Zhu, Yulin and Zhan, Xian and Zhou, Kai and Li, Jianfeng and Yu, Le and Yuan,\
+    \ Wei and Luo, Xiapu},\n  booktitle={Proceedings of the 2021 ACM SIGSAC conference on computer and communications security},\n\
+    \  pages={3218--3235},\n  year={2021}\n}"
+  tags: []
+  key_quotes: []
+- citekey: novo2020flow
+  title: Flow-based detection and proxy-based evasion of encrypted malware C2 traffic
+  authors:
+  - Novo, Carlos
+  - Morla, Ricardo
+  year: 2020
+  venue: Proceedings of the 13th ACM Workshop on Artificial Intelligence and Security
+  bibtex: "@inproceedings{novo2020flow,\ntitle={Flow-based detection and proxy-based evasion of encrypted malware C2 traffic},\n\
+    \  author={Novo, Carlos and Morla, Ricardo},\n  booktitle={Proceedings of the 13th ACM Workshop on Artificial Intelligence\
+    \ and Security},\n  pages={83--91},\n  year={2020}\n}"
+  tags: []
+  key_quotes: []
+- citekey: aghakhani2020malware
+  title: When malware is packin'heat; limits of machine learning classifiers based on static analysis features
+  authors:
+  - Aghakhani, Hojjat
+  - Gritti, Fabio
+  - Mecca, Francesco
+  - Lindorfer, Martina
+  - Ortolani, Stefano
+  year: 2020
+  venue: Network and Distributed System Security Symposium
+  bibtex: "@inproceedings{aghakhani2020malware,\ntitle={When malware is packin'heat; limits of machine learning classifiers\
+    \ based on static analysis features},\n  author={Aghakhani, Hojjat and Gritti, Fabio and Mecca, Francesco and Lindorfer,\
+    \ Martina and Ortolani, Stefano and Balzarotti, Davide and Vigna, Giovanni and Kruegel, Christopher},\n  booktitle={Network\
+    \ and Distributed System Security Symposium},\n  year={2020},\n}"
+  tags: []
+  key_quotes: []
+- citekey: zhou2023limits
+  title: 'Limits of i/o based ransomware detection: An imitation based attack'
+  authors:
+  - Zhou, Chijin
+  - Guo, Lihua
+  - Hou, Yiwei
+  - Ma, Zhenya
+  - Zhang, Quan
+  year: 2023
+  venue: 2023 IEEE symposium on security and privacy
+  bibtex: "@inproceedings{zhou2023limits,\ntitle={Limits of i/o based ransomware detection: An imitation based attack},\n\
+    \  author={Zhou, Chijin and Guo, Lihua and Hou, Yiwei and Ma, Zhenya and Zhang, Quan and Wang, Mingzhe and Liu, Zhe and\
+    \ Jiang, Yu},\n  booktitle={2023 IEEE symposium on security and privacy},\n  pages={2584--2601},\n  year={2023},\n}"
+  tags: []
+  key_quotes: []
+- citekey: zhu2022few
+  title: A few-shot meta-learning based siamese neural network using entropy features for ransomware classification
+  authors:
+  - Zhu, Jinting
+  - Jang-Jaccard, Julian
+  - Singh, Amardeep
+  - Welch, Ian
+  - Al-Sahaf, Harith
+  year: 2022
+  venue: Computers \& Security
+  bibtex: "@article{zhu2022few,\ntitle={A few-shot meta-learning based siamese neural network using entropy features for ransomware\
+    \ classification},\n  author={Zhu, Jinting and Jang-Jaccard, Julian and Singh, Amardeep and Welch, Ian and Al-Sahaf, Harith\
+    \ and Camtepe, Seyit},\n  journal={Computers \\& Security},\n  volume={117},\n  pages={102691},\n  year={2022},\n}"
+  tags: []
+  key_quotes: []
+- citekey: kreuk2018adversarial
+  title: Adversarial examples on discrete sequences for beating whole-binary malware detection
+  authors:
+  - Kreuk, Felix
+  - Barak, Assi
+  - Aviv-Reuven, Shir
+  - Baruch, Moran
+  - Pinkas, Benny
+  year: 2018
+  venue: arXiv preprint arXiv:1802.04528
+  bibtex: "@article{kreuk2018adversarial,\ntitle={Adversarial examples on discrete sequences for beating whole-binary malware\
+    \ detection},\n  author={Kreuk, Felix and Barak, Assi and Aviv-Reuven, Shir and Baruch, Moran and Pinkas, Benny and Keshet,\
+    \ Joseph},\n  journal={arXiv preprint arXiv:1802.04528},\n  pages={490--510},\n  year={2018},\n}"
+  tags: []
+  key_quotes: []
+- citekey: amer2020dynamic
+  title: A dynamic Windows malware detection and prediction method based on contextual understanding of API call sequence
+  authors:
+  - Amer, Eslam
+  - Zelinka, Ivan
+  year: 2020
+  venue: Computers \& Security
+  bibtex: "@article{amer2020dynamic,\ntitle={A dynamic Windows malware detection and prediction method based on contextual\
+    \ understanding of API call sequence},\n  author={Amer, Eslam and Zelinka, Ivan},\n  journal={Computers \\& Security},\n\
+    \  volume={92},\n  pages={101760},\n  year={2020},\n}"
+  tags: []
+  key_quotes: []
+- citekey: yuan2014droid
+  title: 'Droid-sec: deep learning in android malware detection'
+  authors:
+  - Yuan, Zhenlong
+  - Lu, Yongqiang
+  - Wang, Zhaoguo
+  - Xue, Yibo
+  year: 2014
+  venue: Proceedings of the 2014 ACM conference on SIGCOMM
+  bibtex: "@inproceedings{yuan2014droid,\ntitle={Droid-sec: deep learning in android malware detection},\n  author={Yuan,\
+    \ Zhenlong and Lu, Yongqiang and Wang, Zhaoguo and Xue, Yibo},\n  booktitle={Proceedings of the 2014 ACM conference on\
+    \ SIGCOMM},\n  pages={371--372},\n  year={2014}\n}"
+  tags: []
+  key_quotes: []
+- citekey: zhang2024killing
+  title: 'Killing Two Birds with One Stone: Malicious Package Detection in NPM and PyPI using a Single Model of Malicious
+    Behavior Sequence'
+  authors:
+  - Zhang, Junan
+  - Huang, Kaifeng
+  - Huang, Yiheng
+  - Chen, Bihuan
+  - Wang, Ruisi
+  year: 2024
+  venue: ACM Transactions on Software Engineering and Methodology
+  bibtex: "@article{zhang2024killing,\ntitle={Killing Two Birds with One Stone: Malicious Package Detection in NPM and PyPI\
+    \ using a Single Model of Malicious Behavior Sequence},\n  author={Zhang, Junan and Huang, Kaifeng and Huang, Yiheng and\
+    \ Chen, Bihuan and Wang, Ruisi and Wang, Chong and Peng, Xin},\n  journal={ACM Transactions on Software Engineering and\
+    \ Methodology},\n  year={2024},\n}"
+  tags: []
+  key_quotes: []
+- citekey: sun20241+
+  title: '1+ 1> 2: Integrating Deep Code Behaviors with Metadata Features for Malicious PyPI Package Detection'
+  authors:
+  - Sun, Xiaobing
+  - Gao, Xingan
+  - Cao, Sicong
+  - Bo, Lili
+  - Wu, Xiaoxue
+  year: 2024
+  venue: Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering
+  bibtex: "@inproceedings{sun20241+,\ntitle={1+ 1> 2: Integrating Deep Code Behaviors with Metadata Features for Malicious\
+    \ PyPI Package Detection},\n  author={Sun, Xiaobing and Gao, Xingan and Cao, Sicong and Bo, Lili and Wu, Xiaoxue and Huang,\
+    \ Kaifeng},\n  booktitle={Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering},\n\
+    \  pages={1159--1170},\n  year={2024}\n}"
+  tags: []
+  key_quotes: []
+- citekey: liang2023needle
+  title: 'A needle is an outlier in a haystack: hunting malicious pypi packages with code clustering'
+  authors:
+  - Liang, Wentao
+  - Ling, Xiang
+  - Wu, Jingzheng
+  - Luo, Tianyue
+  - Wu, Yanjun
+  year: 2023
+  venue: 2023 38th IEEE/ACM International Conference on Automated Software Engineering (ASE)
+  bibtex: "@inproceedings{liang2023needle,\ntitle={A needle is an outlier in a haystack: hunting malicious pypi packages with\
+    \ code clustering},\n  author={Liang, Wentao and Ling, Xiang and Wu, Jingzheng and Luo, Tianyue and Wu, Yanjun},\n  booktitle={2023\
+    \ 38th IEEE/ACM International Conference on Automated Software Engineering (ASE)},\n  pages={307--318},\n  year={2023},\n\
+    }"
+  tags: []
+  key_quotes: []
+- citekey: yu2024maltracker
+  title: 'Maltracker: A fine-grained npm malware tracker copiloted by llm-enhanced dataset'
+  authors:
+  - Yu, Zeliang
+  - Wen, Ming
+  - Guo, Xiaochen
+  - Jin, Hai
+  year: 2024
+  venue: Proceedings of the 33rd ACM SIGSOFT International Symposium on Software Testing and Analysis
+  bibtex: "@inproceedings{yu2024maltracker,\ntitle={Maltracker: A fine-grained npm malware tracker copiloted by llm-enhanced\
+    \ dataset},\n  author={Yu, Zeliang and Wen, Ming and Guo, Xiaochen and Jin, Hai},\n  booktitle={Proceedings of the 33rd\
+    \ ACM SIGSOFT International Symposium on Software Testing and Analysis},\n  pages={1759--1771},\n  year={2024}\n}"
+  tags: []
+  key_quotes: []
+- citekey: sun2024integrating
+  title: '1+1>2: Integrating Deep Code Behaviors with Metadata Features for Malicious PyPI Package Detection'
+  authors:
+  - Sun, Xiaobing
+  - Gao, Xingan
+  - Cao, Sicong
+  - Bo, Lili
+  - Wu, Xiaoxue
+  year: 2024
+  venue: Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering
+  bibtex: "@inproceedings{sun2024integrating,\ntitle={1+1>2: Integrating Deep Code Behaviors with Metadata Features for Malicious\
+    \ PyPI Package Detection},\n  author={Sun, Xiaobing and Gao, Xingan and Cao, Sicong and Bo, Lili and Wu, Xiaoxue and Huang,\
+    \ Kaifeng},\n  booktitle={Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering},\n\
+    \  pages={1--13},\n  year={2024},\n}"
+  tags: []
+  key_quotes: []
+- citekey: ohm2022feasibility
+  title: On the feasibility of supervised machine learning for the detection of malicious software packages
+  authors:
+  - Ohm, Marc
+  - Boes, Felix
+  - Bungartz, Christian
+  - Meier, Michael
+  year: 2022
+  venue: Proceedings of the 17th International Conference on Availability, Reliability and Security
+  bibtex: "@inproceedings{ohm2022feasibility,\ntitle={On the feasibility of supervised machine learning for the detection\
+    \ of malicious software packages},\n  author={Ohm, Marc and Boes, Felix and Bungartz, Christian and Meier, Michael},\n\
+    \  booktitle={Proceedings of the 17th International Conference on Availability, Reliability and Security},\n  pages={1--10},\n\
+    \  year={2022},\n}"
+  tags: []
+  key_quotes: []
+- citekey: sejfia2022practical
+  title: Practical automated detection of malicious npm packages
+  authors:
+  - Sejfia, Adriana
+  - Sch{\"a
+  year: 2022
+  venue: Proceedings of the 44th International Conference on Software Engineering
+  bibtex: "@inproceedings{sejfia2022practical,\ntitle={Practical automated detection of malicious npm packages},\n  author={Sejfia,\
+    \ Adriana and Sch{\\\"a}fer, Max},\n  booktitle={Proceedings of the 44th International Conference on Software Engineering},\n\
+    \  pages={1681--1692},\n  year={2022},\n}"
+  tags: []
+  key_quotes: []
+- citekey: fass2018jast
+  title: 'Jast: Fully syntactic detection of malicious (obfuscated) javascript'
+  authors:
+  - Fass, Aurore
+  - Krawczyk, Robert P
+  - Backes, Michael
+  - Stock, Ben
+  year: 2018
+  venue: Proceedings of the 15th International Conference on Detection of Intrusions and Malware, and Vulnerability Assessment
+  bibtex: "@inproceedings{fass2018jast,\ntitle={Jast: Fully syntactic detection of malicious (obfuscated) javascript},\n \
+    \ author={Fass, Aurore and Krawczyk, Robert P and Backes, Michael and Stock, Ben},\n  booktitle={Proceedings of the 15th\
+    \ International Conference on Detection of Intrusions and Malware, and Vulnerability Assessment},\n  pages={303--325},\n\
+    \  year={2018},\n}"
+  tags: []
+  key_quotes: []
+- citekey: fass2019jstap
+  title: 'Jstap: A static pre-filter for malicious javascript detection'
+  authors:
+  - Fass, Aurore
+  - Backes, Michael
+  - Stock, Ben
+  year: 2019
+  venue: Proceedings of the 35th Annual Computer Security Applications Conference
+  bibtex: "@inproceedings{fass2019jstap,\ntitle={Jstap: A static pre-filter for malicious javascript detection},\n  author={Fass,\
+    \ Aurore and Backes, Michael and Stock, Ben},\n  booktitle={Proceedings of the 35th Annual Computer Security Applications\
+    \ Conference},\n  pages={257--269},\n  year={2019},\n}"
+  tags: []
+  key_quotes: []
+- citekey: ladisa2023feasibility
+  title: On the Feasibility of Cross-Language Detection of Malicious Packages in npm and PyPI
+  authors:
+  - Ladisa, Piergiorgio
+  - Ponta, Serena Elisa
+  - Ronzoni, Nicola
+  - Martinez, Matias
+  - Barais, Olivier
+  year: 2023
+  venue: Proceedings of the 39th Annual Computer Security Applications Conference
+  bibtex: "@inproceedings{ladisa2023feasibility,\ntitle={On the Feasibility of Cross-Language Detection of Malicious Packages\
+    \ in npm and PyPI},\n  author={Ladisa, Piergiorgio and Ponta, Serena Elisa and Ronzoni, Nicola and Martinez, Matias and\
+    \ Barais, Olivier},\n  booktitle={Proceedings of the 39th Annual Computer Security Applications Conference},\n  pages={71--82},\n\
+    \  year={2023}\n}"
+  tags: []
+  key_quotes: []
+- citekey: Liang2021
+  title: Proceedings of the IEEE 20th International Conference on Trust, Security and Privacy in Computing and Communications
+  authors:
+  - Liang, Genpei
+  - Zhou, Xiangyu
+  - Wang, Qingyu
+  - Du, Yutong
+  - Huang, Cheng
+  year: 2021
+  venue: Proceedings of the IEEE 20th International Conference on Trust, Security and Privacy in Computing and Communications
+  bibtex: "@inproceedings{Liang2021,\nauthor={Liang, Genpei and Zhou, Xiangyu and Wang, Qingyu and Du, Yutong and Huang, Cheng},\n\
+    \  booktitle={Proceedings of the IEEE 20th International Conference on Trust, Security and Privacy in Computing and Communications},\
+    \ \n  title={Malicious Packages Lurking in User-Friendly Python Package Index}, \n  year={2021},\n  pages={606-613},\n\
+    }"
+  tags: []
+  key_quotes: []
+- citekey: garrett2019detecting
+  title: Detecting suspicious package updates
+  authors:
+  - Garrett, Kalil
+  - Ferreira, Gabriel
+  - Jia, Limin
+  - Sunshine, Joshua
+  - K{\"a
+  year: 2019
+  venue: 'Proceedings of the IEEE/ACM 41st International Conference on Software Engineering: New Ideas and Emerging Results'
+  bibtex: "@inproceedings{garrett2019detecting,\ntitle={Detecting suspicious package updates},\n  author={Garrett, Kalil and\
+    \ Ferreira, Gabriel and Jia, Limin and Sunshine, Joshua and K{\\\"a}stner, Christian},\n  booktitle={Proceedings of the\
+    \ IEEE/ACM 41st International Conference on Software Engineering: New Ideas and Emerging Results },\n  pages={13--16},\n\
+    \  year={2019},\n}"
+  tags: []
+  key_quotes: []
+- citekey: huang2024spiderscan
+  title: 'SpiderScan: Practical Detection of Malicious NPM Packages Based on Graph-Based Behavior Modeling and Matching'
+  authors:
+  - Huang, Yiheng
+  - Wang, Ruisi
+  - Zheng, Wen
+  - Zhou, Zhuotong
+  - Wu, Susheng
+  year: 2024
+  venue: Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering
+  bibtex: "@inproceedings{huang2024spiderscan,\ntitle={SpiderScan: Practical Detection of Malicious NPM Packages Based on\
+    \ Graph-Based Behavior Modeling and Matching},\n  author={Huang, Yiheng and Wang, Ruisi and Zheng, Wen and Zhou, Zhuotong\
+    \ and Wu, Susheng and Ke, Shulin and Chen, Bihuan and Gao, Shan and Peng, Xin},\n  booktitle={Proceedings of the 39th\
+    \ IEEE/ACM International Conference on Automated Software Engineering},\n  pages={1--13},\n  year={2024},\n}"
+  tags: []
+  key_quotes: []
+- citekey: ucci2019survey
+  title: Survey of machine learning techniques for malware analysis
+  authors:
+  - Ucci, Daniele
+  - Aniello, Leonardo
+  - Baldoni, Roberto
+  year: 2019
+  venue: Computers \& Security
+  bibtex: "@article{ucci2019survey,\ntitle={Survey of machine learning techniques for malware analysis},\n  author={Ucci,\
+    \ Daniele and Aniello, Leonardo and Baldoni, Roberto},\n  journal={Computers \\& Security},\n  volume={81},\n  pages={123--147},\n\
+    \  year={2019},\n}"
+  tags: []
+  key_quotes: []
+- citekey: tang2020ransomspector
+  title: 'RansomSpector: An introspection-based approach to detect crypto ransomware'
+  authors:
+  - Tang, Fei
+  - Ma, Boyang
+  - Li, Jinku
+  - Zhang, Fengwei
+  - Su, Jipeng
+  year: 2020
+  venue: Computers \& Security
+  bibtex: "@article{tang2020ransomspector,\ntitle={RansomSpector: An introspection-based approach to detect crypto ransomware},\n\
+    \  author={Tang, Fei and Ma, Boyang and Li, Jinku and Zhang, Fengwei and Su, Jipeng and Ma, Jianfeng},\n  journal={Computers\
+    \ \\& Security},\n  volume={97},\n  pages={101997},\n  year={2020},\n  publisher={Elsevier}\n}"
+  tags: []
+  key_quotes: []
+- citekey: omar2014arbitrary
+  title: 'Arbitrary control-flow embedding into multiple threads for obfuscation: A preliminary complexity and performance
+    analysis'
+  authors:
+  - Omar, Rasha
+  - El-Mahdy, Ahmed
+  - Rohou, Erven
+  year: 2014
+  venue: Proceedings of the 2nd international workshop on Security in cloud computing
+  bibtex: "@inproceedings{omar2014arbitrary,\ntitle={Arbitrary control-flow embedding into multiple threads for obfuscation:\
+    \ A preliminary complexity and performance analysis},\n  author={Omar, Rasha and El-Mahdy, Ahmed and Rohou, Erven},\n\
+    \  booktitle={Proceedings of the 2nd international workshop on Security in cloud computing},\n  pages={51--58},\n  year={2014}\n\
+    }"
+  tags: []
+  key_quotes: []
+- citekey: bernstein2008chacha
+  title: ChaCha, a variant of Salsa20
+  authors:
+  - Bernstein, Daniel J
+  - others
+  year: 2008
+  venue: Workshop record of SASC
+  bibtex: "@inproceedings{bernstein2008chacha,\ntitle={ChaCha, a variant of Salsa20},\n  author={Bernstein, Daniel J and others},\n\
+    \  booktitle={Workshop record of SASC},\n  volume={8},\n  number={1},\n  pages={3--5},\n  year={2008},\n  organization={Citeseer}\n\
+    }"
+  tags: []
+  key_quotes: []
+- citekey: berbain2008sosemanuk
+  title: Sosemanuk, a fast software-oriented stream cipher
+  authors:
+  - Berbain, C{\^o
+  year: 2008
+  venue: 'New Stream Cipher Designs: The eSTREAM Finalists'
+  bibtex: "@article{berbain2008sosemanuk,\ntitle={Sosemanuk, a fast software-oriented stream cipher},\n  author={Berbain,\
+    \ C{\\^o}me and Billet, Olivier and Canteaut, Anne and Courtois, Nicolas and Gilbert, Henri and Goubin, Louis and Gouget,\
+    \ Aline and Granboulan, Louis and Lauradoux, C{\\'e}dric and Minier, Marine and others},\n  journal={New Stream Cipher\
+    \ Designs: The eSTREAM Finalists},\n  pages={98--118},\n  year={2008},\n  publisher={Springer}\n}"
+  tags: []
+  key_quotes: []
+- citekey: jindal2015rc4
+  title: RC4 encryption-A literature survey
+  authors:
+  - Jindal, Poonam
+  - Singh, Brahmjit
+  year: 2015
+  venue: Procedia Computer Science
+  bibtex: "@article{jindal2015rc4,\ntitle={RC4 encryption-A literature survey},\n  author={Jindal, Poonam and Singh, Brahmjit},\n\
+    \  journal={Procedia Computer Science},\n  volume={46},\n  pages={697--705},\n  year={2015},\n  publisher={Elsevier}\n\
+    }"
+  tags: []
+  key_quotes: []
+- citekey: diffie1976new
+  title: New Directions in Cryptography
+  authors:
+  - DIFFIE, WHITFIELD
+  - HELLMAN, MARTIN E
+  year: 1976
+  venue: IEEE TRANSACTIONS ON INFORMATION THEORY
+  bibtex: "@article{diffie1976new,\ntitle={New Directions in Cryptography},\n  author={DIFFIE, WHITFIELD and HELLMAN, MARTIN\
+    \ E},\n  journal={IEEE TRANSACTIONS ON INFORMATION THEORY},\n  volume={22},\n  number={6},\n  year={1976}\n}"
+  tags: []
+  key_quotes: []
+- citekey: elgamal1985public
+  title: A public key cryptosystem and a signature scheme based on discrete logarithms
+  authors:
+  - ElGamal, Taher
+  year: 1985
+  venue: IEEE transactions on information theory
+  bibtex: "@article{elgamal1985public,\ntitle={A public key cryptosystem and a signature scheme based on discrete logarithms},\n\
+    \  author={ElGamal, Taher},\n  journal={IEEE transactions on information theory},\n  volume={31},\n  number={4},\n  pages={469--472},\n\
+    \  year={1985},\n  publisher={IEEE}\n}"
+  tags: []
+  key_quotes: []
+- citekey: pub2000digital
+  title: Digital signature standard (DSS)
+  authors:
+  - PUB, FIPS
+  year: 2000
+  venue: Fips pub
+  bibtex: "@article{pub2000digital,\ntitle={Digital signature standard (DSS)},\n  author={PUB, FIPS},\n  journal={Fips pub},\n\
+    \  pages={186--192},\n  year={2000}\n}"
+  tags: []
+  key_quotes: []
+- citekey: rivest1978method
+  title: A method for obtaining digital signatures and public-key cryptosystems
+  authors:
+  - Rivest, Ronald L
+  - Shamir, Adi
+  - Adleman, Leonard
+  year: 1978
+  venue: Communications of the ACM
+  bibtex: "@article{rivest1978method,\ntitle={A method for obtaining digital signatures and public-key cryptosystems},\n \
+    \ author={Rivest, Ronald L and Shamir, Adi and Adleman, Leonard},\n  journal={Communications of the ACM},\n  volume={21},\n\
+    \  number={2},\n  pages={120--126},\n  year={1978},\n  publisher={ACM New York, NY, USA}\n}"
+  tags: []
+  key_quotes: []
+- citekey: rabin1978digitalized
+  title: Digitalized signatures
+  authors:
+  - Rabin, Michael O
+  year: 1978
+  venue: Foundations of secure computation
+  bibtex: "@article{rabin1978digitalized,\ntitle={Digitalized signatures},\n  author={Rabin, Michael O},\n  journal={Foundations\
+    \ of secure computation},\n  pages={155--168},\n  year={1978},\n  publisher={Academic Press}\n}"
+  tags: []
+  key_quotes: []
+- citekey: goldwasser2019probabilistic
+  title: Probabilistic encryption \& how to play mental poker keeping secret all partial information
+  authors:
+  - Goldwasser, Shafi
+  - Micali, Silvio
+  year: 2019
+  venue: 'Providing sound foundations for cryptography: on the work of Shafi Goldwasser and Silvio Micali'
+  bibtex: "@incollection{goldwasser2019probabilistic,\ntitle={Probabilistic encryption \\& how to play mental poker keeping\
+    \ secret all partial information},\n  author={Goldwasser, Shafi and Micali, Silvio},\n  booktitle={Providing sound foundations\
+    \ for cryptography: on the work of Shafi Goldwasser and Silvio Micali},\n  pages={173--201},\n  year={2019}\n}"
+  tags: []
+  key_quotes: []
+- citekey: rijmen2001aes
+  title: Advanced encryption standard
+  authors:
+  - Rijmen, Vincent
+  - Daemen, Joan
+  year: 2001
+  venue: Proceedings of federal information processing standards publications, national institute of standards and technology
+  bibtex: "@article{rijmen2001aes,\ntitle={Advanced encryption standard},\n  author={Rijmen, Vincent and Daemen, Joan},\n\
+    \  journal={Proceedings of federal information processing standards publications, national institute of standards and\
+    \ technology},\n  volume={19},\n  pages={22},\n  year={2001}\n}"
+  tags: []
+  key_quotes: []
+- citekey: standard1999data
+  title: Data encryption standard
+  authors:
+  - Standard, Data Encryption
+  - others
+  year: 1999
+  venue: Federal Information Processing Standards Publication
+  bibtex: "@article{standard1999data,\ntitle={Data encryption standard},\n  author={Standard, Data Encryption and others},\n\
+    \  journal={Federal Information Processing Standards Publication},\n  volume={112},\n  number={3},\n  year={1999},\n \
+    \ publisher={De Standaard}\n}"
+  tags: []
+  key_quotes: []
+- citekey: shirey2007internet
+  title: Internet security glossary, version 2
+  authors:
+  - Shirey, Robert
+  year: 2007
+  venue: ''
+  bibtex: "@techreport{shirey2007internet,\ntitle={Internet security glossary, version 2},\n  author={Shirey, Robert},\n \
+    \ year={2007}\n}"
+  tags: []
+  key_quotes: []
+- citekey: antoniak2018evaluating
+  title: Evaluating the stability of embedding-based word similarities
+  authors:
+  - Antoniak, Maria
+  - Mimno, David
+  year: 2018
+  venue: Transactions of the Association for Computational Linguistics
+  bibtex: "@article{antoniak2018evaluating,\ntitle={Evaluating the stability of embedding-based word similarities},\n  author={Antoniak,\
+    \ Maria and Mimno, David},\n  journal={Transactions of the Association for Computational Linguistics},\n  volume={6},\n\
+    \  pages={107--119},\n  year={2018},\n  publisher={MIT Press One Rogers Street, Cambridge, MA 02142-1209, USA journals-info~…}\n\
+    }"
+  tags: []
+  key_quotes: []
+- citekey: liu2025llm
+  title: Llm-powered static binary taint analysis
+  authors:
+  - Liu, Puzhuo
+  - Sun, Chengnian
+  - Zheng, Yaowen
+  - Feng, Xuan
+  - Qin, Chuan
+  year: 2025
+  venue: ACM Transactions on Software Engineering and Methodology
+  bibtex: "@article{liu2025llm,\ntitle={Llm-powered static binary taint analysis},\n  author={Liu, Puzhuo and Sun, Chengnian\
+    \ and Zheng, Yaowen and Feng, Xuan and Qin, Chuan and Wang, Yuncheng and Xu, Zhenyang and Li, Zhi and Di, Peng and Jiang,\
+    \ Yu and others},\n  journal={ACM Transactions on Software Engineering and Methodology},\n  year={2025},\n  publisher={ACM\
+    \ New York, NY}\n}"
+  tags: []
+  key_quotes: []
+- citekey: smart2003cryptography
+  title: 'Cryptography: an introduction'
+  authors:
+  - Smart, Nigel Paul
+  - others
+  year: 2003
+  venue: ''
+  bibtex: "@book{smart2003cryptography,\ntitle={Cryptography: an introduction},\n  author={Smart, Nigel Paul and others},\n\
+    \  volume={3},\n  year={2003},\n  publisher={McGraw-Hill New York}\n}"
+  tags: []
+  key_quotes: []
+- citekey: mao2003modern
+  title: 'Modern cryptography: theory and practice'
+  authors:
+  - Mao, Wenbo
+  year: 2003
+  venue: ''
+  bibtex: "@book{mao2003modern,\ntitle={Modern cryptography: theory and practice},\n  author={Mao, Wenbo},\n  year={2003},\n\
+    \  publisher={Pearson P T R}\n}"
+  tags: []
+  key_quotes: []
+- citekey: bernstein2012high
+  title: High-speed high-security signatures
+  authors:
+  - Bernstein, Daniel J
+  - Duif, Niels
+  - Lange, Tanja
+  - Schwabe, Peter
+  - Yang, Bo-Yin
+  year: 2012
+  venue: Journal of cryptographic engineering
+  bibtex: "@article{bernstein2012high,\ntitle={High-speed high-security signatures},\n  author={Bernstein, Daniel J and Duif,\
+    \ Niels and Lange, Tanja and Schwabe, Peter and Yang, Bo-Yin},\n  journal={Journal of cryptographic engineering},\n  volume={2},\n\
+    \  number={2},\n  pages={77--89},\n  year={2012},\n  publisher={Springer}\n}"
+  tags: []
+  key_quotes: []
+- citekey: johnson2001elliptic
+  title: The elliptic curve digital signature algorithm (ECDSA)
+  authors:
+  - Johnson, Don
+  - Menezes, Alfred
+  - Vanstone, Scott
+  year: 2001
+  venue: International journal of information security
+  bibtex: "@article{johnson2001elliptic,\ntitle={The elliptic curve digital signature algorithm (ECDSA)},\n  author={Johnson,\
+    \ Don and Menezes, Alfred and Vanstone, Scott},\n  journal={International journal of information security},\n  volume={1},\n\
+    \  pages={36--63},\n  year={2001},\n  publisher={Springer}\n}"
+  tags: []
+  key_quotes: []
+- citekey: menezes1993elliptic
+  title: Elliptic curve cryptosystems and their implementation
+  authors:
+  - Menezes, Alfred J
+  - Vanstone, Scott A
+  year: 1993
+  venue: Journal of cryptology
+  bibtex: "@article{menezes1993elliptic,\ntitle={Elliptic curve cryptosystems and their implementation},\n  author={Menezes,\
+    \ Alfred J and Vanstone, Scott A},\n  journal={Journal of cryptology},\n  volume={6},\n  pages={209--224},\n  year={1993},\n\
+    \  publisher={Springer}\n}"
+  tags: []
+  key_quotes: []
+- citekey: zhang2024ranker
+  title: 'Ranker: Early ransomware detection through kernel-level behavioral analysis'
+  authors:
+  - Zhang, Huan
+  - Zhao, Lixin
+  - Yu, Aimin
+  - Cai, Lijun
+  - Meng, Dan
+  year: 2024
+  venue: IEEE Transactions on Information Forensics and Security
+  bibtex: "@article{zhang2024ranker,\ntitle={Ranker: Early ransomware detection through kernel-level behavioral analysis},\n\
+    \  author={Zhang, Huan and Zhao, Lixin and Yu, Aimin and Cai, Lijun and Meng, Dan},\n  journal={IEEE Transactions on Information\
+    \ Forensics and Security},\n  volume={19},\n  pages={6113--6127},\n  year={2024},\n  publisher={IEEE}\n}"
+  tags: []
+  key_quotes: []
+- citekey: Gu2024ASO
+  title: A Survey on LLM-as-a-Judge
+  authors:
+  - Jiawei Gu
+  - Xuhui Jiang
+  - Zhichao Shi
+  - Hexiang Tan
+  - Xuehao Zhai
+  year: 2024
+  venue: ArXiv
+  bibtex: "@article{Gu2024ASO,\ntitle={A Survey on LLM-as-a-Judge},\n  author={Jiawei Gu and Xuhui Jiang and Zhichao Shi and\
+    \ Hexiang Tan and Xuehao Zhai and Chengjin Xu and Wei Li and Yinghan Shen and Shengjie Ma and Honghao Liu and Yuanzhuo\
+    \ Wang and Jian Guo},\n  journal={ArXiv},\n  year={2024},\n  volume={abs/2411.15594},\n}"
+  tags: []
+  key_quotes: []
+- citekey: hamilton2017inductive
+  title: Inductive representation learning on large graphs
+  authors:
+  - Hamilton, Will
+  - Ying, Zhitao
+  - Leskovec, Jure
+  year: 2017
+  venue: Advances in neural information processing systems
+  bibtex: "@article{hamilton2017inductive,\ntitle={Inductive representation learning on large graphs},\n  author={Hamilton,\
+    \ Will and Ying, Zhitao and Leskovec, Jure},\n  journal={Advances in neural information processing systems},\n  volume={30},\n\
+    \  year={2017}\n}"
+  tags: []
+  key_quotes: []
+- citekey: manning2008introduction
+  title: Introduction to information retrieval
+  authors:
+  - Manning, Christopher D
+  year: 2008
+  venue: ''
+  bibtex: "@book{manning2008introduction,\ntitle={Introduction to information retrieval},\n  author={Manning, Christopher\
+    \ D},\n  year={2008},\n  publisher={Syngress Publishing,}\n}"
+  tags: []
+  key_quotes: []
+- citekey: berant2014semantic
+  title: Semantic parsing via paraphrasing
+  authors:
+  - Berant, Jonathan
+  - Liang, Percy
+  year: 2014
+  venue: 'Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)'
+  bibtex: "@inproceedings{berant2014semantic,\ntitle={Semantic parsing via paraphrasing},\n  author={Berant, Jonathan and\
+    \ Liang, Percy},\n  booktitle={Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics\
+    \ (Volume 1: Long Papers)},\n  pages={1415--1425},\n  year={2014}\n}"
+  tags: []
+  key_quotes: []
+- citekey: dong2016language
+  title: Language to logical form with neural attention
+  authors:
+  - Dong, Li
+  - Lapata, Mirella
+  year: 2016
+  venue: 'Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)'
+  bibtex: "@article{dong2016language,\ntitle={Language to logical form with neural attention},\n  author={Dong, Li and Lapata,\
+    \ Mirella},\n  journal={Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume\
+    \ 1: Long Papers)},\n  year={2016}\n}"
+  tags: []
+  key_quotes: []

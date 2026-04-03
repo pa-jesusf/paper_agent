@@ -184,6 +184,536 @@ terms:
     first_use_en: "packing"
     forbidden_variants: []
 
+  # --- 以下为第二轮核对补充 ---
+
+  - canonical: "static analysis"
+    abbreviation: ""
+    chinese: "静态分析"
+    first_use_zh: "静态分析（Static Analysis）"
+    first_use_en: "static analysis"
+    forbidden_variants: []
+
+  - canonical: "dynamic analysis"
+    abbreviation: ""
+    chinese: "动态分析"
+    first_use_zh: "动态分析（Dynamic Analysis）"
+    first_use_en: "dynamic analysis"
+    forbidden_variants: []
+
+  - canonical: "decompilation"
+    abbreviation: ""
+    chinese: "反编译"
+    first_use_zh: "反编译（Decompilation）"
+    first_use_en: "decompilation"
+    forbidden_variants:
+      - "反汇编"
+
+  - canonical: "sandbox evasion"
+    abbreviation: ""
+    chinese: "沙箱逃逸"
+    first_use_zh: "沙箱逃逸（Sandbox Evasion）"
+    first_use_en: "sandbox evasion"
+    forbidden_variants: []
+
+  - canonical: "anti-analysis techniques"
+    abbreviation: ""
+    chinese: "反分析技术"
+    first_use_zh: "反分析技术（Anti-analysis Techniques）"
+    first_use_en: "anti-analysis techniques"
+    forbidden_variants:
+      - "反检测技术"
+
+  - canonical: "code polymorphism"
+    abbreviation: ""
+    chinese: "代码多态"
+    first_use_zh: "代码多态（Code Polymorphism）"
+    first_use_en: "code polymorphism"
+    forbidden_variants:
+      - "代码多态性"
+      - "多态变换"
+
+  - canonical: "semantic equivalence"
+    abbreviation: ""
+    chinese: "语义等价"
+    first_use_zh: "语义等价（Semantic Equivalence）"
+    first_use_en: "semantic equivalence"
+    forbidden_variants:
+      - "语义等同"
+
+  - canonical: "evidence of actions"
+    abbreviation: ""
+    chinese: "行为证据"
+    first_use_zh: "行为证据（Evidence of Actions）"
+    first_use_en: "evidence of actions"
+    forbidden_variants: []
+
+  - canonical: "Portable Executable"
+    abbreviation: "PE"
+    chinese: "可移植可执行文件"
+    first_use_zh: "可移植可执行文件（Portable Executable, PE）"
+    first_use_en: "Portable Executable (PE)"
+    forbidden_variants: []
+
+  - canonical: "Retrieval-Augmented Generation"
+    abbreviation: "RAG"
+    chinese: "检索增强生成"
+    first_use_zh: "检索增强生成（Retrieval-Augmented Generation, RAG）"
+    first_use_en: "Retrieval-Augmented Generation (RAG)"
+    forbidden_variants: []
+
+  - canonical: "t-SNE"
+    abbreviation: "t-SNE"
+    chinese: "t-SNE"
+    first_use_zh: "t-SNE（t-分布随机邻域嵌入, t-Distributed Stochastic Neighbor Embedding）"
+    first_use_en: "t-Distributed Stochastic Neighbor Embedding (t-SNE)"
+    forbidden_variants: []
+
+  - canonical: "cross-validation"
+    abbreviation: ""
+    chinese: "交叉验证"
+    first_use_zh: "五折交叉验证（5-Fold Cross-Validation）"
+    first_use_en: "5-fold cross-validation"
+    forbidden_variants: []
+
+  - canonical: "ablation study"
+    abbreviation: ""
+    chinese: "消融实验"
+    first_use_zh: "消融实验（Ablation Study）"
+    first_use_en: "ablation study"
+    forbidden_variants:
+      - "消融研究"
+      - "剥离实验"
+
+  - canonical: "adversarial attack"
+    abbreviation: ""
+    chinese: "对抗攻击"
+    first_use_zh: "对抗攻击（Adversarial Attack）"
+    first_use_en: "adversarial attack"
+    forbidden_variants: []
+
+  - canonical: "Ransomware-as-a-Service"
+    abbreviation: "RaaS"
+    chinese: "勒索软件即服务"
+    first_use_zh: "勒索软件即服务（Ransomware-as-a-Service, RaaS）"
+    first_use_en: "Ransomware-as-a-Service (RaaS)"
+    forbidden_variants: []
+
+  - canonical: "Cyber Kill Chain"
+    abbreviation: "CKC"
+    chinese: "网络杀伤链"
+    first_use_zh: "网络杀伤链（Cyber Kill Chain, CKC）"
+    first_use_en: "Cyber Kill Chain (CKC)"
+    forbidden_variants:
+      - "杀伤链"
+      - "攻击链"
+
+  - canonical: "Kruskal-Wallis H test"
+    abbreviation: ""
+    chinese: "Kruskal-Wallis H 检验"
+    first_use_zh: "Kruskal-Wallis H 检验"
+    first_use_en: "Kruskal-Wallis H test"
+    forbidden_variants: []
+
+  - canonical: "Cohen's Kappa"
+    abbreviation: ""
+    chinese: "Cohen's Kappa 系数"
+    first_use_zh: "Cohen's Kappa 系数"
+    first_use_en: "Cohen's Kappa"
+    forbidden_variants: []
+
+  - canonical: "Normalized Mutual Information"
+    abbreviation: "NMI"
+    chinese: "归一化互信息"
+    first_use_zh: "归一化互信息（Normalized Mutual Information, NMI）"
+    first_use_en: "Normalized Mutual Information (NMI)"
+    forbidden_variants: []
+
+  - canonical: "Adjusted Rand Index"
+    abbreviation: "ARI"
+    chinese: "调整兰德指数"
+    first_use_zh: "调整兰德指数（Adjusted Rand Index, ARI）"
+    first_use_en: "Adjusted Rand Index (ARI)"
+    forbidden_variants: []
+
+  - canonical: "Focal Loss"
+    abbreviation: ""
+    chinese: "焦点损失"
+    first_use_zh: "焦点损失函数（Focal Loss）"
+    first_use_en: "Focal Loss"
+    forbidden_variants: []
+
+  - canonical: "chronological setting"
+    abbreviation: ""
+    chinese: "时序评估设置"
+    first_use_zh: "时序评估设置（Chronological Setting）"
+    first_use_en: "chronological setting"
+    forbidden_variants:
+      - "时间序列设置"
+
+  - canonical: "random setting"
+    abbreviation: ""
+    chinese: "随机划分设置"
+    first_use_zh: "随机划分设置（Random Setting）"
+    first_use_en: "random setting"
+    forbidden_variants: []
+
+  # --- 第三轮核对补充：评价指标 & 统计检验 ---
+
+  - canonical: "Precision"
+    abbreviation: "Pre."
+    chinese: "精确率"
+    first_use_zh: "精确率（Precision）"
+    first_use_en: "Precision"
+    forbidden_variants:
+      - "准确率"
+
+  - canonical: "Recall"
+    abbreviation: "Rec."
+    chinese: "召回率"
+    first_use_zh: "召回率（Recall）"
+    first_use_en: "Recall"
+    forbidden_variants:
+      - "查全率"
+
+  - canonical: "True Positive"
+    abbreviation: "TP"
+    chinese: "真正例"
+    first_use_zh: "真正例（True Positive, TP）"
+    first_use_en: "True Positive (TP)"
+    forbidden_variants: []
+
+  - canonical: "False Positive"
+    abbreviation: "FP"
+    chinese: "假正例"
+    first_use_zh: "假正例（False Positive, FP）"
+    first_use_en: "False Positive (FP)"
+    forbidden_variants: []
+
+  - canonical: "False Negative"
+    abbreviation: "FN"
+    chinese: "假负例"
+    first_use_zh: "假负例（False Negative, FN）"
+    first_use_en: "False Negative (FN)"
+    forbidden_variants: []
+
+  - canonical: "False Negative Rate"
+    abbreviation: "FNR"
+    chinese: "假负率"
+    first_use_zh: "假负率（False Negative Rate, FNR）"
+    first_use_en: "False Negative Rate (FNR)"
+    forbidden_variants: []
+
+  - canonical: "Mann-Whitney U test"
+    abbreviation: ""
+    chinese: "Mann-Whitney U 检验"
+    first_use_zh: "Mann-Whitney U 检验"
+    first_use_en: "Mann-Whitney U test"
+    forbidden_variants: []
+
+  - canonical: "p-value"
+    abbreviation: ""
+    chinese: "p 值"
+    first_use_zh: "p 值（p-value）"
+    first_use_en: "p-value"
+    forbidden_variants:
+      - "P值"
+      - "p值"
+
+  - canonical: "min-max normalization"
+    abbreviation: ""
+    chinese: "最小-最大归一化"
+    first_use_zh: "最小-最大归一化（Min-Max Normalization）"
+    first_use_en: "min-max normalization"
+    forbidden_variants: []
+
+  # --- 模型 & 运算符 ---
+
+  - canonical: "multi-layer perceptron"
+    abbreviation: "MLP"
+    chinese: "多层感知机"
+    first_use_zh: "多层感知机（Multi-Layer Perceptron, MLP）"
+    first_use_en: "multi-layer perceptron (MLP)"
+    forbidden_variants: []
+
+  - canonical: "softmax"
+    abbreviation: ""
+    chinese: "softmax 函数"
+    first_use_zh: "softmax 函数"
+    first_use_en: "softmax"
+    forbidden_variants: []
+
+  - canonical: "READOUT"
+    abbreviation: ""
+    chinese: "图级读出函数"
+    first_use_zh: "图级读出函数（READOUT）"
+    first_use_en: "READOUT"
+    forbidden_variants: []
+
+  - canonical: "cosine similarity"
+    abbreviation: ""
+    chinese: "余弦相似度"
+    first_use_zh: "余弦相似度（Cosine Similarity）"
+    first_use_en: "cosine similarity"
+    forbidden_variants: []
+
+  - canonical: "Shannon entropy"
+    abbreviation: ""
+    chinese: "香农熵"
+    first_use_zh: "香农熵（Shannon Entropy）"
+    first_use_en: "Shannon entropy"
+    forbidden_variants: []
+
+  - canonical: "Jensen-Shannon Divergence"
+    abbreviation: "JSD"
+    chinese: "Jensen-Shannon 散度"
+    first_use_zh: "Jensen-Shannon 散度（Jensen-Shannon Divergence, JSD）"
+    first_use_en: "Jensen-Shannon Divergence (JSD)"
+    forbidden_variants: []
+
+  # --- 加密算法 & 组件 ---
+
+  - canonical: "AES"
+    abbreviation: "AES"
+    chinese: "高级加密标准"
+    first_use_zh: "高级加密标准（Advanced Encryption Standard, AES）"
+    first_use_en: "Advanced Encryption Standard (AES)"
+    forbidden_variants: []
+
+  - canonical: "DES"
+    abbreviation: "DES"
+    chinese: "数据加密标准"
+    first_use_zh: "数据加密标准（Data Encryption Standard, DES）"
+    first_use_en: "Data Encryption Standard (DES)"
+    forbidden_variants: []
+
+  - canonical: "RSA"
+    abbreviation: "RSA"
+    chinese: "RSA 算法"
+    first_use_zh: "RSA 非对称加密算法"
+    first_use_en: "RSA"
+    forbidden_variants: []
+
+  - canonical: "S-box"
+    abbreviation: ""
+    chinese: "替换盒"
+    first_use_zh: "替换盒（S-box）"
+    first_use_en: "S-box (substitution box)"
+    forbidden_variants: []
+
+  - canonical: "P-box"
+    abbreviation: ""
+    chinese: "置换盒"
+    first_use_zh: "置换盒（P-box）"
+    first_use_en: "P-box (permutation box)"
+    forbidden_variants: []
+
+  - canonical: "XOR"
+    abbreviation: ""
+    chinese: "异或运算"
+    first_use_zh: "异或运算（XOR）"
+    first_use_en: "XOR"
+    forbidden_variants: []
+
+  - canonical: "Cryptographic Service Provider"
+    abbreviation: "CSP"
+    chinese: "加密服务提供程序"
+    first_use_zh: "加密服务提供程序（Cryptographic Service Provider, CSP）"
+    first_use_en: "Cryptographic Service Provider (CSP)"
+    forbidden_variants: []
+
+  # --- 混淆 & 反分析技术 ---
+
+  - canonical: "control flow flattening"
+    abbreviation: ""
+    chinese: "控制流平坦化"
+    first_use_zh: "控制流平坦化（Control Flow Flattening）"
+    first_use_en: "control flow flattening"
+    forbidden_variants: []
+
+  - canonical: "opaque predicate"
+    abbreviation: ""
+    chinese: "不透明谓词"
+    first_use_zh: "不透明谓词（Opaque Predicate）"
+    first_use_en: "opaque predicate"
+    forbidden_variants: []
+
+  - canonical: "Mixed Boolean-Arithmetic"
+    abbreviation: "MBA"
+    chinese: "混合布尔算术"
+    first_use_zh: "混合布尔算术（Mixed Boolean-Arithmetic, MBA）"
+    first_use_en: "Mixed Boolean-Arithmetic (MBA)"
+    forbidden_variants: []
+
+  - canonical: "logic bomb"
+    abbreviation: ""
+    chinese: "逻辑炸弹"
+    first_use_zh: "逻辑炸弹（Logic Bomb）"
+    first_use_en: "logic bomb"
+    forbidden_variants: []
+
+  # --- 对抗鲁棒性评估 ---
+
+  - canonical: "random perturbation"
+    abbreviation: "R.P."
+    chinese: "随机扰动"
+    first_use_zh: "随机扰动（Random Perturbation, R.P.）"
+    first_use_en: "random perturbation (R.P.)"
+    forbidden_variants: []
+
+  - canonical: "feature binarization"
+    abbreviation: "F.B."
+    chinese: "特征二值化"
+    first_use_zh: "特征二值化（Feature Binarization, F.B.）"
+    first_use_en: "feature binarization (F.B.)"
+    forbidden_variants: []
+
+  - canonical: "DISP"
+    abbreviation: "DISP"
+    chinese: "指令位移"
+    first_use_zh: "指令位移（Displacement, DISP）"
+    first_use_en: "Displacement (DISP)"
+    forbidden_variants: []
+
+  - canonical: "IPR"
+    abbreviation: "IPR"
+    chinese: "原位代码随机化"
+    first_use_zh: "原位代码随机化（In-Place Randomization, IPR）"
+    first_use_en: "In-Place Randomization (IPR)"
+    forbidden_variants: []
+
+  - canonical: "unpacked setting"
+    abbreviation: ""
+    chinese: "脱壳评估设置"
+    first_use_zh: "脱壳评估设置（Unpacked Setting）"
+    first_use_en: "unpacked setting"
+    forbidden_variants: []
+
+  # --- 基线方法 & 分类器 ---
+
+  - canonical: "Support Vector Machine"
+    abbreviation: "SVM"
+    chinese: "支持向量机"
+    first_use_zh: "支持向量机（Support Vector Machine, SVM）"
+    first_use_en: "Support Vector Machine (SVM)"
+    forbidden_variants: []
+
+  - canonical: "random forest"
+    abbreviation: "RF"
+    chinese: "随机森林"
+    first_use_zh: "随机森林（Random Forest）"
+    first_use_en: "random forest"
+    forbidden_variants: []
+
+  - canonical: "Naïve Bayes"
+    abbreviation: "NB"
+    chinese: "朴素贝叶斯"
+    first_use_zh: "朴素贝叶斯（Naïve Bayes）"
+    first_use_en: "Naïve Bayes"
+    forbidden_variants:
+      - "贝叶斯"
+
+  - canonical: "GreedyBlock"
+    abbreviation: ""
+    chinese: "GreedyBlock"
+    first_use_zh: "GreedyBlock（基于贪心策略的恶意软件检测基线）"
+    first_use_en: "GreedyBlock"
+    forbidden_variants: []
+
+  - canonical: "ZRS"
+    abbreviation: ""
+    chinese: "ZRS"
+    first_use_zh: "ZRS（零日勒索软件检测基线）"
+    first_use_en: "ZRS"
+    forbidden_variants: []
+
+  # --- 工具 & 数据集 ---
+
+  - canonical: "IDA Pro"
+    abbreviation: ""
+    chinese: "IDA Pro"
+    first_use_zh: "IDA Pro（商用反编译工具）"
+    first_use_en: "IDA Pro"
+    forbidden_variants: []
+
+  - canonical: "pefile"
+    abbreviation: ""
+    chinese: "pefile 库"
+    first_use_zh: "pefile（Python PE 文件解析库）"
+    first_use_en: "pefile"
+    forbidden_variants: []
+
+  - canonical: "Detect-it-easy"
+    abbreviation: "DiE"
+    chinese: "Detect-it-easy 查壳工具"
+    first_use_zh: "Detect-it-easy（DiE, 自动查壳工具）"
+    first_use_en: "Detect-it-easy (DiE)"
+    forbidden_variants: []
+
+  - canonical: "DikeDataset"
+    abbreviation: ""
+    chinese: "DikeDataset 数据集"
+    first_use_zh: "DikeDataset 良性样本数据集"
+    first_use_en: "DikeDataset"
+    forbidden_variants: []
+
+  - canonical: "Dynamic Binary Instrumentation"
+    abbreviation: "DBI"
+    chinese: "动态二进制插桩"
+    first_use_zh: "动态二进制插桩（Dynamic Binary Instrumentation, DBI）"
+    first_use_en: "Dynamic Binary Instrumentation (DBI)"
+    forbidden_variants: []
+
+  # --- LLM 模型名 ---
+
+  - canonical: "GPT-4o"
+    abbreviation: ""
+    chinese: "GPT-4o"
+    first_use_zh: "GPT-4o"
+    first_use_en: "GPT-4o"
+    forbidden_variants: []
+
+  - canonical: "Claude-3.5 Sonnet"
+    abbreviation: ""
+    chinese: "Claude-3.5 Sonnet"
+    first_use_zh: "Claude-3.5 Sonnet"
+    first_use_en: "Claude-3.5 Sonnet"
+    forbidden_variants: []
+
+  - canonical: "Gemini-2.0 Flash"
+    abbreviation: ""
+    chinese: "Gemini-2.0 Flash"
+    first_use_zh: "Gemini-2.0 Flash"
+    first_use_en: "Gemini-2.0 Flash"
+    forbidden_variants: []
+
+  - canonical: "DeepSeek-R1"
+    abbreviation: ""
+    chinese: "DeepSeek-R1"
+    first_use_zh: "DeepSeek-R1"
+    first_use_en: "DeepSeek-R1"
+    forbidden_variants: []
+
+  - canonical: "Qwen-Turbo"
+    abbreviation: ""
+    chinese: "Qwen-Turbo"
+    first_use_zh: "Qwen-Turbo"
+    first_use_en: "Qwen-Turbo"
+    forbidden_variants: []
+
+  - canonical: "LLM-as-a-Judge"
+    abbreviation: ""
+    chinese: "LLM-as-a-Judge"
+    first_use_zh: "LLM-as-a-Judge（大模型评判范式）"
+    first_use_en: "LLM-as-a-Judge"
+    forbidden_variants: []
+
+  - canonical: "call graph"
+    abbreviation: "CG"
+    chinese: "调用图"
+    first_use_zh: "调用图（Call Graph, CG）"
+    first_use_en: "call graph (CG)"
+    forbidden_variants: []
+
 # 数学符号 — 与 preamble.tex 中的 \newcommand 对应
 symbols:
   - name: "knowledge base (full)"
@@ -233,3 +763,155 @@ symbols:
     latex_macro: "F_1"
     definition: "F_1 = \\frac{2 \\cdot P \\cdot R}{P + R}"
     description: "精确率与召回率的调和均值"
+
+  # --- 以下为第二轮核对补充：论文核心公式符号 ---
+
+  # 二进制表示
+  - name: "decompiled binary"
+    chinese: "反编译二进制"
+    latex_macro: "\\langle B_C, B_F \\rangle"
+    definition: "\\langle B_C, B_F \\rangle"
+    description: "反编译后的二进制表示，B_C 为全局常量集合，B_F 为反编译函数集合"
+
+  - name: "global constants"
+    chinese: "全局常量集合"
+    latex_macro: "B_C"
+    definition: "B_C"
+    description: "二进制文件中提取的全局常量集合"
+
+  - name: "decompiled functions"
+    chinese: "反编译函数集合"
+    latex_macro: "B_F"
+    definition: "B_F"
+    description: "二进制文件中提取的所有反编译函数"
+
+  - name: "candidate functions"
+    chinese: "候选函数集合"
+    latex_macro: "B_F^{\\prime}"
+    definition: "B_F^{\\prime}"
+    description: "SEFEI阶段经嵌入筛选的Top-k候选加密函数"
+
+  # 证据表示
+  - name: "evidence collection"
+    chinese: "证据集合"
+    latex_macro: "\\mathbf{E}"
+    definition: "\\mathbf{E}"
+    description: "样本中识别到的所有行为证据条目集合"
+
+  - name: "evidence tuple"
+    chinese: "证据元组"
+    latex_macro: "\\langle func, \\langle action \\rangle, content, ele \\rangle"
+    definition: "\\langle func, \\langle action \\rangle, content, ele \\rangle"
+    description: "单条证据：函数名、行为类型列表、内容、知识库元素"
+
+  # 图表示与GNN
+  - name: "offensive action graph"
+    chinese: "攻击性行为子图"
+    latex_macro: "G_{off}"
+    definition: "G_{off}"
+    description: "函数调用图中标记为攻击性行为的子图（加密/文件系统/通知窗口）"
+
+  - name: "defensive action graph"
+    chinese: "防御性行为子图"
+    latex_macro: "G_{def}"
+    definition: "G_{def}"
+    description: "函数调用图中标记为防御性行为的子图（混淆/环境检查/延迟/破坏）"
+
+  - name: "offensive embedding"
+    chinese: "攻击性图嵌入"
+    latex_macro: "\\mathbf{h}_{off}"
+    definition: "\\mathbf{h}_{off} = \\mathrm{READOUT}(\\mathrm{GraphSAGE}(G_{off})) \\in \\mathbb{R}^{d_h}"
+    description: "Offensive GNN输出的图级嵌入向量（84维）"
+
+  - name: "defensive embedding"
+    chinese: "防御性图嵌入"
+    latex_macro: "\\mathbf{h}_{def}"
+    definition: "\\mathbf{h}_{def} = \\mathrm{READOUT}(\\mathrm{GraphSAGE}(G_{def})) \\in \\mathbb{R}^{d_h}"
+    description: "Defensive GNN输出的图级嵌入向量（84维）"
+
+  - name: "embedding dimension"
+    chinese: "图嵌入维度"
+    latex_macro: "d_h"
+    definition: "d_h = 84"
+    description: "graph-level嵌入维度（mean+max+add三种池化拼接，每种28维）"
+
+  - name: "statistical feature vector"
+    chinese: "统计特征向量"
+    latex_macro: "\\mathbf{x}"
+    definition: "\\mathbf{x} \\in \\mathbb{R}^{57}"
+    description: "样本级57维统计特征向量（三层知识库提取）"
+
+  - name: "concatenated features"
+    chinese: "拼接特征向量"
+    latex_macro: "\\mathbf{z}"
+    definition: "\\mathbf{z} = \\mathbf{h}_{off} \\Vert \\mathbf{h}_{def} \\Vert \\mathrm{MLP}(\\mathbf{x}) \\in \\mathbb{R}^{d_z}"
+    description: "三通道融合后的特征向量（84+84+128=296维）"
+
+  - name: "concatenation dimension"
+    chinese: "拼接向量总维度"
+    latex_macro: "d_z"
+    definition: "d_z = 296"
+    description: "融合后特征总维度（84+84+128）"
+
+  - name: "predicted output"
+    chinese: "预测输出"
+    latex_macro: "\\hat{\\mathbf{y}}"
+    definition: "\\hat{\\mathbf{y}} = \\mathrm{softmax}(\\mathrm{MLP}(\\mathbf{z})) \\in \\mathbb{R}^{2}"
+    description: "二分类预测概率分布（恶意/良性）"
+
+  # 运算符
+  - name: "concatenation operator"
+    chinese: "向量拼接运算符"
+    latex_macro: "\\Vert"
+    definition: "\\Vert"
+    description: "向量拼接运算符"
+
+  - name: "Cohen's d"
+    chinese: "Cohen's d 效应量"
+    latex_macro: "d"
+    definition: "d = \\frac{\\bar{x}_1 - \\bar{x}_2}{s_p}"
+    description: "两组间均值差异的标准化效应量"
+
+  - name: "Pearson correlation"
+    chinese: "Pearson 相关系数"
+    latex_macro: "r"
+    definition: "r"
+    description: "线性相关系数，用于衡量O-D极性独立性（r=0.48准正交）"
+
+  # --- 第三轮核对补充：缺失符号 ---
+
+  - name: "cross-entropy loss"
+    chinese: "交叉熵损失"
+    latex_macro: "\\mathcal{L}_{\\mathrm{CE}}"
+    definition: "\\mathcal{L}_{\\mathrm{CE}}"
+    description: "softmax 交叉熵损失函数（结合 Focal Loss 使用）"
+
+  - name: "individual evidence"
+    chinese: "单条证据"
+    latex_macro: "e"
+    definition: "e \\in \\mathbf{E}"
+    description: "证据集合 E 中的单条证据条目"
+
+  - name: "individual function"
+    chinese: "单个函数"
+    latex_macro: "f"
+    definition: "f \\in B_F"
+    description: "反编译函数集合中的单个函数"
+
+  - name: "adjacent functions"
+    chinese: "邻接函数集合"
+    latex_macro: "\\langle func_{\\mathrm{adj}} \\rangle"
+    definition: "\\langle func_{\\mathrm{adj}} \\rangle"
+    description: "调用图中与 e.func 相邻的函数集合"
+
+  - name: "top-n parameter"
+    chinese: "Top-n 候选参数"
+    latex_macro: "n"
+    definition: "n = 10"
+    description: "SEFEI 阶段余弦相似度筛选的 Top-n 候选函数数量"
+
+  - name: "delta F1"
+    chinese: "F1 变化量"
+    latex_macro: "\\Delta F_1"
+    definition: "\\Delta F_1"
+    description: "消融实验中各组件移除后的 F1 变化量"
