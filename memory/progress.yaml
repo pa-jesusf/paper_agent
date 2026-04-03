@@ -1,16 +1,16 @@
 # Paper Agent — 项目进度追踪
 # 由 memory_manager.py 自动维护，Agent 也可直接编辑
 
-current_phase: init  # init | research | analysis | writing | review | final
+current_phase: research  # init | research | analysis | writing | review | final
 
 phases:
   init:
-    status: not_started     # not_started | in_progress | completed
-    started_at: null
-    completed_at: null
+    status: completed
+    started_at: "2026-04-03"
+    completed_at: "2026-04-03"
   research:
-    status: not_started
-    started_at: null
+    status: in_progress
+    started_at: "2026-04-03"
     completed_at: null
   analysis:
     status: not_started
@@ -30,13 +30,23 @@ phases:
     completed_at: null
 
 # 章节级进度
-sections: {}
-  # 示例:
-  # 01-introduction:
-  #   status: draft          # not_started | outline | draft | review | final
-  #   word_count: 850
-  #   last_edited: "2026-04-02T14:00:00"
-  #   todo_count: 2
+sections:
+  00-abstract:
+    status: not_started
+  01-introduction:
+    status: outline
+  02-related-work:
+    status: not_started
+    note: "文献缺口:LLM4Security(10-15篇),家族分析(8-12篇),GNN4Malware(5-8篇)"
+  03-knowledge:
+    status: outline
+  04-family:
+    status: draft
+    note: "已在source paper中完成，需改写为中文硕士论文格式"
+  05-polarcatch:
+    status: outline
+  06-conclusion:
+    status: not_started
 
 # 图表进度
 figures: {}
@@ -48,6 +58,13 @@ figures: {}
 
 # 文献进度
 literature:
-  total_in_library: 0
+  total_in_library: 151
   papers_with_notes: 0
-  papers_cited: 0
+  papers_with_tags: 151
+  papers_with_key_quotes: 0
+  papers_cited: 151
+  estimated_additional_needed: 30-45
+  critical_gaps:
+    - "Ch2.3 LLM4Security: ~3 refs → need 10-15"
+    - "Ch2.4 家族分析: ~2 refs → need 8-12"
+    - "Ch2.2/5 GNN4Malware: ~1 ref → need 5-8"

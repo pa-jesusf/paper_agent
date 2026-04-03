@@ -4,14 +4,69 @@
 
 ---
 
-<!-- 数据分析阶段由 Agent 填充，格式示例：
+## 发现 F1: 攻防行为画像维度效率高
+- **来源**: data/raw/chapter2_family_analysis/
+- **数据**: 34个家族437个勒索软件样本
+- **详情**: 7维行为画像的Kruskal-Wallis H检验η²=0.29-0.43，全部达到大效应(>0.14)标准
+- **对应章节**: 第四章 §4.4 RQ1
 
-## 发现 1: 模型 A 在小样本下表现优异
-- 来源: pipeline/scripts/01_parse_results.py
-- 数据: data/raw/experiment_results_v3.csv
-- 详情: 当训练样本 < 1000 时，模型 A 的准确率比 B 高 5.3%
-- 对应图表: pipeline/figures/fig_04_accuracy_comparison.pdf
+## 发现 F2: 攻防极性跨家族成立且准正交
+- **来源**: data/raw/chapter2_family_analysis/
+- **数据**: 437样本攻击性(A_off)与防御性(A_def)行为分布
+- **详情**: 98.2%样本同时展现两种极性行为；Pearson r=0.48表明O-D准正交（非冗余）
+- **对应章节**: 第四章 §4.4 RQ1
 
-## 发现 2: ...
+## 发现 F3: 同一家族拓扑结构内聚
+- **来源**: data/raw/chapter2_family_analysis/
+- **数据**: 5-fold交叉验证 + 11维图拓扑特征
+- **详情**: 5/5折CV通过稳定性检验；11/11维KW检验达到统计显著
+- **对应章节**: 第四章 §4.5 RQ2
 
--->
+## 发现 F4: 图拓扑为最强判别模态
+- **来源**: data/raw/chapter2_family_analysis/
+- **数据**: O子图与D子图拓扑特征对比
+- **详情**: 图拓扑η²=0.55-0.72，为三模态中最强；O子图分散(家族差异大)、D子图紧致(家族内一致)
+- **对应章节**: 第四章 §4.5 RQ2
+- **对应图表**: pipeline/figures/ (待生成)
+
+## 发现 F5: 三层知识库差异化覆盖
+- **来源**: data/raw/chapter2_family_analysis/
+- **数据**: Lex层与Sem层相关性分析
+- **详情**: Lex-Sem Pearson r=0.06，几乎无冗余，三层各覆盖不同行为侧面
+- **对应章节**: 第四章 §4.6 RQ3
+
+## 发现 F6: 统计特征判别力最高
+- **来源**: data/raw/chapter2_family_analysis/
+- **数据**: 57维统计特征KW检验
+- **详情**: 53/54特征达到大效应(η²>0.14)，最高η²=0.77；对家族分类贡献最大
+- **对应章节**: 第四章 §4.6 RQ3
+
+## 发现 F7: LLM三阶段识别性能
+- **来源**: data/raw/evaluation/
+- **数据**: 5个LLM(GPT-4o/Claude-3.5/Gemini-2.0/DeepSeek-R1/Qwen-Turbo)
+- **详情**: GPT-4o最优：SLEI F1=0.89, SEFEI F1=0.91, CAR F1=0.93；其余LLM平均下降5-12%
+- **对应章节**: 第三章 §3.7 RQ3
+
+## 发现 F8: PolarCatch识别有效性
+- **来源**: data/raw/evaluation/
+- **数据**: 437恶意+962良性，Random/Chronological设置
+- **详情**: Chronological F1=0.931, Precision=0.952, Recall=0.911; Random F1≈0.96; 对比ZRS +20.9%
+- **对应章节**: 第五章 §5.5 RQ2
+
+## 发现 F9: 对抗鲁棒性
+- **来源**: data/raw/evaluation/
+- **数据**: 5类对抗攻击(R.P., F.B., DISP, IPR, 结构攻击)
+- **详情**: 全部攻击下F1≥0.96；最大F1降幅仅3.5个百分点
+- **对应章节**: 第五章 §5.5 RQ4
+
+## 发现 F10: 消融实验
+- **来源**: data/raw/evaluation/
+- **数据**: 移除各通道的ΔF1
+- **详情**: 移除O-GNN降幅最大(ΔF1≈-12%)，移除D-GNN(ΔF1≈-8%)，移除统计(ΔF1≈-3%)，说明三通道互补
+- **对应章节**: 第五章 §5.5 RQ5
+
+## 发现 F11: 系统效率
+- **来源**: data/raw/evaluation/
+- **数据**: 端到端处理时延与成本
+- **详情**: 平均9.8秒/样本(含LLM调用)；$0.047/样本(GPT-4o API成本)
+- **对应章节**: 第五章 §5.5 RQ6
