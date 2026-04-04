@@ -1,10 +1,17 @@
 # Paper Agent — 关键决策记录
 # 记录项目中的重要决策及其理由，供后续 Agent 参考
 
-decisions: []
-  # 示例:
-  # - timestamp: "2026-04-02T10:15:00"
-  #   topic: "论文结构"
-  #   decision: "采用 5 章结构"
-  #   rationale: "投稿目标有页数限制，5 章更紧凑"
-  #   agent: writer
+decisions:
+  - timestamp: "2026-04-04T12:00:00"
+    topic: "原始材料调查"
+    decision: "深度调查data/raw/全部目录，建立原始材料→论文章节的完整映射"
+    rationale: "发现paper agent此前未消化原始英文论文(ch03/ch04/ch05)、PolarCatch代码实现、知识库JSON、评估框架等大量一手材料。这些是论文扩写的核心来源。"
+    agent: writer
+    artifacts:
+      - "/memories/repo/raw-data-investigation.md"
+      - "memory/progress.yaml (新增raw_data_investigation节)"
+  - timestamp: "2026-04-04T12:00:00"
+    topic: "第3章撰写策略"
+    decision: "以paper/src/ch04-approach.tex为骨架、knowledge_base/JSON+PolarCatch/代码为血肉扩写03-knowledge.tex"
+    rationale: "原始英文论文ch04-approach.tex包含~1200行完整方法论，涵盖知识库构建细节和三阶段识别框架。ch03-empirical.tex虽大部分被注释但含实证数据。硕士论文需将10页英文扩写为18-25页中文。"
+    agent: writer

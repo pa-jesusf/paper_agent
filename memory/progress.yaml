@@ -54,6 +54,15 @@ sections:
     note: "文献缺口:LLM4Security(10-15篇),家族分析(8-12篇),GNN4Malware(5-8篇)"
   03-knowledge:
     status: outline
+    note: "下一个撰写目标。原始材料已完成深度调查：paper/src/ch03-empirical.tex(实证,大部分被注释)+ch04-approach.tex(~1200行方法论)为核心扩写来源；knowledge_base/*.json为知识库数据源；PolarCatch/下有全部特征提取脚本和Prompt文档；evaluation/下有三任务验证框架+ground_truth+6步评估流水线"
+    raw_sources:
+      empirical_study: "data/raw/paper/src/ch03-empirical.tex"
+      methodology: "data/raw/paper/src/ch04-approach.tex"
+      knowledge_base: "data/raw/knowledge_base/*.json"
+      feature_scripts: "data/raw/PolarCatch/*.py"
+      evaluation_framework: "data/raw/evaluation/"
+      llm_prompts: "data/raw/PolarCatch/Prompt*.pdf"
+      review_feedback: "data/raw/paper/doc/*review*.docx"
   04-family:
     status: draft
     note: "已扩写为图表驱动的 LaTeX 章节稿，使用第4章全部13张图并补充多张统计表，编译通过"
@@ -61,6 +70,20 @@ sections:
     status: outline
   06-conclusion:
     status: not_started
+
+# 原始材料调查状态 (2026-04-04完成)
+raw_data_investigation:
+  status: completed
+  date: "2026-04-04"
+  findings:
+    - "data/raw/paper/: ASE2026英文原稿完整，ch04-approach.tex ~1200行为第3/5章核心来源"
+    - "data/raw/paper/src/ch03-empirical.tex: 实证研究数据(AES 38.4%等)，大部分被注释需恢复"
+    - "data/raw/paper/doc/: 含NDSS26和FSE26审稿意见，可用于改进论述"
+    - "data/raw/PolarCatch/: 完整实现，含FEATURE_DOCUMENTATION(19D+57D)和MODEL_ARCHITECTURE(Dual GNN参数)"
+    - "data/raw/PolarCatch/: 10+特征提取脚本，72个实验结果文件，11类消融实验"
+    - "data/raw/knowledge_base/: 三层KB原始JSON(lexical 100+条/semantic 15+含代码/statistical 44条)"
+    - "data/raw/evaluation/: 三任务验证(19848+9341+44838候选)，6步评估流水线，RQ1-RQ6各有独立数据"
+  detailed_memo: "见 /memories/repo/raw-data-investigation.md"
 
 # 图表进度
 figures:
